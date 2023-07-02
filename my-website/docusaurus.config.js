@@ -9,7 +9,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
+  title: 'Cssville',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
