@@ -82,13 +82,14 @@ docReady(function () {
   })
   const generatorNodes: ReactNode[] = [];
   Cssville.generators.forEach((g, i) => {
-    let array = new Array();
+    let array = new Array();    
         g.cssData.map(d => getClasses(d.getCss("", []))).forEach(arr => {
             array = array.concat(arr);
         });
         var node =  (
-            <div key={`node-${this.name}`} className="pb-3">
-                <div className="fs-x-large fw-bold pb-2">{this.name}</div>
+            <div key={`node-${g.name}-${i}`} className="py-4">
+                <div className="fs-x-large fw-bold pb-3">{g.name}</div>
+                <div className="border-bottom mb-3"></div>
                 <CssClassesList data={array} />
             </div>
         );
@@ -131,10 +132,10 @@ docReady(function () {
     }
     if (!hasCopied) {
       hasCopied = true;
-      copyIcon.src = "copied.svg";
+      copyIcon.src = "img/copied.svg";
       setTimeout(() => {
         hasCopied = false;
-        copyIcon.src = "copy.svg";
+        copyIcon.src = "img/copy.svg";
       }, 2000);
     }
   }, false)
