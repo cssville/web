@@ -25,5 +25,5 @@ jobs:
         with:
           source-directory: '.'
           destination-github-username: 'cssville'
-          destination-repository-name: 'test'
+          destination-repository-name: 'cssville.github.io'
           target-branch: main
