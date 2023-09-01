@@ -5,7 +5,8 @@ import { ReactNode } from "react";
 import hljs from 'highlight.js';
 import "./site.css";
 import "cssville/cssville.css";
-import { CssClassesList } from './CssClassesList';
+import { CssClassesList } from './components/CssClassesList';
+import { Footer } from './components/Footer';
 
 function docReady(fn: () => void) {
   // see if DOM is already available
@@ -63,7 +64,7 @@ docReady(function () {
     prefixesNodes[prefixesNodes.length] =
       <div className="pb-3 md-w-12 md-pb-4">
         <div className="fs-x-large pb-3"><span className="fw-bold">{prefix}</span></div>
-        <div key={`come-example-${prefix}`} className="max-w-12 bg-grey p-2 mr-2 br-2">
+        <div key={`come-example-${prefix}`} className="max-w-12 bg-grey shadow p-3 mr-3 br-2">
           <pre className="m-0 overflow-auto">
             <code className="language-css hljs br-2 max-w-sm mx-auto"
               dangerouslySetInnerHTML={{
@@ -102,8 +103,7 @@ docReady(function () {
     </h2>
     <p className="pb-4 m-0 max-w-8 md-max-w-12">
       The same classes can be used with predefined screen-size prefixes. When prefix is used, the style is applied only for specific screen resolution.
-      See the example below for the
-      <span className="fs-small code text-decoration-none border br-2 px-2 opacity-1 bg-grey fw-bold">d-flex</span> property:
+      See the example below for the <span className="fs-small code text-decoration-none border br-2 px-2 opacity-1 bg-grey fw-bold">d-flex</span> property:
     </p>
     <div className="pb-5 d-flex flex-wrap-wrap">{prefixesNodes}</div>
     <h2 className="fs-xxx-large m-0 pb-4 md-fs-xx-large">
@@ -115,6 +115,7 @@ docReady(function () {
       which might be used to define more complex styles, utility classes are very simple and focused on a single aspect of the style.
     </p>
     {generatorNodes}
+    <Footer/>
   </>;
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(<>{rootNode}</>);
