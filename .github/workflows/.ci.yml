@@ -22,5 +22,5 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.API_TOKEN_GITHUB }}
-          repository: cssville/cssville.github.io
+          repository: cssville/test
           force: true
