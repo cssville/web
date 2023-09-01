@@ -18,12 +18,9 @@ jobs:
       - run: npm run build
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Pushes to another repository
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          source-directory: '.'
-          destination-github-username: 'cssville'
-          destination-repository-name: 'cssville.github.io'
-          target-branch: main
+          github_token: ${{ secrets.API_TOKEN_GITHUB }}
+          repository: cssville/cssville.github.io
+          force: true
