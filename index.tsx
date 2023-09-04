@@ -47,25 +47,5 @@ docReady(function () {
   </>;
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(<>{rootNode}</>);
-
   hljs.highlightAll();
-  document.getElementById("copy")?.addEventListener('click', async function () {
-    var copyText = document.getElementById("input-copy") as HTMLInputElement;
-    var copyIcon = document.getElementById("copy-icon") as HTMLImageElement;
-    if (navigator.clipboard) {
-      await navigator.clipboard.writeText(copyText.innerText);
-    } else {
-      copyText.select();
-      copyText.setSelectionRange(0, 99999);
-      document.execCommand("copy");
-    }
-    if (!hasCopied) {
-      hasCopied = true;
-      copyIcon.src = "img/copied.svg";
-      setTimeout(() => {
-        hasCopied = false;
-        copyIcon.src = "img/copy.svg";
-      }, 2000);
-    }
-  }, false)
 });

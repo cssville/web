@@ -7,14 +7,15 @@ export const ClassesList = (props: any) => {
   return (
     <>
       <div className="w-12 fs-medium pb-2 d-flex flex-wrap-wrap">
-        {props.data.map((value: any, i: number) => {
-          var cl = value.cssClass;
-          return (
-            <a key={`class-${cl}`} onClick={(e) => { setActive(i) }}
-              className={`cursor-pointer fs-small code m-1 text-decoration-none border br-2 px-2 ${i === active ? "opacity-1 bg-grey fw-bold" : "opacity-05"}`}>
-              {cl}
-            </a>);
-        })}
+        {
+          props.data.map((value: any, i: number) => {
+            var cl = value.cssClass;
+            return (
+              <a key={`class-${cl}`} onClick={(e) => { setActive(i) }}
+                className={`cursor-pointer fs-small code m-1 text-decoration-none border br-2 px-2 ${i === active ? "opacity-1 bg-grey fw-bold" : "opacity-05"}`}>
+                {cl}
+              </a>);
+          })}
       </div>
       <div key={`come-example-${active}`} className="max-w-12 bg-grey shadow p-3 br-3">
         <pre className="m-0">
