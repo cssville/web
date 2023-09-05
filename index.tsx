@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom/client';
-import React = require("react");
+import React from 'react';
 import hljs from 'highlight.js';
 import "./site.css";
 import "cssville/cssville.css";
@@ -21,31 +21,26 @@ function docReady(fn: () => void) {
   }
 }
 
-let hasCopied = false;
-
-
 docReady(function () {
-
-  const rootNode = 
-  <>
-    <div className="w-12 position-relative">
-      <div className="position-absolute h-100 w-12">
-        <img src="img/bg.svg" className="w-12 h-100 object-fit-cover"/>
-      </div>
-      <div className="position-relative mx-auto max-w-xl px-5 lg-px-4 md-px-3 sm-px-2">
-        <Header />
-        <LandingMain />
-      </div>
-    </div>
-    <div className="position-relative mx-auto max-w-xl py-4 px-5 lg-px-4 md-px-3 sm-px-2">
-      <AboutSection/>
-      <DemoSection/>
-      <CssPrefixesSection/>
-      <CssClassesSection/>
-    </div>
-      <Footer/>
-  </>;
   const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(<>{rootNode}</>);
+  root.render(
+    <>
+      <div className="w-12 position-relative">
+        <div className="position-absolute h-100 w-12">
+          <img src="img/bg.svg" className="w-12 h-100 object-fit-cover" />
+        </div>
+        <div className="position-relative mx-auto max-w-xl px-5 lg-px-4 md-px-3 sm-px-2">
+          <Header />
+          <LandingMain />
+        </div>
+      </div>
+      <div className="position-relative mx-auto max-w-xl py-4 px-5 lg-px-4 md-px-3 sm-px-2">
+        <AboutSection />
+        <DemoSection />
+        <CssPrefixesSection />
+        <CssClassesSection />
+      </div>
+      <Footer />
+    </>);
   hljs.highlightAll();
 });

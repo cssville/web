@@ -1,4 +1,4 @@
-import React = require("react");
+import React from 'react';
 
 export const Chip = (props: any) => {
     return (

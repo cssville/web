@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
       "jsx": "react",
-      "module": "commonjs",
+      "module": "es6",
       "lib": ["es5", "es6", "dom"],
       "rootDir": "",
-      "moduleResolution": "node"
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true
   }
 }

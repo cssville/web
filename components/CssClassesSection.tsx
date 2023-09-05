@@ -1,4 +1,4 @@
-import React = require("react");
+import React from 'react';
 import Cssville from 'cssville/build/cssville';
 import { ReactNode } from "react";
 import { ClassesList } from "./ClassesList";

@@ -1,5 +1,4 @@
-import React = require("react");
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export const LandingMain = (props: any) => {
   const [isCopied, setIsCopied] = useState(false);

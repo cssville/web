@@ -1,5 +1,5 @@
 import { useState } from "react";
-import React = require("react");
+import React from 'react';
 import hljs from 'highlight.js';
 
 export const ClassesList = (props: any) => {

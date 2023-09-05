@@ -1,4 +1,4 @@
-import React = require("react");
+import React from 'react';
 import hljs from 'highlight.js';
 import { Chip } from "./Chip";
 
