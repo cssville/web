@@ -27,6 +27,8 @@ var whiteSpaceGenerator_1 = require("./generators/whiteSpaceGenerator");
 var objectFitGenerator_1 = require("./generators/objectFitGenerator");
 var opacityGenerator_1 = require("./generators/opacityGenerator");
 var overflowGenerator_1 = require("./generators/overflowGenerator");
+var breakpoints_1 = require("./breakpoints");
+var colors_1 = require("./colors");
 var Cssville = /** @class */ (function () {
     function Cssville() {
     }
@@ -34,20 +36,27 @@ var Cssville = /** @class */ (function () {
         if (classes === void 0) { classes = []; }
         var css = "";
         var breakpointsCss = "";
-        var breakpointNames = Object.keys(this.breakpoints);
+        var breakpointNames = Object.keys(breakpoints_1["default"].breakpoints);
         for (var _i = 0, breakpointNames_1 = breakpointNames; _i < breakpointNames_1.length; _i++) {
             var breakpointName = breakpointNames_1[_i];
-            var breakpointValue = this.breakpoints[breakpointName];
+            var breakpointValue = breakpoints_1["default"].breakpoints[breakpointName];
             breakpointsCss += " --cssville-".concat(breakpointName, "-breakpoint: ").concat(breakpointValue, ";");
         }
-        css += ":root {".concat(breakpointsCss, "}");
+        var colorsCss = "";
+        var colorNames = Object.keys(colors_1["default"].basicColors);
+        for (var _a = 0, colorNames_1 = colorNames; _a < colorNames_1.length; _a++) {
+            var colorName = colorNames_1[_a];
+            var breakpointValue = colors_1["default"].basicColors[colorName];
+            colorsCss += " --cssville-".concat(colorName, "-color: ").concat(breakpointValue, ";");
+        }
+        css += ":root {".concat(breakpointsCss, "}{").concat(colorsCss, "} ");
         for (var x = 0; x < Cssville.generators.length; x++) {
             var g = Cssville.generators[x];
             var cssPart = g.generate("", classes);
             css += cssPart;
         }
-        for (var _a = 0, breakpointNames_2 = breakpointNames; _a < breakpointNames_2.length; _a++) {
-            var breakpointName = breakpointNames_2[_a];
+        for (var _b = 0, breakpointNames_2 = breakpointNames; _b < breakpointNames_2.length; _b++) {
+            var breakpointName = breakpointNames_2[_b];
             var v = "--cssville-".concat(breakpointName, "-breakpoint");
             var innerCss = "";
             for (var x = 0; x < Cssville.generators.length; x++) {
@@ -58,13 +67,6 @@ var Cssville = /** @class */ (function () {
             css += "@media screen and (max-width: var(".concat(v, ")) { ").concat(innerCss, "} ");
         }
         return css;
-    };
-    Cssville.breakpoints = {
-        xl: "1280px",
-        lg: "1012px",
-        md: "768px",
-        sm: "544px",
-        xs: "320px"
     };
     Cssville.generators = [
         new alignContentGenerator_1.AlignContentGenerator("align-content"),
