@@ -1,5 +1,5 @@
 import React from 'react';
-import Cssville from 'cssville/build/cssville';
+import Cssville from './build/cssville.js';
 import { ReactNode } from "react";
 import { ClassesList } from "./ClassesList";
 
