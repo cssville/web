@@ -27,51 +27,52 @@ var whiteSpaceGenerator_1 = require("./generators/whiteSpaceGenerator");
 var objectFitGenerator_1 = require("./generators/objectFitGenerator");
 var opacityGenerator_1 = require("./generators/opacityGenerator");
 var overflowGenerator_1 = require("./generators/overflowGenerator");
-var breakpoints_1 = require("./breakpoints");
-var colors_1 = require("./colors");
+var borderGenerator_1 = require("./generators/borderGenerator");
+var breakpoints_1 = require("./vars/breakpoints");
+var colors_1 = require("./vars/colors");
+var border_1 = require("./vars/border");
+var boxShadowGenerator_1 = require("./generators/boxShadowGenerator");
+var shadow_1 = require("./vars/shadow");
 var Cssville = /** @class */ (function () {
     function Cssville() {
     }
     Cssville.getCss = function (classes) {
         if (classes === void 0) { classes = []; }
         var css = "";
-        var breakpointsCss = "";
-        var breakpointNames = Object.keys(breakpoints_1["default"].breakpoints);
-        for (var _i = 0, breakpointNames_1 = breakpointNames; _i < breakpointNames_1.length; _i++) {
-            var breakpointName = breakpointNames_1[_i];
-            var breakpointValue = breakpoints_1["default"].breakpoints[breakpointName];
-            breakpointsCss += " --cssville-".concat(breakpointName, "-breakpoint: ").concat(breakpointValue, ";");
+        var allVarsCss = "";
+        for (var _i = 0, _a = this.variables; _i < _a.length; _i++) {
+            var varsCollection = _a[_i];
+            var collectionCss = "";
+            for (var _b = 0, varsCollection_1 = varsCollection; _b < varsCollection_1.length; _b++) {
+                var v = varsCollection_1[_b];
+                collectionCss += " ".concat(v.css);
+            }
+            allVarsCss += " ".concat(collectionCss);
         }
-        var colorsCss = "";
-        var colorNames = Object.keys(colors_1["default"].basicColors);
-        for (var _a = 0, colorNames_1 = colorNames; _a < colorNames_1.length; _a++) {
-            var colorName = colorNames_1[_a];
-            var breakpointValue = colors_1["default"].basicColors[colorName];
-            colorsCss += " --cssville-".concat(colorName, "-color: ").concat(breakpointValue, ";");
-        }
-        css += ":root {".concat(breakpointsCss, "}{").concat(colorsCss, "} ");
+        css += ":root {".concat(allVarsCss, "} ");
         for (var x = 0; x < Cssville.generators.length; x++) {
             var g = Cssville.generators[x];
             var cssPart = g.generate("", classes);
             css += cssPart;
         }
-        for (var _b = 0, breakpointNames_2 = breakpointNames; _b < breakpointNames_2.length; _b++) {
-            var breakpointName = breakpointNames_2[_b];
-            var v = "--cssville-".concat(breakpointName, "-breakpoint");
+        for (var _c = 0, _d = breakpoints_1["default"].breakpoints; _c < _d.length; _c++) {
+            var breakpoint = _d[_c];
             var innerCss = "";
             for (var x = 0; x < Cssville.generators.length; x++) {
                 var g = Cssville.generators[x];
-                var cssPartForPrefix = g.generate(breakpointName, classes);
+                var cssPartForPrefix = g.generate(breakpoint.name, classes);
                 innerCss += cssPartForPrefix;
             }
-            css += "@media screen and (max-width: var(".concat(v, ")) { ").concat(innerCss, "} ");
+            css += "@media screen and (max-width: ".concat(breakpoint["var"], ") { ").concat(innerCss, "} ");
         }
         return css;
     };
     Cssville.generators = [
         new alignContentGenerator_1.AlignContentGenerator("align-content"),
         new alignItemsGenerator_1.AlignItemsGenerator("align-items"),
+        new borderGenerator_1.BorderGenerator("border"),
         new borderRadiusGenerator_1.BorderRadiusGenerator("border-radius"),
+        new boxShadowGenerator_1.BoxShadowGenerator("box-shadow"),
         new backgroundColorGenerator_1.BackgroundColorGenerator("background-color"),
         new colorGenerator_1.ColorGenerator("color"),
         new cursorGenerator_1.CursorGenerator("cursor"),
@@ -96,6 +97,13 @@ var Cssville = /** @class */ (function () {
         new widthGenerator_1.WidthGenerator("width"),
         new whiteSpaceGenerator_1.WhiteSpaceGenerator("white-space"),
         new wordBreakGenerator_1.WordBreakGenerator("word-break"),
+    ];
+    Cssville.variables = [
+        breakpoints_1["default"].breakpoints,
+        colors_1["default"].basicColors,
+        colors_1["default"].colorsPalette,
+        border_1["default"].vars,
+        shadow_1["default"].vars,
     ];
     return Cssville;
 }());

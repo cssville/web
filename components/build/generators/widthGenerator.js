@@ -18,6 +18,7 @@ exports.__esModule = true;
 exports.WidthGenerator = void 0;
 var cssClassData_1 = require("../data/cssClassData");
 var GeneratorBase_1 = require("../GeneratorBase");
+var breakpoints_1 = require("../vars/breakpoints");
 var WidthGenerator = /** @class */ (function (_super) {
     __extends(WidthGenerator, _super);
     function WidthGenerator() {
@@ -36,11 +37,11 @@ var WidthGenerator = /** @class */ (function (_super) {
             ["10", ["83.333%"]],
             ["11", ["91.666%"]],
             ["12", ["100%"]],
-            ["xs", ["320px"]],
-            ["sm", ["544px"]],
-            ["md", ["768px"]],
-            ["lg", ["1012px"]],
-            ["xl", ["1280px"]],
+            ["xs", [breakpoints_1["default"].xs["var"]]],
+            ["sm", [breakpoints_1["default"].sm["var"]]],
+            ["md", [breakpoints_1["default"].md["var"]]],
+            ["lg", [breakpoints_1["default"].lg["var"]]],
+            ["xl", [breakpoints_1["default"].xl["var"]]],
         ]);
         _this.list = ["max-content", "min-content", "fit-content", "16px", "24px", "32px", "48px", "64px", "inherit", "initial", "revert", "unset"];
         _this.cssData = [
