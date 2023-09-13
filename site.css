@@ -1,45 +1,17 @@
 html, body {
-    color: #343A40;
+    color: var(--cssville-blue-grey-900-color);
     font-family: 'Inter', sans-serif;
     font-size: large;
-}
-
-.dark {
-    background-color: #22272e;
 }
 
 .green {
     color: #6FAC6F;
 }
 
-.blue {
-    color: #0080ff;
-}
-
 .bg-green {
     background-color: #6FAC6F;
 }
 
-.grey {
-    color: #cccccc;
-}
-
 .code {
     font-family: 'JetBrains Mono', monospace;
-}
-
-.bg-grey {
-    background-color: #f6f6f6;
-}
-
-.border {
-    border: solid 1px #ccc;
-}
-
-.border-bottom {
-    border-bottom: solid 1px #dadada;
-}
-
-.shadow {
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }

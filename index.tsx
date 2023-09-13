@@ -29,12 +29,12 @@ docReady(function () {
         <div className="position-absolute h-100 w-12">
           <img src="img/bg.svg" className="w-12 h-100 object-fit-cover" />
         </div>
-        <div className="position-relative mx-auto max-w-xl px-5 lg-px-4 md-px-3 sm-px-2">
+        <div className="position-relative mx-auto max-w-xl px-5 lg-px-3 md-px-2">
           <Header />
           <LandingMain />
         </div>
       </div>
-      <div className="position-relative mx-auto max-w-xl py-4 px-5 lg-px-4 md-px-3 sm-px-2">
+      <div className="position-relative mx-auto max-w-xl py-4 px-5 lg-px-3 md-px-2">
         <AboutSection />
         <DemoSection />
         <CssPrefixesSection />

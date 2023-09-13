@@ -34,7 +34,7 @@ export const CssClassesSection = (props: any) => {
     var node = (
       <div key={`node-${g.name}-${i}`} className="py-4">
         <div className="fs-x-large fw-bold pb-3">{g.name}</div>
-        <div className="border-bottom mb-3"></div>
+        <div className="border-bottom-1 mb-3"></div>
         <ClassesList data={array} />
       </div>
     );

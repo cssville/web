@@ -21,7 +21,7 @@ export const LandingMain = (props: any) => {
         <div className="d-flex w-8 lg-w-12">
           <div className="d-flex flex-direction-column">
             <h1 className="fs-4x-large m-0 pb-5 lg-pb-3 md-fs-xxx-large">
-              The <span className="blue">most simple</span> CSS utility-first framework
+              The <span className="color-light-blue-700">most simple</span> CSS utility-first framework
             </h1>
             <div className="w-8 md-w-12 pb-5 lg-pb-3">
               <p className="fs-larger p-0 m-0 lg-py-3 md-fs-large">
@@ -32,15 +32,15 @@ export const LandingMain = (props: any) => {
             </div>
           </div>
         </div>
-        <div className="d-flex w-4 lg-w-12 justify-content-center">
+        <div className="d-flex lg-d-none w-4 lg-w-12 justify-content-center">
           <img src="img/landing.svg" alt="cssville-landing" className="w-12 lg-max-w-xs" />
         </div>
       </div>
       <div className="pb-4">
-        <div id="copy" className="d-flex p-3 text-decoration-none color-black dark br-3 w-fit-content align-items-center sm-p-2 sm-br-2 cursor-pointer" onClick={handleCopyClick}>
+        <div id="copy" className="d-flex p-3 text-decoration-none bg-color-blue-grey-900 br-3 w-fit-content align-items-center sm-p-2 sm-br-2 cursor-pointer box-shadow-lg" onClick={handleCopyClick}>
           <img src="img/chevron-right.svg" alt=">" className="h-24px w-24px pr-3 sm-pr-1" />
           <div className="d-flex align-items-center justify-content-center pr-4 sm-pr-3">
-            <span className="fs-larger fw-bold code hljs sm-fs-medium"><span className="hljs-name">npm</span> install <span className="hljs-attr">cssville</span></span>
+            <span className="fs-larger fw-bold code sm-fs-medium color-blue-grey-200"><span className="hljs-name">npm</span> install <span className="hljs-attr">cssville</span></span>
           </div>
           <img id="copy-icon" src={isCopied ? "img/copied.svg" : "img/copy.svg"} alt={isCopied ? "copied" : "copy"} className="h-24px w-24px pr-2"/>
         </div>

@@ -4,6 +4,7 @@
   "description": "Cssville website",
   "main": "index.js",
   "scripts": {
+    "install": "npm install",
     "build": "webpack",
     "watch:build": "webpack --watch",
     "watch:server": "lite-server -c lite-server-config.json",
@@ -24,7 +25,7 @@
   },
   "homepage": "https://github.com/cssville/cssville-web#readme",
   "dependencies": {
-    "cssville": "^0.3.3",
+    "cssville": "^0.3.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

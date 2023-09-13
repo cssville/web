@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Footer = (props: any) => {
     return (
-        <div className="d-flex flex-direction-row md-flex-direction-column align-items-center justify-content-center w-12 mt-3 py-3 bg-grey opacity-07">
+        <div className="d-flex flex-direction-row md-flex-direction-column align-items-center justify-content-center w-12 mt-3 py-3 bg-color-grey-100 opacity-07">
           <div className="mr-3">
             <span>© Cssville 2023</span>
           </div>

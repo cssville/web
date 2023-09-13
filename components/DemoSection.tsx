@@ -16,8 +16,8 @@ export const DemoSection = (props: any) => {
       <p className="pb-3 m-0">
         The example below shows some classes in action:
       </p>
-      <div className="d-flex flex-direction-column position-relative bg-grey br-3 pt-3 mb-5">
-        <div className="w-12 d-flex justify-content-center">
+      <div className="d-flex flex-direction-column position-relative br-3 py-3 lg-p-2 mb-5 box-shadow-xl">
+        <div className="w-12 d-flex justify-content-center pb-3">
           <div id="example" className="w-12 d-flex justify-content-center">
             <div className="d-flex w-12 position-relative max-w-sm">
               <img src="img/house.png" className="w-12 max-w-12 br-3 object-fit-cover" />
@@ -42,8 +42,7 @@ export const DemoSection = (props: any) => {
         </div>
         <div className="d-flex justify-content-center">
           <pre className="overflow-auto m-0">
-
-            <code className="language-xml hljs br-2"
+            <code className="language-xml hljs br-3"
               dangerouslySetInnerHTML={{
                 __html:
                   hljs.highlight(`

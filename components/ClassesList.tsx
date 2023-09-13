@@ -12,12 +12,12 @@ export const ClassesList = (props: any) => {
             var cl = value.cssClass;
             return (
               <a key={`class-${cl}`} onClick={(e) => { setActive(i) }}
-                className={`cursor-pointer fs-small code m-1 text-decoration-none border br-2 px-2 ${i === active ? "opacity-1 bg-grey fw-bold" : "opacity-05"}`}>
+                className={`cursor-pointer fs-small code m-1 text-decoration-none border-1 br-2 px-2 ${i === active ? "opacity-1 bg-color-grey-100 fw-bold" : "opacity-05"}`}>
                 {cl}
               </a>);
           })}
       </div>
-      <div key={`come-example-${active}`} className="max-w-12 bg-grey shadow p-3 br-3">
+      <div key={`come-example-${active}`} className="max-w-12 box-shadow-lg p-3 br-3">
         <pre className="m-0">
           <code className="language-css hljs br-2 max-w-sm mx-auto"
             dangerouslySetInnerHTML={{
