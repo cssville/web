@@ -6,7 +6,7 @@ export const Header = (props: any) => {
         <a href="/" className="d-flex text-decoration-none color-green-500">
           <img src="img/cssville.svg" alt="logo" className="h-48px w-48px py-2"/>
           <div className="d-flex align-items-center justify-content-center sm-d-none pl-3">
-            <span className="fw-900 fs-x-large code">cssville</span>
+            <span className="fw-900 fs-x-large font-family-code">cssville</span>
           </div>
         </a>
         <div className="flex-grow-1"></div>

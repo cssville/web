@@ -40,7 +40,7 @@ export const LandingMain = (props: any) => {
         <div id="copy" className="d-flex p-3 text-decoration-none bg-color-blue-grey-900 br-3 w-fit-content align-items-center sm-p-2 sm-br-2 cursor-pointer box-shadow-lg" onClick={handleCopyClick}>
           <img src="img/chevron-right.svg" alt=">" className="h-24px w-24px pr-3 sm-pr-1" />
           <div className="d-flex align-items-center justify-content-center pr-4 sm-pr-3">
-            <span className="fs-larger fw-bold code sm-fs-medium color-blue-grey-200"><span className="hljs-name">npm</span> install <span className="hljs-attr">cssville</span></span>
+            <span className="fs-larger fw-bold font-family-code sm-fs-medium color-blue-grey-200"><span className="hljs-name">npm</span> install <span className="hljs-attr">cssville</span></span>
           </div>
           <img id="copy-icon" src={isCopied ? "img/copied.svg" : "img/copy.svg"} alt={isCopied ? "copied" : "copy"} className="h-24px w-24px pr-2"/>
         </div>
