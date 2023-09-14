@@ -13,7 +13,7 @@ export const CssPrefixesSection = (props: any) => {
         <div className="fs-x-large pb-3"><span className="fw-bold">{val.name}</span></div>
         <div className="max-w-12 box-shadow-lg p-3 mr-3 br-3">
           <pre className="m-0 overflow-auto">
-            <code className="language-css hljs br-2 max-w-sm mx-auto"
+            <code className="fs-large language-css hljs br-2 max-w-sm mx-auto"
               dangerouslySetInnerHTML={{
                 __html:
                   hljs.highlight(`
@@ -33,7 +33,7 @@ export const CssPrefixesSection = (props: any) => {
         <h2 className="fs-xxx-large m-0 pb-4 md-fs-xx-large">
           CSS prefixes
         </h2>
-        <p className="pb-4 m-0 max-w-8 md-max-w-12">
+        <p className="fs-large pb-4 m-0 max-w-8 md-max-w-12">
           The same classes can be used with predefined screen-size prefixes. When prefix is used, the style is applied only for specific screen resolution.
           See the example below for the <Chip text="d-flex"/> property:
         </p>

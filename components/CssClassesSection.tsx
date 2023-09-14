@@ -45,7 +45,7 @@ export const CssClassesSection = (props: any) => {
       <h2 className="fs-xxx-large m-0 pb-4 md-fs-xx-large">
         CSS classes
       </h2>
-      <p className="pb-3 m-0 max-w-8 md-max-w-12">
+      <p className="fs-large pb-3 m-0 max-w-8 md-max-w-12">
         Utility classes are a specific type of class that is designed to provide a single,
         focused styling property, such as padding, margin, or font size. Unlike traditional classes,
         which might be used to define more complex styles, utility classes are very simple and focused on a single aspect of the style.

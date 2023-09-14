@@ -8,12 +8,12 @@ export const DemoSection = (props: any) => {
       <h2 className="fs-xxx-large m-0 pb-4 md-fs-xx-large">
         Demo
       </h2>
-      <p className="pb-3 m-0 max-w-8 md-max-w-12">
+      <p className="fs-large pb-3 m-0 max-w-8 md-max-w-12">
         In a utility-first framework, each class is designed to target a specific aspect of the style, such as font size, color, margin, or padding.
         The classes are named according to the property they control, such as <Chip text="flex-direction-row"/>, <Chip text="cursor-pointer"/>, <Chip text="mx-4"/>, <Chip text="py-2"/>, and so on.
         These classes can be added directly to HTML elements, without the need for additional CSS styling.
       </p>
-      <p className="pb-3 m-0">
+      <p className="fs-large pb-3 m-0">
         The example below shows some classes in action:
       </p>
       <div className="d-flex flex-direction-column position-relative br-3 py-3 lg-p-2 mb-5 box-shadow-xl">
@@ -42,7 +42,7 @@ export const DemoSection = (props: any) => {
         </div>
         <div className="d-flex justify-content-center">
           <pre className="overflow-auto m-0">
-            <code className="language-xml hljs br-3"
+            <code className="fs-large language-xml hljs br-3"
               dangerouslySetInnerHTML={{
                 __html:
                   hljs.highlight(`

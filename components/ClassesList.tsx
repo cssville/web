@@ -19,7 +19,7 @@ export const ClassesList = (props: any) => {
       </div>
       <div key={`come-example-${active}`} className="max-w-12 box-shadow-lg p-3 br-3">
         <pre className="m-0">
-          <code className="language-css hljs br-2 max-w-sm mx-auto"
+          <code className="fs-large language-css hljs br-2 max-w-sm mx-auto"
             dangerouslySetInnerHTML={{
               __html:
                 hljs.highlight(props.data[active].cssString, { language: 'css' }).value

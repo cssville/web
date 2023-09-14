@@ -4,7 +4,6 @@
   "description": "Cssville website",
   "main": "index.js",
   "scripts": {
-    "install": "npm install",
     "build": "webpack",
     "watch:build": "webpack --watch",
     "watch:server": "lite-server -c lite-server-config.json",
@@ -37,7 +36,6 @@
     "copyfiles": "^2.4.1",
     "css-loader": "^6.8.1",
     "highlight.js": "^11.7.0",
-    "highlightjs": "^9.16.2",
     "lite-server": "^2.6.1",
     "mini-css-extract-plugin": "^2.7.6",
     "nodemon": "^2.0.12",
