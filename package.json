@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/cssville/cssville-web#readme",
   "dependencies": {
-    "cssville": "^0.4.0",
+    "cssville": "^0.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

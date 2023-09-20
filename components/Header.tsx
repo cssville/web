@@ -11,14 +11,14 @@ export const Header = (props: any) => {
         </a>
         <div className="flex-grow-1"></div>
         <div className="d-flex align-items-center justify-content-center">
-          <a className="d-flex px-3 py-2 text-decoration-none color-white bg-color-green-500 br-3 box-shadow-lg" 
+          <a className="d-flex px-3 py-2 text-decoration-none color-white bg-color-green-500 bg-color-green-600-hover br-2 box-shadow-lg" 
             href="https://github.com/cssville/cssville" target="_blank" rel="noopener">
-            <img src="img/mark-github.svg" alt="mark-github" className="h-32px w-32px"/>
-            <div className="d-flex align-items-center justify-content-center xs-d-none px-3">
+            <img src="img/mark-github.svg" alt="mark-github" className="h-24px w-24px"/>
+            <div className="d-flex align-items-center justify-content-center xs-d-none pl-2">
               <span className="fs-large fw-bold">Open source</span>
             </div>
           </a>
         </div>
       </div>
     );
-}
+} 
