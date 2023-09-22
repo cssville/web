@@ -18,7 +18,7 @@ export const LandingMain = (props: any) => {
   };
   return (
     <div className="d-flex py-5 flex-direction-column">
-      <div className="d-flex lg-flex-direction-column w-12 justify-content-center">
+      <div className="d-flex py-4 lg-flex-direction-column w-12 justify-content-center">
         <div className="d-flex w-8 xl-w-12">
           <div className="d-flex flex-direction-column align-items-center">
             <h1 className="fs-4x-large m-0 pb-5 lg-pb-3 md-fs-xxx-large text-align-center">
@@ -30,7 +30,7 @@ export const LandingMain = (props: any) => {
                 Develop faster using classes like <Chip text="d-flex"/>, <Chip text="cursor-pointer"/>, and <Chip text="py-2"/>.
               </p>
             </div>
-            <div className="d-flex justify-content-center pb-4">
+            <div className="d-flex justify-content-center">
               <div id="copy" className="d-flex p-3 text-decoration-none bg-color-blue-grey-900 br-3 w-fit-content align-items-center sm-p-2 sm-br-2 cursor-pointer box-shadow-lg" onClick={handleCopyClick}>
                 <img src="img/chevron-right.svg" alt=">" className="h-24px w-24px pr-3 sm-pr-1" />
                 <div className="d-flex align-items-center justify-content-center pr-4 sm-pr-3">

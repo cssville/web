@@ -30,7 +30,7 @@ export const CssPrefixesSection = (props: any) => {
   })
     return (
       <>
-        <h2 className="fs-xxx-large m-0 pb-4 md-fs-xx-large">
+        <h2 id="prefixes" className="fs-xxx-large m-0 pb-4 md-fs-xx-large">
           CSS prefixes
         </h2>
         <p className="fs-large pb-4 m-0 max-w-8 md-max-w-12">
