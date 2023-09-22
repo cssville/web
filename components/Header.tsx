@@ -11,7 +11,7 @@ export const Header = (props: any) => {
         </a>
         <div className="flex-grow-1"></div>
         <div className="d-flex align-items-center justify-content-center">
-          <a className="d-flex px-3 py-2 text-decoration-none color-white bg-color-green-500 bg-color-green-600-hover br-2 box-shadow-lg" 
+          <a className="d-flex px-3 py-2 text-decoration-none border-1 bg-color-grey-100-hover br-2 box-shadow-lg color-blue-grey-900" 
             href="https://github.com/cssville/cssville" target="_blank" rel="noopener">
             <img src="img/mark-github.svg" alt="mark-github" className="h-24px w-24px"/>
             <div className="d-flex align-items-center justify-content-center xs-d-none pl-2">

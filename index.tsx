@@ -26,8 +26,7 @@ docReady(function () {
   root.render(
     <>
       <div className="w-12 position-relative">
-        <div className="position-absolute h-100 w-12">
-          <img src="img/bg.svg" className="w-12 h-100 object-fit-cover" />
+        <div className="position-absolute h-100 w-12 grad">
         </div>
         <div className="position-relative mx-auto max-w-xl px-5 lg-px-3 md-px-2">
           <Header />

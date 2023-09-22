@@ -1,2 +1,12 @@
 :root {
 }
+
+.grad {
+  background-image: radial-gradient(#d0e7ff 5%, white 50%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+  grid-gap: 10px; /* Adjust the gap between grid items as needed */
+}
