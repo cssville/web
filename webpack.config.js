@@ -1,31 +1,51 @@
 const path = require('path');
+const glob = require("glob-all");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+
+const PATHS = {
+  components: path.join(__dirname, "components"),
+  index: path.join(__dirname, "index.tsx"),
+  root: path.resolve(__dirname, './'),
+};
+
+function collectSafelist() {
+  return {
+    standard: ["safelisted", /^safelisted-/],
+    deep: [/^safelisted-deep-/],
+    greedy: [/^safelisted-greedy/],
+  };
+}
 
 module.exports = {
-  target: "node",  
+  target: "node",
   mode: "development",
   devtool: "inline-source-map",
   entry: {
     web: "./index.tsx",
   },
   output: {
-    path: path.resolve(__dirname, './'),
+    path: PATHS.root,
     filename: "[name].bundle.js" // <--- Will be compiled to this single file
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
     fallback: {
-        "fs": false
+      "fs": false
     }
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'web.bundle.css', // Name of the output bundle file
     }),
+    new PurgeCSSPlugin({
+      paths: [PATHS.index, ...glob.sync(`${PATHS.components}/**/*`, { nodir: true })],
+      safelist: collectSafelist,
+    }),
   ],
   module: {
     rules: [
-      { 
+      {
         test: /\.tsx?$/,
         loader: "ts-loader"
       },
