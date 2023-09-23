@@ -1,6 +1,8 @@
 const path = require('path');
 const glob = require("glob-all");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 
 const PATHS = {
@@ -18,9 +20,9 @@ function collectSafelist() {
 }
 
 module.exports = {
-  target: "node",
-  mode: "development",
-  devtool: "inline-source-map",
+  target: "web",
+  mode: "production",
+  //devtool: "inline-source-map",
   entry: {
     web: "./index.tsx",
   },
@@ -54,5 +56,12 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ]
-  }
+  },
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(), // Minimize CSS
+      new TerserPlugin(), // Minimize JavaScript
+    ],
+    minimize: true,
+  },
 };
