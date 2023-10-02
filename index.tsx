@@ -28,8 +28,8 @@ docReady(function () {
       <div className="w-12 position-relative">
         <div className="position-absolute h-100 w-12 grad">
         </div>
+        <Header />
         <div className="position-relative mx-auto max-w-xl px-5 lg-px-3 md-px-2">
-          <Header />
           <LandingMain />
         </div>
       </div>

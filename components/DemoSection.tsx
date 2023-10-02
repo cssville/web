@@ -17,10 +17,10 @@ export const DemoSection = (props: any) => {
         The example below shows some classes in action:
       </p>
       <div className="d-flex flex-direction-column position-relative br-3 py-3 lg-p-2 mb-5 box-shadow-xl">
-        <div className="w-12 d-flex justify-content-center pb-3">
+        <div className="w-12 d-flex justify-content-center mb--3">
           <div id="example" className="w-12 d-flex justify-content-center">
             <div className="d-flex w-12 position-relative max-w-sm">
-              <img src="img/house.png" className="w-12 max-w-12 br-3 object-fit-cover" />
+              <img src="img/house.webp" className="w-12 max-w-12 br-3 object-fit-cover" />
               <div className="d-flex position-absolute h-100 w-12">
                 <div className="d-flex flex-direction-column p-3 w-12">
                   <img src="img/star.svg" className="h-24px w-24px" />
@@ -47,7 +47,7 @@ export const DemoSection = (props: any) => {
                 __html:
                   hljs.highlight(`
   <div className="d-flex w-12 position-relative max-w-sm">
-    <img src="img/house.png" className="w-12 max-w-12 br-3 object-fit-cover" />
+    <img src="img/house.webp" className="w-12 max-w-12 br-3 object-fit-cover" />
     <div className="d-flex position-absolute h-100 w-12">
       <div className="d-flex flex-direction-column p-3 w-12">
         <img src="img/star.svg" className="h-24px w-24px" />
