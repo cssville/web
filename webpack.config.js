@@ -33,7 +33,8 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
     fallback: {
-      "fs": false
+      "fs": false,
+      "path": false,
     }
   },
   plugins: [

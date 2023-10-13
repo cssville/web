@@ -1,42 +1,27 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-exports.__esModule = true;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.BoxShadowGenerator = void 0;
-var cssClassData_1 = require("../data/cssClassData");
-var GeneratorBase_1 = require("../GeneratorBase");
-var colors_1 = require("../vars/colors");
-var shadow_1 = require("../vars/shadow");
-var BoxShadowGenerator = /** @class */ (function (_super) {
-    __extends(BoxShadowGenerator, _super);
-    function BoxShadowGenerator() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.postfixValuesMap = new Map([
-            ["xs", ["".concat(shadow_1["default"].xs["var"], " ").concat(colors_1["default"].shadow["var"])]],
-            ["sm", ["".concat(shadow_1["default"].sm["var"], " ").concat(colors_1["default"].shadow["var"])]],
-            ["md", ["".concat(shadow_1["default"].md["var"], " ").concat(colors_1["default"].shadow["var"])]],
-            ["lg", ["".concat(shadow_1["default"].lg["var"], " ").concat(colors_1["default"].shadow["var"])]],
-            ["xl", ["".concat(shadow_1["default"].xl["var"], " ").concat(colors_1["default"].shadow["var"])]],
+const cssClassData_1 = require("../data/cssClassData");
+const GeneratorBase_1 = require("../GeneratorBase");
+const shadow_1 = __importDefault(require("../vars/shadow"));
+const ui_1 = __importDefault(require("../vars/ui"));
+class BoxShadowGenerator extends GeneratorBase_1.GeneratorBase {
+    constructor() {
+        super(...arguments);
+        this.postfixValuesMap = new Map([
+            ["xs", [`${shadow_1.default.xs.var} ${ui_1.default.shadow.var}`]],
+            ["sm", [`${shadow_1.default.sm.var} ${ui_1.default.shadow.var}`]],
+            ["md", [`${shadow_1.default.md.var} ${ui_1.default.shadow.var}`]],
+            ["lg", [`${shadow_1.default.lg.var} ${ui_1.default.shadow.var}`]],
+            ["xl", [`${shadow_1.default.xl.var} ${ui_1.default.shadow.var}`]],
         ]);
-        _this.list = ["none"];
-        _this.cssData = [
-            new cssClassData_1.CssClassData("box-shadow", ["box-shadow"], _this.list, _this.postfixValuesMap),
+        this.list = ["none"];
+        this.cssData = [
+            new cssClassData_1.CssClassData("box-shadow", ["box-shadow"], this.list, this.postfixValuesMap),
         ];
-        return _this;
     }
-    return BoxShadowGenerator;
-}(GeneratorBase_1.GeneratorBase));
+}
 exports.BoxShadowGenerator = BoxShadowGenerator;

@@ -1,44 +1,47 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.CssClassData = void 0;
-var CssClassData = /** @class */ (function () {
-    function CssClassData(className, cssProperties, postfixArray, postfixValuesMap) {
-        if (postfixValuesMap === void 0) { postfixValuesMap = new Map(); }
-        var _this = this;
+class CssClassData {
+    constructor(className, cssProperties, postfixArray, postfixValuesMap = new Map()) {
         this.className = className;
         this.cssProperties = cssProperties;
         this.postfixValuesMap = postfixValuesMap;
         this.cssParts = new Map();
         if (postfixArray !== undefined) {
-            postfixArray.forEach(function (element) {
-                _this.postfixValuesMap.set(element, [element]);
+            postfixArray.forEach(element => {
+                this.postfixValuesMap.set(element, [element]);
             });
         }
-        this.postfixValuesMap.forEach(function (value, key) {
+        this.postfixValuesMap.forEach((value, key) => {
             var postfix = key;
             var innerProperties = "";
-            _this.cssProperties.forEach(function (cssProperty) {
-                value.forEach(function (v) {
-                    innerProperties += "".concat(cssProperty, ": ").concat(v, "; ");
+            var innerPropertiesIm = "";
+            this.cssProperties.forEach(cssProperty => {
+                value.forEach(v => {
+                    innerProperties += `${cssProperty}: ${v}; `;
+                    innerPropertiesIm += `${cssProperty}: ${v} !important; `;
                 });
             });
-            _this.cssParts.set("".concat(_this.className, "-").concat(postfix), innerProperties);
+            this.cssParts.set(`${this.className}-${postfix}`, innerProperties);
+            this.cssParts.set(`${this.className}-${postfix}-i`, innerPropertiesIm);
         });
     }
-    CssClassData.prototype.getCss = function (prefix, classes) {
-        if (prefix === void 0) { prefix = ""; }
+    getCss(prefix = "", classes) {
         var css = "";
-        this.cssParts.forEach(function (value, key) {
-            var className = "".concat(prefix === "" ? "" : "".concat(prefix, "-")).concat(key);
+        var postfix = "hover";
+        this.cssParts.forEach((value, key) => {
+            var className = `${prefix === "" ? "" : `${prefix}-`}${key}`;
+            var classNameWithPostfix = `${prefix === "" ? "" : `${prefix}-`}${key}-${postfix}`;
             if (classes.length === 0) {
-                css += ".".concat(className, " {").concat(value, "} ");
+                css += `.${className} {${value}} `;
+                css += `.${classNameWithPostfix}:hover {${value}} `;
             }
             if (classes.length > 0 && classes.indexOf(className) >= 0) {
-                css += ".".concat(className, " {").concat(value, "} ");
+                css += `.${className} {${value}} `;
+                css += `.${classNameWithPostfix}:hover {${value}} `;
             }
         });
         return css;
-    };
-    return CssClassData;
-}());
+    }
+}
 exports.CssClassData = CssClassData;

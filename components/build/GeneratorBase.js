@@ -1,22 +1,20 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.GeneratorBase = void 0;
-var GeneratorBase = /** @class */ (function () {
-    function GeneratorBase(name) {
+class GeneratorBase {
+    constructor(name, generateCssForBreakpoints = true) {
         this.name = "";
         this.postfixValuesMap = new Map();
         this.cssData = [];
         this.name = name;
+        this.generateCssForBreakpoints = generateCssForBreakpoints;
     }
-    GeneratorBase.prototype.generate = function (prefix, classes) {
-        if (prefix === void 0) { prefix = ""; }
-        if (classes === void 0) { classes = []; }
+    generate(prefix = "", classes = []) {
         var cssPart = "";
-        this.cssData.forEach(function (data) {
+        this.cssData.forEach(data => {
             cssPart += data.getCss(prefix, classes);
         });
         return cssPart;
-    };
-    return GeneratorBase;
-}());
+    }
+}
 exports.GeneratorBase = GeneratorBase;

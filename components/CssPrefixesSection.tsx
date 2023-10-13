@@ -1,13 +1,12 @@
 import React from 'react';
-//import Cssville from 'cssville/build/cssville';
+import { Cssville } from './build/cssville';
 import { ReactNode } from "react";
 import hljs from 'highlight.js';
 import { Chip } from "./Chip";
-import CssvilleBreakpoints from './build/vars/breakpoints';
 
 export const CssPrefixesSection = (props: any) => {
   const prefixesNodes: ReactNode[] = [];
-  CssvilleBreakpoints.breakpoints.forEach((val, prefix) => {
+  Cssville.breakpoints.forEach((val, prefix) => {
     prefixesNodes[prefixesNodes.length] =
       <div key={`come-example-${prefix}`} className="pb-3 md-w-12 md-pb-4">
         <div className="fs-x-large pb-3"><span className="fw-bold">{val.name}</span></div>

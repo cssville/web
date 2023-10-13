@@ -1,7 +1,7 @@
 import React from 'react';
-import Cssville from './build/cssville.js';
 import { ReactNode } from "react";
 import { ClassesList } from "./ClassesList";
+import { Cssville } from './build/cssville';
 
 function getClasses(text: string): Array<{ cssClass: string, cssString: string }> {
   const classes = Array<{ cssClass: string, cssString: string }>();
