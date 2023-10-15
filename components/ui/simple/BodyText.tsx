@@ -20,8 +20,7 @@ export const BodyText: React.FC<BodyTextProps> = (props) => {
           : props.xl ? 'fs-lg lh-lg'
             : 'fs-sm lh-sm';
 
-  const fontWeight = props.bold ? 'fw-bold'
-    : 'fw-medium';
+  const fontWeight = props.bold ? 'fw-bold' : 'fw-medium';
 
   const { className, ...restProps } = props;
 

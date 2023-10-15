@@ -17,8 +17,7 @@ export const Separator: React.FC<SeparatorProps> = (props) => {
           : props.xl ? 'my-6'
             : 'my-4';
 
-  const color = props.noborder ? 'bg-color-transparent' :
-    'bg-color-border';
+  const color = props.noborder ? 'bg-color-transparent' : 'bg-color-border';
 
   const { className, ...restProps } = props;
 
