@@ -24,9 +24,10 @@
   },
   "homepage": "https://github.com/cssville/cssville-web#readme",
   "dependencies": {
-    "cssville": "^0.4.3",
+    "cssville": "^0.5.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
     "@types/highlight.js": "^10.1.0",

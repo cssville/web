@@ -2,7 +2,7 @@ import React from 'react';
 import { Cssville } from './build/cssville';
 import { ReactNode } from "react";
 import hljs from 'highlight.js';
-import { Chip } from "./Chip";
+import { Chip } from "./ui/simple/Chip";
 
 export const CssPrefixesSection = (props: any) => {
   const prefixesNodes: ReactNode[] = [];
@@ -34,7 +34,7 @@ export const CssPrefixesSection = (props: any) => {
         </h2>
         <p className="fs-large pb-4 m-0 max-w-8 md-max-w-12">
           The same classes can be used with predefined screen-size prefixes. When prefix is used, the style is applied only for specific screen resolution.
-          See the example below for the <Chip text="d-flex"/> property:
+          See the example below for the <Chip txt="d-flex"/> property:
         </p>
         <div className="pb-5 d-flex flex-wrap-wrap">{prefixesNodes}</div>
       </>

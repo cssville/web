@@ -3,13 +3,32 @@ import React from 'react';
 import hljs from 'highlight.js';
 import "./site.css";
 import "cssville/cssville.css";
-import { Footer } from './components/Footer';
-import { CssPrefixesSection } from './components/CssPrefixesSection';
-import { CssClassesSection } from './components/CssClassesSection';
-import { Header } from './components/Header';
-import { LandingMain } from './components/LandingMain';
-import { AboutSection } from './components/AboutSection';
-import { DemoSection } from './components/DemoSection';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HomePage } from './components/pages/HomePage';
+import { ChipPage } from './components/pages/ChipPage';
+import { TypographyPage } from './components/pages/TypographyPage';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/chip",
+    element: <ChipPage />,
+  },
+  {
+    path: "/typography",
+    element: <TypographyPage />
+  }
+  //{
+  //  path: "/posts/:url",
+  //  element: <BlogPage />,
+  //  loader: async ({ params }) => {
+  //    return params.url;
+  //  },
+  //},
+]);
 
 function docReady(fn: () => void) {
   // see if DOM is already available
@@ -24,22 +43,7 @@ function docReady(fn: () => void) {
 docReady(function () {
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
-    <>
-      <div className="w-12 position-relative">
-        <div className="position-absolute h-100 w-12 grad">
-        </div>
-        <Header />
-        <div className="position-relative mx-auto max-w-xl px-5 lg-px-3 md-px-2">
-          <LandingMain />
-        </div>
-      </div>
-      <div className="position-relative mx-auto max-w-xl py-4 px-5 lg-px-3 md-px-2">
-        <AboutSection />
-        <DemoSection />
-        <CssPrefixesSection />
-        <CssClassesSection />
-      </div>
-      <Footer />
-    </>);
+    <RouterProvider router={router} />
+  );
   hljs.highlightAll();
 });
