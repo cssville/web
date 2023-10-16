@@ -17,12 +17,12 @@ export const Separator: React.FC<SeparatorProps> = (props) => {
           : props.xl ? 'my-6'
             : 'my-4';
 
-  const color = props.noborder ? 'bg-color-transparent' : 'bg-color-border';
+  const border = props.noborder ? 'h-1px bg-color-transparent' : 'border-bottom-1';
 
   const { className, ...restProps } = props;
 
   return (
-    <div className={`${size} h-1px ${color} w-12 ${props.className ? props.className : ''}`} {...restProps} >
+    <div className={`${size} h-1px ${border} w-12 ${props.className ? props.className : ''}`} {...restProps} >
       {props.children}
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface BodyTextProps extends React.HTMLProps<HTMLElement> {
+interface TitleTextProps extends React.HTMLProps<HTMLElement> {
   text?: string;
   tag?: React.ElementType;
   //size
@@ -15,13 +15,20 @@ interface BodyTextProps extends React.HTMLProps<HTMLElement> {
   nopadding?: boolean;
 }
 
-export const BodyText: React.FC<BodyTextProps> = (props) => {
-  const size = props.xs ? 'fs-2xs lh-2xs'
-    : props.sm ? 'fs-xs lh-xs'
-      : props.md ? 'fs-sm lh-sm'
-        : props.lg ? 'fs-md lh-md'
-          : props.xl ? 'fs-lg lh-lg'
-            : 'fs-sm lh-sm';
+export const TitleText: React.FC<TitleTextProps> = (props) => {
+  const size = props.xs ? 'fs-xs lh-xs'
+    : props.sm ? 'fs-sm lh-sm'
+      : props.md ? 'fs-md lh-md'
+        : props.lg ? 'fs-xl lh-xl'
+          : props.xl ? 'fs-2xl lh-2xl'
+            : 'fs-md lh-md';
+
+  const tag = props.xs ? 'h6'
+    : props.sm ? 'h5'
+      : props.md ? 'h4'
+        : props.lg ? 'h3'
+          : props.xl ? 'h2'
+            : 'h4';
 
   const py = props.nopadding ? 'py-0'
     : props.xs ? 'py-1'
@@ -32,8 +39,8 @@ export const BodyText: React.FC<BodyTextProps> = (props) => {
               : 'py-3';
 
   const fontWeight = props.bold ? 'fw-bold' : 'fw-medium';
-  
-  const Tag = props.tag || 'p'; 
+
+  const Tag = props.tag || tag;
 
   const { className, ...restProps } = props;
 

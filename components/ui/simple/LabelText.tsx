@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface BodyTextProps extends React.HTMLProps<HTMLElement> {
+interface LabelTextProps extends React.HTMLProps<HTMLElement> {
   text?: string;
   tag?: React.ElementType;
   //size
@@ -15,13 +15,13 @@ interface BodyTextProps extends React.HTMLProps<HTMLElement> {
   nopadding?: boolean;
 }
 
-export const BodyText: React.FC<BodyTextProps> = (props) => {
+export const LabelText: React.FC<LabelTextProps> = (props) => {
   const size = props.xs ? 'fs-2xs lh-2xs'
-    : props.sm ? 'fs-xs lh-xs'
-      : props.md ? 'fs-sm lh-sm'
-        : props.lg ? 'fs-md lh-md'
-          : props.xl ? 'fs-lg lh-lg'
-            : 'fs-sm lh-sm';
+    : props.sm ? 'fs-2xs lh-2xs'
+      : props.md ? 'fs-xs lh-xs'
+        : props.lg ? 'fs-sm lh-sm'
+          : props.xl ? 'fs-md lh-md'
+            : 'fs-xs lh-xs';
 
   const py = props.nopadding ? 'py-0'
     : props.xs ? 'py-1'
@@ -33,7 +33,7 @@ export const BodyText: React.FC<BodyTextProps> = (props) => {
 
   const fontWeight = props.bold ? 'fw-bold' : 'fw-medium';
   
-  const Tag = props.tag || 'p'; 
+  const Tag = props.tag || 'label'; 
 
   const { className, ...restProps } = props;
 
