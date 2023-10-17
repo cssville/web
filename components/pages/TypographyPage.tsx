@@ -1,13 +1,25 @@
 import React from 'react';
-import { BodyText } from '../ui/simple/BodyText';
 import { Separator } from '../ui/simple/Separator';
 import { CommonPage } from './CommonPage';
 import { LabelText } from '../ui/simple/LabelText';
-import { TitleText } from '../ui/simple/TitleText';
+import { HeadlineText, TitleText, BodyText } from '../ui/simple/Typography';
 
 export const TypographyPage = (props) => {
   return (
     <CommonPage>
+      <BodyText xl>Default HeadlineText:</BodyText>
+      <HeadlineText text="Default title" />
+      <HeadlineText>Default title</HeadlineText>
+      <Separator lg />
+      <BodyText xl>HeadlineText sizes:</BodyText>
+      <HeadlineText xl>Extra large headline</HeadlineText>
+      <HeadlineText lg>Large headline</HeadlineText>
+      <HeadlineText md>Medium headline</HeadlineText>
+      <HeadlineText sm>Small headline</HeadlineText>
+      <HeadlineText xs>Extra headline</HeadlineText>
+
+      <Separator lg />
+
       <BodyText xl>Default TitleText:</BodyText>
       <TitleText text="Default title" />
       <TitleText>Default title</TitleText>
