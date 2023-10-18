@@ -39,7 +39,7 @@ export function buildSimpleComponent(props: BaseProps, defaultTag: string = "div
   const { className, ...restProps } = props;
   return (
     <Tag className={`${classes} ${props.className ? props.className : ''}`} {...restProps} >
-      {props.text || props.children}
+      {props.children}
     </Tag>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { ReactNode } from "react";
 import { ClassesList } from "./ClassesList";
 import { Cssville } from './build/cssville';
+import { Display, Text } from './ui/simple/Typography';
 
 function getClasses(text: string): Array<{ cssClass: string, cssString: string }> {
   const classes = Array<{ cssClass: string, cssString: string }>();
@@ -42,14 +43,14 @@ export const CssClassesSection = (props: any) => {
   })
   return (
     <>
-      <h2 id="classes" className="fs-xxx-large m-0 pb-4 md-fs-xx-large">
+      <Display id="classes" tag="h2">
         CSS classes
-      </h2>
-      <p className="fs-large pb-3 m-0 max-w-8 md-max-w-12">
+      </Display>
+      <Text xl className="max-w-8 md-max-w-12">
         Utility classes are a specific type of class that is designed to provide a single,
         focused styling property, such as padding, margin, or font size. Unlike traditional classes,
         which might be used to define more complex styles, utility classes are very simple and focused on a single aspect of the style.
-      </p>
+      </Text>
       {generatorNodes}
     </>
   );

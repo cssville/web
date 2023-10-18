@@ -1,22 +1,23 @@
 import React from 'react';
 import hljs from 'highlight.js';
 import { Chip } from "./ui/simple/Chip";
-import { BodyText } from './ui/simple/BodyText';
+import { Display, Text } from "./ui/simple/Typography"
+
 
 export const DemoSection = (props: any) => {
   return (
     <>
-      <h2 id="demo" className="fs-xxx-large m-0 pb-4 md-fs-xx-large">
+      <Display id="demo" tag="h2">
         Demo
-      </h2>
-      <BodyText xl className="max-w-8 md-max-w-12">
+      </Display>
+      <Text xl className="max-w-8 md-max-w-12">
         In a utility-first framework, each class is designed to target a specific aspect of the style, such as font size, color, margin, or padding.
-        The classes are named according to the property they control, such as <Chip txt="flex-direction-row"/>, <Chip txt="cursor-pointer"/>, <Chip txt="mx-4"/>, <Chip txt="py-2"/>, and so on.
+        The classes are named according to the property they control, such as <Chip>flex-direction-row</Chip>, <Chip>cursor-pointer</Chip>, <Chip>mx-4</Chip>, <Chip>py-2</Chip>, and so on.
         These classes can be added directly to HTML elements, without the need for additional CSS styling.
-      </BodyText>
-      <p className="fs-large pb-3 m-0">
+      </Text>
+      <Text xl>
         The example below shows some classes in action:
-      </p>
+      </Text>
       <div className="d-flex flex-direction-column position-relative br-5 py-6 lg-p-4 mb-6 box-shadow-xl">
         <div className="w-12 d-flex justify-content-center mb--5">
           <div id="example" className="w-12 d-flex justify-content-center">

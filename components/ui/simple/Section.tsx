@@ -1,26 +1,12 @@
 import React from 'react';
+import { BaseProps } from '../props/Props';
+import { buildSimpleComponent } from '../utils';
 
-interface SectionProps extends React.HTMLProps<HTMLDivElement> {
-  xs?: boolean;
-  sm?: boolean;
-  md?: boolean;
-  lg?: boolean;
-  xl?: boolean;
-}
-
-export const Section: React.FC<SectionProps> = (props) => {
-  const size = props.xs ? 'max-w-xs py-2 px-2 lg-px-1 md-px-0'
-    : props.sm ? 'max-w-sm py-3 px-3 lg-px-2 md-px-1'
-      : props.md ? 'max-w-md py-4 px-4 lg-px-3 md-px-2'
-        : props.lg ? 'max-w-lg py-5 px-5 lg-px-4 md-px-3'
-          : props.xl ? 'max-w-xl py-5 px-5 lg-px-4 md-px-3'
-            : 'max-w-lg py-5 px-5 lg-px-4 md-px-3';
-
-  const { className, ...restProps } = props;
-
-  return (
-    <div className={`${size} position-relative mx-auto ${props.className ? props.className : ''}`} {...restProps} >
-      {props.children}
-    </div>
-  );
-};
+export const Section: React.FC<BaseProps> = (props) => buildSimpleComponent(props, "div", [], [
+  "position-relative mx-auto",
+  ['max-w-xs', 'max-w-sm', 'max-w-md', 'max-w-lg', 'max-w-xl'],
+  ['py-2', 'py-3', 'py-4', 'py-5', 'py-6'],
+  ['px-2', 'px-3', 'px-4', 'px-5', 'px-6'],
+  ['lg-px-1', 'lg-px-2', 'lg-px-3', 'lg-px-4', 'lg-px-5'],
+  ['md-px-0', 'md-px-1', 'md-px-2', 'md-px-3', 'md-px-4'],
+]);

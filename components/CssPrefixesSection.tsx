@@ -3,6 +3,7 @@ import { Cssville } from './build/cssville';
 import { ReactNode } from "react";
 import hljs from 'highlight.js';
 import { Chip } from "./ui/simple/Chip";
+import { Display, Text } from './ui/simple/Typography';
 
 export const CssPrefixesSection = (props: any) => {
   const prefixesNodes: ReactNode[] = [];
@@ -27,16 +28,16 @@ export const CssPrefixesSection = (props: any) => {
         </div>
       </div>;
   })
-    return (
-      <>
-        <h2 id="prefixes" className="fs-xxx-large m-0 pb-4 md-fs-xx-large">
-          CSS prefixes
-        </h2>
-        <p className="fs-large pb-4 m-0 max-w-8 md-max-w-12">
-          The same classes can be used with predefined screen-size prefixes. When prefix is used, the style is applied only for specific screen resolution.
-          See the example below for the <Chip txt="d-flex"/> property:
-        </p>
-        <div className="pb-5 d-flex flex-wrap-wrap">{prefixesNodes}</div>
-      </>
-    );
+  return (
+    <>
+      <Display id="prefixes" tag="h2">
+        CSS prefixes
+      </Display>
+      <Text xl className="max-w-8 md-max-w-12">
+        The same classes can be used with predefined screen-size prefixes. When prefix is used, the style is applied only for specific screen resolution.
+        See the example below for the <Chip>d-flex</Chip> property:
+      </Text>
+      <div className="pb-5 d-flex flex-wrap-wrap">{prefixesNodes}</div>
+    </>
+  );
 }

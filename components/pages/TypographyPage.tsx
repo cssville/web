@@ -1,61 +1,68 @@
 import React from 'react';
-import { Separator } from '../ui/simple/Separator';
+import { Divider } from '../ui/simple/Divider';
 import { CommonPage } from './CommonPage';
-import { LabelText } from '../ui/simple/LabelText';
-import { HeadlineText, TitleText, BodyText } from '../ui/simple/Typography';
+import { Headline, Title, Text, Label, Display } from '../ui/simple/Typography';
 
 export const TypographyPage = (props) => {
   return (
-    <CommonPage>
-      <BodyText xl>Default HeadlineText:</BodyText>
-      <HeadlineText text="Default title" />
-      <HeadlineText>Default title</HeadlineText>
-      <Separator lg />
-      <BodyText xl>HeadlineText sizes:</BodyText>
-      <HeadlineText xl>Extra large headline</HeadlineText>
-      <HeadlineText lg>Large headline</HeadlineText>
-      <HeadlineText md>Medium headline</HeadlineText>
-      <HeadlineText sm>Small headline</HeadlineText>
-      <HeadlineText xs>Extra headline</HeadlineText>
+    <CommonPage title="Typography">
+      <Text xl>Default Display:</Text>
+      <Display>Default display</Display>
+      <Divider lg />
+      <Text xl>Display sizes:</Text>
+      <Display xl>Extra large display</Display>
+      <Display lg>Large display</Display>
+      <Display md>Medium display</Display>
+      <Display sm>Small display</Display>
+      <Display xs>Extra display</Display>
 
-      <Separator lg />
+      <Divider lg />
 
-      <BodyText xl>Default TitleText:</BodyText>
-      <TitleText text="Default title" />
-      <TitleText>Default title</TitleText>
-      <Separator lg />
-      <BodyText xl>TitleText sizes:</BodyText>
-      <TitleText xl>Extra large title</TitleText>
-      <TitleText lg>Large body title</TitleText>
-      <TitleText md>Medium body title</TitleText>
-      <TitleText sm>Small body title</TitleText>
-      <TitleText xs>Extra small title</TitleText>
+      <Text xl>Default Headline:</Text>
+      <Headline>Default headline</Headline>
+      <Divider lg />
+      <Text xl>Headline sizes:</Text>
+      <Headline xl>Extra large headline</Headline>
+      <Headline lg>Large headline</Headline>
+      <Headline md>Medium headline</Headline>
+      <Headline sm>Small headline</Headline>
+      <Headline xs>Extra headline</Headline>
 
-      <Separator lg />
+      <Divider lg />
 
-      <BodyText xl>Default LabelText:</BodyText>
-      <div className="d-flex w-12"><LabelText text="Default label" /></div>
-      <div className="d-flex w-12"><LabelText>Default label</LabelText></div>
-      <Separator lg />
-      <BodyText xl>LabelText sizes:</BodyText>
-      <div className="d-flex w-12"><LabelText xl>Extra large label</LabelText></div>
-      <div className="d-flex w-12"><LabelText lg>Large body label</LabelText></div>
-      <div className="d-flex w-12"><LabelText md>Medium body label</LabelText></div>
-      <div className="d-flex w-12"><LabelText sm>Small body label</LabelText></div>
-      <div className="d-flex w-12"><LabelText xs>Extra small label</LabelText></div>
+      <Text xl>Default Title:</Text>
+      <Title>Default title</Title>
+      <Divider lg />
+      <Text xl>Title sizes:</Text>
+      <Title xl>Extra large title</Title>
+      <Title lg>Large body title</Title>
+      <Title md>Medium body title</Title>
+      <Title sm>Small body title</Title>
+      <Title xs>Extra small title</Title>
 
-      <Separator lg />
+      <Divider lg />
 
-      <BodyText xl>Default BodyText:</BodyText>
-      <BodyText text="Default body text" />
-      <BodyText>Default body text</BodyText>
-      <Separator lg />
-      <BodyText xl>BodyText sizes:</BodyText>
-      <BodyText xl>Extra large text</BodyText>
-      <BodyText lg>Large body text</BodyText>
-      <BodyText md>Medium body text</BodyText>
-      <BodyText sm>Small body text</BodyText>
-      <BodyText xs>Extra small text</BodyText>
+      <Text xl>Default Label:</Text>
+      <div className="d-flex w-12"><Label>Default label</Label></div>
+      <Divider lg />
+      <Text xl>Label sizes:</Text>
+      <div className="d-flex w-12"><Label xl>Extra large label</Label></div>
+      <div className="d-flex w-12"><Label lg>Large body label</Label></div>
+      <div className="d-flex w-12"><Label md>Medium body label</Label></div>
+      <div className="d-flex w-12"><Label sm>Small body label</Label></div>
+      <div className="d-flex w-12"><Label xs>Extra small label</Label></div>
+
+      <Divider lg />
+
+      <Text xl>Default BodyText:</Text>
+      <Text>Default body text</Text>
+      <Divider lg />
+      <Text xl>BodyText sizes:</Text>
+      <Text xl>Extra large text</Text>
+      <Text lg>Large body text</Text>
+      <Text md>Medium body text</Text>
+      <Text sm>Small body text</Text>
+      <Text xs>Extra small text</Text>
     </CommonPage>
   );
 };
