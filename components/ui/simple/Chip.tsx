@@ -27,14 +27,7 @@ export const Chip: React.FC<ChipProps> = (props) => {
                 : 'border-color-border'
   ];
   const filledChipClasses = [
-    'color-bg',    
-    //props.primary ? 'color-bg-primary'
-    //  : props.secondary ? 'color-bg-secondary'
-    //    : props.success ? 'color-bg-success'
-    //      : props.info ? 'color-bg-info'
-    //        : props.warning ? 'color-bg-warning'
-    //          : props.error ? 'color-bg-error'
-    //            : 'color-bg-secondary',
+    'color-bg',
     props.primary ? 'bg-color-primary'
       : props.secondary ? 'bg-color-secondary'
         : props.success ? 'bg-color-success'
@@ -50,6 +43,7 @@ export const Chip: React.FC<ChipProps> = (props) => {
               : props.error ? 'border-color-error'
                 : 'border-color-bg'
   ];
+  
   const other = props.filled ? filledChipClasses
     : props.outline ? outlineChipClasses
       : outlineChipClasses;
