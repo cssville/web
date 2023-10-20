@@ -14,7 +14,7 @@ export const TypographyPage = (props) => {
       <Display lg>Large display</Display>
       <Display md>Medium display</Display>
       <Display sm>Small display</Display>
-      <Display xs>Extra display</Display>
+      <Display xs>Extra small display</Display>
 
       <Divider lg />
 
@@ -26,7 +26,7 @@ export const TypographyPage = (props) => {
       <Headline lg>Large headline</Headline>
       <Headline md>Medium headline</Headline>
       <Headline sm>Small headline</Headline>
-      <Headline xs>Extra headline</Headline>
+      <Headline xs>Extra small headline</Headline>
 
       <Divider lg />
 

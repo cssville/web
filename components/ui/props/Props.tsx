@@ -13,6 +13,8 @@ export interface BaseProps extends React.HTMLProps<HTMLElement>, SizeProps {
 export interface TextProps extends BaseProps {
   bold?: boolean;
   nopadding?: boolean;
+  centered?: boolean;
+  dynamic?: boolean;
 }
 
 export interface DividerProps extends BaseProps {
@@ -20,7 +22,8 @@ export interface DividerProps extends BaseProps {
 }
 
 export interface ChipProps extends BaseProps {
-  //style
+  rounded?: boolean;
+  //variants
   outline?: boolean;
   filled?: boolean;
   //style:

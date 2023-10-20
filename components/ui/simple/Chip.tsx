@@ -43,17 +43,22 @@ export const Chip: React.FC<ChipProps> = (props) => {
               : props.error ? 'border-color-error'
                 : 'border-color-bg'
   ];
-  
+
   const other = props.filled ? filledChipClasses
     : props.outline ? outlineChipClasses
       : outlineChipClasses;
 
   return buildSimpleComponent(props, "span", [], [
-    "font-family-code text-decoration-none border-style-solid",
+    "d-inline-block font-family-code text-decoration-none border-style-solid",
     ['fs-2xs', 'fs-xs', 'fs-sm', 'fs-md', 'fs-lg'],
-    ['br-1', 'br-2', 'br-3', 'br-3', 'br-4'],
+    ['lh-2xs', 'lh-xs', 'lh-sm', 'lh-md', 'lh-lg'],
+    props.rounded
+      ? 'br-9999px'
+      : ['br-1', 'br-2', 'br-3', 'br-3', 'br-4'],
+    props.rounded
+      ? ['px-2', 'px-3', 'px-4', 'px-4', 'px-5']
+      : ['px-2', 'px-2', 'px-3', 'px-3', 'px-4'],
     ['py-0', 'py-1', 'py-1', 'py-2', 'py-3'],
-    ['px-2', 'px-2', 'px-3', 'px-3', 'px-4'],
     props.bold ? 'fw-bold'
       : props.normal ? 'fw-normal'
         : 'fw-500',
