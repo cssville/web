@@ -3,7 +3,7 @@ import { BaseProps, SizeProps } from "./props/Props";
 import React from "react";
 
 export function getValueBySize(props: SizeProps, values: string[], defaultClass: string = ""): string {
-  if(values.length < 5){
+  if (values.length < 5) {
     return defaultClass;
   }
   const xsClass = values[0];
@@ -30,15 +30,18 @@ export function buildSimpleComponent(props: BaseProps, defaultTag: string = "div
     else {
       c = getValueBySize(props, item)
     }
-    classes += (classes === "" ? c : ` ${c}`);
+    if (c !== "") {
+      classes += (classes === "" ? c : ` ${c}`);
+    }
   }
+  
+  const { className, tag, ...restProps } = props;
   const baseTag = "div";
-  const tagFromProps = props.tag || getValueBySize(props, tagsArray, defaultTag)
+  const tagFromProps = tag || getValueBySize(props, tagsArray, defaultTag)
   const Tag = tagFromProps === "" ? baseTag : tagFromProps;
 
-  const { className, ...restProps } = props;
   return (
-    <Tag className={`${classes} ${props.className ? props.className : ''}`} {...restProps} >
+    <Tag className={`${classes}${props.className ? ` ${props.className}` : ''}`} {...restProps} >
       {props.children}
     </Tag>
   );
