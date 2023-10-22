@@ -30,7 +30,7 @@ export const HeroSection = (props: any) => {
               Cssville is a utility-first CSS framework with zero dependencies.
               Develop faster using classes like <Chip>d-flex</Chip>, <Chip>cursor-pointer</Chip>, and <Chip>py-2</Chip>.
             </Text>
-            <Divider lg noborder/>
+            <Divider lg noborder />
             <div className="d-flex justify-content-center">
               <div id="copy" className="d-flex text-decoration-none bg-color-blue-grey-900 br-5 md-br-4 w-fit-content align-items-center p-5 sm-p-4 sm-br-3 cursor-pointer box-shadow-lg" onClick={handleCopyClick}>
                 <img src="img/chevron-right.svg" alt=">" className="h-24px w-24px pr-5 sm-pr-4" />

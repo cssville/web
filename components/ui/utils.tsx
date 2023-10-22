@@ -34,7 +34,7 @@ export function buildSimpleComponent(props: BaseProps, defaultTag: string = "div
       classes += (classes === "" ? c : ` ${c}`);
     }
   }
-  
+
   const { className, tag, ...restProps } = props;
   const baseTag = "div";
   const tagFromProps = tag || getValueBySize(props, tagsArray, defaultTag)
