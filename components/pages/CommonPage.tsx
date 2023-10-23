@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header } from '../ui/complex/Header';
-import { Footer } from '../ui/complex/Footer';
+import { Header } from '../ui/Header';
+import { Footer } from '../ui/Footer';
 import { Section } from '../ui/simple/Section';
 import { Display } from '../ui/simple/Typography';
 import { Divider } from '../ui/simple/Divider';

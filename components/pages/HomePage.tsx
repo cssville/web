@@ -1,11 +1,11 @@
 import React from 'react';
-import { Header } from '../ui/complex/Header';
+import { Header } from '../ui/Header';
 import { HeroSection } from '../HeroSection';
 import { AboutSection } from '../AboutSection';
 import { DemoSection } from '../DemoSection';
 import { CssPrefixesSection } from '../CssPrefixesSection';
 import { CssClassesSection } from '../CssClassesSection';
-import { Footer } from '../ui/complex/Footer';
+import { Footer } from '../ui/Footer';
 import { Section } from '../ui/simple/Section';
 
 export const HomePage = (props) => {
