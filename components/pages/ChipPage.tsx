@@ -8,7 +8,7 @@ export const ChipPage = (props) => {
   return (
     <CommonPage title="Chip">
       <Text xl>Default chip:</Text>
-      <Chip>Default chip</Chip>
+      <Chip>Default chip</Chip> <Chip disabled>Disabled chip</Chip>
 
       <Divider lg />
 
@@ -22,6 +22,12 @@ export const ChipPage = (props) => {
 
       <Text xl>Default chips:</Text>
       <Chip primary>Primary chip</Chip> <Chip secondary>Secondary chip</Chip> <Chip success>Success chip</Chip> <Chip info>Info chip</Chip> <Chip warning>Warning chip</Chip> <Chip error>Error chip</Chip>
+
+      <Text xl>Noborder chips:</Text>
+      <Chip primary noborder>Primary chip</Chip> <Chip secondary noborder>Secondary chip</Chip> <Chip success noborder>Success chip</Chip> <Chip info noborder>Info chip</Chip> <Chip warning noborder>Warning chip</Chip> <Chip error noborder>Error chip</Chip>
+
+      <Text xl>Square chips:</Text>
+      <Chip primary square>Primary chip</Chip> <Chip secondary square>Secondary chip</Chip> <Chip success square>Success chip</Chip> <Chip info square>Info chip</Chip> <Chip warning square>Warning chip</Chip> <Chip error square>Error chip</Chip>
 
       <Text xl>Filled chips:</Text>
       <Chip primary filled>Primary chip</Chip> <Chip secondary filled>Secondary chip</Chip> <Chip success filled>Success chip</Chip> <Chip info filled>Info chip</Chip> <Chip warning filled>Warning chip</Chip> <Chip error filled>Error chip</Chip>

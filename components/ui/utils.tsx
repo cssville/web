@@ -1,6 +1,28 @@
 import { ReactElement, ReactNode } from "react";
-import { BaseProps, SizeProps } from "./props/Props";
+import { BaseProps, SizeProps, StyleProps } from "./props/Props";
 import React from "react";
+
+export function getValueByStyle(props: StyleProps, values: string[], defaultClass: string = ""): string {
+  if (values.length < 6) {
+    return defaultClass;
+  }
+  const primaryClass = values[0];
+  const secondaryClass = values[1];
+  const successClass = values[2];
+  const infoClass = values[3];
+  const warningClass = values[4];
+  const errorClass = values[5];
+  
+  const defaultClassValue = defaultClass === "" ? primaryClass : defaultClass;
+  
+  return props.primary ? primaryClass
+  : props.secondary ? secondaryClass
+    : props.success ? successClass
+      : props.info ? infoClass
+        : props.warning ? warningClass
+          : props.error ? errorClass
+            : defaultClassValue;
+}
 
 export function getValueBySize(props: SizeProps, values: string[], defaultClass: string = ""): string {
   if (values.length < 5) {

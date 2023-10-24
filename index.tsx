@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from './components/pages/HomePage';
 import { ChipPage } from './components/pages/ChipPage';
 import { TypographyPage } from './components/pages/TypographyPage';
+import { ButtonPage } from './components/pages/ButtonPage';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/chip",
     element: <ChipPage />,
+  },
+  {
+    path: "/button",
+    element: <ButtonPage />,
   },
   {
     path: "/typography",

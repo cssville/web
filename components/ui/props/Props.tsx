@@ -21,19 +21,35 @@ export interface DividerProps extends BaseProps {
   noborder?: boolean;
 }
 
-export interface ChipProps extends BaseProps {
-  rounded?: boolean;
-  //variants
-  outline?: boolean;
-  filled?: boolean;
-  //style:
+export interface StyleProps extends BaseProps {
   primary?: boolean;
   secondary?: boolean;
   success?: boolean;
   info?: boolean;
   warning?: boolean;
   error?: boolean;
+}
+
+export interface ButtonProps extends StyleProps {
+  disabled?: boolean;
+  rounded?: boolean;
+  square?: boolean;
+  noborder?: boolean;
+  //variants
+  outline?: boolean;
+  filled?: boolean;
   //text:
   bold?: boolean;
-  normal?: boolean;
+}
+
+export interface ChipProps extends StyleProps {
+  disabled?: boolean;
+  rounded?: boolean;
+  square?: boolean;
+  noborder?: boolean;
+  //variants
+  outline?: boolean;
+  filled?: boolean;
+  //text:
+  bold?: boolean;
 }
