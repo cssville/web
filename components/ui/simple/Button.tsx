@@ -1,27 +1,32 @@
 import React from 'react';
 import { ButtonProps } from '../props/Props';
 import { buildSimpleComponent, getValueByStyle } from '../utils';
+import { ButtonText } from './ButtonText';
 
 export const Button: React.FC<ButtonProps> = (props) => {
   const outlineBtnClasses = [
     getValueByStyle(props, ['color-primary', 'color-secondary', 'color-success', 'color-info', 'color-warning', 'color-error'], 'color-text'),
     getValueByStyle(props, ['bg-color-bg-primary', 'bg-color-bg-secondary', 'bg-color-bg-success', 'bg-color-bg-info', 'bg-color-bg-warning', 'bg-color-bg-error'], 'bg-color-grey-50'),
+    props.disabled
+      ? ''
+      : getValueByStyle(props, ['bg-color-hover-primary-hover', 'bg-color-hover-secondary-hover', 'bg-color-hover-success-hover', 'bg-color-hover-info-hover', 'bg-color-hover-warning-hover', 'bg-color-hover-error-hover'], 'bg-color-grey-100-hover'),
     getValueByStyle(props, ['border-color-border-primary', 'border-color-border-secondary', 'border-color-border-success', 'border-color-border-info', 'border-color-border-warning', 'border-color-border-error'], 'border-color-border'),
   ];
   const filledBtnClasses = [
     'color-bg',
     getValueByStyle(props, ['bg-color-primary', 'bg-color-secondary', 'bg-color-success', 'bg-color-info', 'bg-color-warning', 'bg-color-error'], 'bg-color-text'),
+    'opacity-08-hover',
     getValueByStyle(props, ['border-color-primary', 'border-color-secondary', 'border-color-success', 'border-color-info', 'border-color-warning', 'border-color-error'], 'border-color-bg'),
   ];
-
-  const other = props.filled ? filledBtnClasses
+  const otherBtnClasses = props.filled ? filledBtnClasses
     : props.outline ? outlineBtnClasses
       : outlineBtnClasses;
 
   const btn = buildSimpleComponent(props, "button", [], [
-    "d-inline-block font-family-code text-decoration-none",
+    "d-inline-block",
     ['py-1', 'py-2', 'py-3', 'py-4', 'py-5'],
-    props.disabled ? 'opacity-05' : '',
+    props.disabled ? 'opacity-05 cursor-default' : 'cursor-pointer',
+    props.noshadow ? 'box-shadow-none' : ['box-shadow-xs', 'box-shadow-sm', 'box-shadow-md', 'box-shadow-lg', 'box-shadow-xl'],
     props.rounded
       ? 'br-9999px'
       : props.square ? 'br-0'
@@ -34,20 +39,12 @@ export const Button: React.FC<ButtonProps> = (props) => {
       props.filled ? 'border-none'
         : props.outline ? 'border-width-1px border-style-solid'
           : 'border-width-1px border-style-solid',
-    ...other
+    ...otherBtnClasses
   ])
 
-  var btnText = buildSimpleComponent(props, "span", [], [
-    "d-inline-block text-decoration-none",
-    ['fs-xs', 'fs-sm', 'fs-md', 'fs-lg', 'fs-xl'],
-    ['lh-xs', 'lh-sm', 'lh-md', 'lh-lg', 'lh-xl'],
-    //['fs-2xs', 'fs-xs', 'fs-sm', 'fs-md', 'fs-lg'],
-    //['lh-2xs', 'lh-xs', 'lh-sm', 'lh-md', 'lh-lg'],
-    props.bold ? 'fw-bold' : 'fw-500',
-    ...other
-  ])
-  
-  btn.props.children = btnText;
+  const { buttonText, ...restProps } = props;
+
+  btn.props.children = buttonText ? buttonText : <ButtonText {...restProps}>{restProps.children}</ButtonText>;
 
   return btn;
 };

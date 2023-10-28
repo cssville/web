@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export interface SizeProps {
   xs?: boolean;
   sm?: boolean;
@@ -31,10 +33,12 @@ export interface StyleProps extends BaseProps {
 }
 
 export interface ButtonProps extends StyleProps {
+  buttonText?: ReactElement;
   disabled?: boolean;
   rounded?: boolean;
   square?: boolean;
   noborder?: boolean;
+  noshadow?: boolean;
   //variants
   outline?: boolean;
   filled?: boolean;

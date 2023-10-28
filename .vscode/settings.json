@@ -3,6 +3,7 @@
       "hljs",
       "noborder",
       "nopadding",
+      "noshadow",
       "purgecss"
     ]
 }

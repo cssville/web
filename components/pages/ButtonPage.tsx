@@ -12,6 +12,11 @@ export const ButtonPage = (props) => {
 
       <Divider lg />
 
+      <Text xl>Button with custom text:</Text>
+      <Button buttonText={<span className="fw-bold fs-large color-green-500">Custom text element</span>}/>
+
+      <Divider lg />
+
       <Text xl>Default button sizes:</Text>
       <Button xs>Extra small</Button> <Button sm>Small size</Button> <Button md>Medium size</Button> <Button lg>Large size</Button> <Button xl>Extra large</Button>
 
@@ -37,7 +42,7 @@ export const ButtonPage = (props) => {
 
       <Text xl>Filled rounded buttons:</Text>
       <Button primary filled rounded>Primary button</Button> <Button secondary filled rounded>Secondary button</Button> <Button success filled rounded>Success button</Button> <Button info filled rounded>Info button</Button> <Button warning filled rounded>Warning button</Button> <Button error filled rounded>Error button</Button>
-      
+
       <Text xl>Outline rounded buttons:</Text>
       <Button primary outline rounded>Primary button</Button> <Button secondary outline rounded>Secondary button</Button> <Button success outline rounded>Success button</Button> <Button info outline rounded>Info button</Button> <Button warning outline rounded>Warning button</Button> <Button error outline rounded>Error button</Button>
     </CommonPage>
