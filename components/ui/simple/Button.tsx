@@ -1,8 +1,8 @@
 import React from 'react';
-import { ChipProps } from '../props/Props';
+import { ButtonProps } from '../props/Props';
 import { buildSimpleComponent, getValueByStyle } from '../utils';
 
-export const Button: React.FC<ChipProps> = (props) => {
+export const Button: React.FC<ButtonProps> = (props) => {
   const outlineBtnClasses = [
     getValueByStyle(props, ['color-primary', 'color-secondary', 'color-success', 'color-info', 'color-warning', 'color-error'], 'color-text'),
     getValueByStyle(props, ['bg-color-bg-primary', 'bg-color-bg-secondary', 'bg-color-bg-success', 'bg-color-bg-info', 'bg-color-bg-warning', 'bg-color-bg-error'], 'bg-color-grey-50'),
@@ -20,11 +20,12 @@ export const Button: React.FC<ChipProps> = (props) => {
 
   const btn = buildSimpleComponent(props, "button", [], [
     "d-inline-block font-family-code text-decoration-none",
-    ['py-0', 'py-1', 'py-1', 'py-2', 'py-3'],
+    ['py-1', 'py-2', 'py-3', 'py-4', 'py-5'],
     props.disabled ? 'opacity-05' : '',
     props.rounded
       ? 'br-9999px'
-      : ['br-1', 'br-2', 'br-3', 'br-3', 'br-4'],
+      : props.square ? 'br-0'
+        : ['br-2', 'br-2', 'br-3', 'br-4', 'br-5'],
     props.rounded
       ? ['px-3', 'px-4', 'px-5', 'px-6', 'px-7']
       : ['px-3', 'px-4', 'px-5', 'px-6', 'px-7'],
@@ -38,9 +39,10 @@ export const Button: React.FC<ChipProps> = (props) => {
 
   var btnText = buildSimpleComponent(props, "span", [], [
     "d-inline-block text-decoration-none",
-    ['fs-2xs', 'fs-xs', 'fs-sm', 'fs-md', 'fs-lg'],
-    ['lh-2xs', 'lh-xs', 'lh-sm', 'lh-md', 'lh-lg'],
-    ['py-0', 'py-1', 'py-1', 'py-2', 'py-3'],
+    ['fs-xs', 'fs-sm', 'fs-md', 'fs-lg', 'fs-xl'],
+    ['lh-xs', 'lh-sm', 'lh-md', 'lh-lg', 'lh-xl'],
+    //['fs-2xs', 'fs-xs', 'fs-sm', 'fs-md', 'fs-lg'],
+    //['lh-2xs', 'lh-xs', 'lh-sm', 'lh-md', 'lh-lg'],
     props.bold ? 'fw-bold' : 'fw-500',
     ...other
   ])
