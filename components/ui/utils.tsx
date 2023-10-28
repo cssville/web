@@ -12,16 +12,16 @@ export function getValueByStyle(props: StyleProps, values: string[], defaultClas
   const infoClass = values[3];
   const warningClass = values[4];
   const errorClass = values[5];
-  
+
   const defaultClassValue = defaultClass === "" ? primaryClass : defaultClass;
-  
+
   return props.primary ? primaryClass
-  : props.secondary ? secondaryClass
-    : props.success ? successClass
-      : props.info ? infoClass
-        : props.warning ? warningClass
-          : props.error ? errorClass
-            : defaultClassValue;
+    : props.secondary ? secondaryClass
+      : props.success ? successClass
+        : props.info ? infoClass
+          : props.warning ? warningClass
+            : props.error ? errorClass
+              : defaultClassValue;
 }
 
 export function getValueBySize(props: SizeProps, values: string[], defaultClass: string = ""): string {
@@ -42,7 +42,7 @@ export function getValueBySize(props: SizeProps, values: string[], defaultClass:
             : defaultClassValue;
 }
 
-export function buildSimpleComponent(props: BaseProps, defaultTag: string = "div", tagsArray: string[] = [], classesArray: (string | string[])[]): ReactElement {
+export function buildSimpleComponent(props: BaseProps, defaultTag: string = "div", tagsArray: string[] = [], classesArray: (string | string[])[], excludeChildren: boolean = false): ReactElement {
   let classes = "";
   for (const item of classesArray) {
     let c = "";
@@ -64,7 +64,7 @@ export function buildSimpleComponent(props: BaseProps, defaultTag: string = "div
 
   return (
     <Tag className={`${classes}${props.className ? ` ${props.className}` : ''}`} {...restProps} >
-      {props.children}
+      {!excludeChildren && props.children}
     </Tag>
   );
 }

@@ -12,6 +12,14 @@ export interface BaseProps extends React.HTMLProps<HTMLElement>, SizeProps {
   tag?: React.ElementType | string;
 }
 
+export interface RowProps extends BaseProps {
+  nospace?: boolean;
+  //justify content
+  contentStart?: boolean;
+  contentEnd?: boolean;
+  contentCenter?: boolean;
+}
+
 export interface TextProps extends BaseProps {
   bold?: boolean;
   nopadding?: boolean;

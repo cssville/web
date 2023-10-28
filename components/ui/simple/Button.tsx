@@ -22,8 +22,10 @@ export const Button: React.FC<ButtonProps> = (props) => {
     : props.outline ? outlineBtnClasses
       : outlineBtnClasses;
 
-  const btn = buildSimpleComponent(props, "button", [], [
-    "d-inline-block",
+  const { buttonText, ...restProps } = props;
+
+  const btn = buildSimpleComponent(restProps, "button", [], [
+    "d-flex align-items-center justify-content-center text-decoration-none text-wrap-nowrap h-min-content",
     ['py-1', 'py-2', 'py-3', 'py-4', 'py-5'],
     props.disabled ? 'opacity-05 cursor-default' : 'cursor-pointer',
     props.noshadow ? 'box-shadow-none' : ['box-shadow-xs', 'box-shadow-sm', 'box-shadow-md', 'box-shadow-lg', 'box-shadow-xl'],
@@ -41,8 +43,6 @@ export const Button: React.FC<ButtonProps> = (props) => {
           : 'border-width-1px border-style-solid',
     ...otherBtnClasses
   ])
-
-  const { buttonText, ...restProps } = props;
 
   btn.props.children = buttonText ? buttonText : <ButtonText {...restProps}>{restProps.children}</ButtonText>;
 
