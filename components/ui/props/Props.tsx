@@ -42,6 +42,9 @@ export interface StyleProps extends BaseProps {
 
 export interface ButtonProps extends StyleProps {
   buttonText?: ReactElement;
+  icon?: ReactElement;
+  startIcon?: ReactElement;
+  endIcon?: ReactElement;
   disabled?: boolean;
   rounded?: boolean;
   square?: boolean;
@@ -52,6 +55,7 @@ export interface ButtonProps extends StyleProps {
   filled?: boolean;
   //text:
   bold?: boolean;
+  notext?: boolean;
 }
 
 export interface ChipProps extends StyleProps {

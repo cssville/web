@@ -22,7 +22,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     : props.outline ? outlineBtnClasses
       : outlineBtnClasses;
 
-  const { buttonText, ...restProps } = props;
+  const { buttonText, startIcon, endIcon, icon, ...restProps } = props;
 
   const btn = buildSimpleComponent(restProps, "button", [], [
     "d-flex align-items-center justify-content-center text-decoration-none text-wrap-nowrap h-min-content",
@@ -44,7 +44,21 @@ export const Button: React.FC<ButtonProps> = (props) => {
     ...otherBtnClasses
   ])
 
-  btn.props.children = buttonText ? buttonText : <ButtonText {...restProps}>{restProps.children}</ButtonText>;
+  const buttonChildren = []
+  if (startIcon || icon) {
+    buttonChildren.push(icon ? icon : startIcon)
+    buttonChildren.push(<div className='w-8px h-100 bg-color-transparent'></div>)
+  }
+
+  const addText = props.notext === undefined ? true : props.notext
+
+  if (addText)
+    buttonChildren.push(buttonText ? buttonText : <ButtonText {...restProps}>{restProps.children}</ButtonText>)
+
+  if (endIcon && !icon)
+    buttonChildren.push(endIcon)
+
+  btn.props.children = buttonChildren;
 
   return btn;
 };

@@ -14,6 +14,7 @@ export const ButtonPage = (props) => {
         <Button noshadow>No shadow button</Button>
         <Button disabled>Disabled button</Button>
         <Button bold>Bold text button</Button>
+        <Button startIcon={<img src="img/mark-github.svg" alt="mark-github" className="h-24px w-24px" />}>Button with icon</Button>
       </Row>
 
       <Divider lg />

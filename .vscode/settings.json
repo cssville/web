@@ -4,6 +4,7 @@
       "noborder",
       "nopadding",
       "noshadow",
+      "notext",
       "purgecss"
     ]
 }
