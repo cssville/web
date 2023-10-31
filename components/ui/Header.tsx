@@ -29,14 +29,10 @@ export const Header = (props: any) => {
                 ))
               }
             </div>
-            <Button buttonText={
-              <>
-                <img src="img/mark-github.svg" alt="mark-github" className="h-24px w-24px" />
-                <div className="d-flex align-items-center justify-content-center md-d-none pl-3">
-                  <span className="fs-medium fw-900 text-decoration-none">Open source</span>
-                </div>
-              </>
-            } tag={"a"} href="https://github.com/cssville/cssville" target="_blank" rel="noopener" />
+            <Button bold tag={"a"} href="https://github.com/cssville/cssville" target="_blank" rel="noopener"
+              icon={<img src="img/mark-github.svg" alt="mark-github" className="h-100 w-100" />} >
+              Open source
+            </Button>
           </div>
         </div>
       </div>

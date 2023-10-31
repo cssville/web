@@ -1,6 +1,7 @@
 import React from 'react';
 import { RowProps } from '../props/Props';
 import { buildSimpleComponent } from '../utils';
+import { Spacer } from './Spacer';
 
 export const Row: React.FC<RowProps> = (props) => {
   var row = buildSimpleComponent(props, "div", [], [
@@ -18,13 +19,8 @@ export const Row: React.FC<RowProps> = (props) => {
     const modifiedChildren = [];
     React.Children.forEach(props.children, (child, index) => {
       modifiedChildren.push(child);
-      var separator = buildSimpleComponent(props, "div", [], [
-        "h-100 bg-color-transparent",
-        ['w-4px', 'w-8px', 'w-12px', 'w-16px', 'w-24px'],
-      ], true)
-      separator.key = `separator-${index}`
       if (index !== React.Children.count(props.children) - 1) {
-        modifiedChildren.push(separator);
+        modifiedChildren.push(<Spacer key={`separator-${index}`} {...props} />);
       }
     });
 

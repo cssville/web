@@ -2,6 +2,7 @@ import React from 'react';
 import { ButtonProps } from '../props/Props';
 import { buildSimpleComponent, getValueByStyle } from '../utils';
 import { ButtonText } from './ButtonText';
+import { Spacer } from './Spacer';
 
 export const Button: React.FC<ButtonProps> = (props) => {
   const outlineBtnClasses = [
@@ -32,10 +33,10 @@ export const Button: React.FC<ButtonProps> = (props) => {
     props.rounded
       ? 'br-9999px'
       : props.square ? 'br-0'
-        : ['br-2', 'br-2', 'br-3', 'br-4', 'br-5'],
+        : ['br-2', 'br-3', 'br-4', 'br-5', 'br-6'],
     props.rounded
       ? ['px-3', 'px-4', 'px-5', 'px-6', 'px-7']
-      : ['px-3', 'px-4', 'px-5', 'px-6', 'px-7'],
+      : ['px-2', 'px-3', 'px-4', 'px-5', 'px-6'],
     props.bold ? 'fw-bold' : 'fw-500',
     props.noborder ? 'border-none' :
       props.filled ? 'border-none'
@@ -46,8 +47,13 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
   const buttonChildren = []
   if (startIcon || icon) {
-    buttonChildren.push(icon ? icon : startIcon)
-    buttonChildren.push(<div className='w-8px h-100 bg-color-transparent'></div>)
+    const iconWrapper = buildSimpleComponent(restProps, "span", [], [
+      ['h-12px', 'h-16px', 'h-24px', 'h-32px', 'h-40px'],
+      ['w-12px', 'w-16px', 'w-24px', 'w-32px', 'w-40px'],
+    ], true)
+    iconWrapper.props.children = icon ? icon : startIcon
+    buttonChildren.push(iconWrapper)
+    buttonChildren.push(<Spacer {...restProps} />)
   }
 
   const addText = props.notext === undefined ? true : props.notext
@@ -55,8 +61,15 @@ export const Button: React.FC<ButtonProps> = (props) => {
   if (addText)
     buttonChildren.push(buttonText ? buttonText : <ButtonText {...restProps}>{restProps.children}</ButtonText>)
 
-  if (endIcon && !icon)
-    buttonChildren.push(endIcon)
+  if (endIcon) {
+    const iconWrapper = buildSimpleComponent(restProps, "span", [], [
+      ['h-12px', 'h-16px', 'h-24px', 'h-32px', 'h-40px'],
+      ['w-12px', 'w-16px', 'w-24px', 'w-32px', 'w-40px'],
+    ], true)
+    iconWrapper.props.children = endIcon
+    buttonChildren.push(<Spacer {...restProps} />)
+    buttonChildren.push(iconWrapper)
+  }
 
   btn.props.children = buttonChildren;
 

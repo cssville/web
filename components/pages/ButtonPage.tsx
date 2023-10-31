@@ -6,6 +6,7 @@ import { Text } from '../ui/simple/Typography';
 import { Row } from '../ui/simple/Row';
 
 export const ButtonPage = (props) => {
+  const ghIcon = <img src="img/mark-github.svg" alt="mark-github" className="h-100 w-100" />;
   return (
     <CommonPage title="Button">
       <Text xl>Default button:</Text>
@@ -14,7 +15,7 @@ export const ButtonPage = (props) => {
         <Button noshadow>No shadow button</Button>
         <Button disabled>Disabled button</Button>
         <Button bold>Bold text button</Button>
-        <Button startIcon={<img src="img/mark-github.svg" alt="mark-github" className="h-24px w-24px" />}>Button with icon</Button>
+        <Button startIcon={ghIcon}>Button with icon</Button>
       </Row>
 
       <Divider lg />
@@ -40,6 +41,15 @@ export const ButtonPage = (props) => {
         <Button md rounded>Medium size</Button>
         <Button lg rounded>Large size</Button>
         <Button xl rounded>Extra large</Button>
+      </Row>
+
+      <Text xl>Button with icon sizes:</Text>
+      <Row>
+        <Button xs icon={ghIcon}>Extra small</Button>
+        <Button sm icon={ghIcon}>Small size</Button>
+        <Button md icon={ghIcon}>Medium size</Button>
+        <Button lg icon={ghIcon}>Large size</Button>
+        <Button xl icon={ghIcon}>Extra large</Button>
       </Row>
 
       <Divider lg />
