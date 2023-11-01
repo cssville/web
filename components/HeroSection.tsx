@@ -23,7 +23,7 @@ export const HeroSection = (props: any) => {
   };
   return (
     <Column xl className="w-8 lg-w-12">
-      <Column xl nospace>
+      <Column xl nospace contentCenter>
         <Display xl centered dynamic>
           The <span className="color-light-blue-700">most simple</span> CSS utility-first framework
         </Display>

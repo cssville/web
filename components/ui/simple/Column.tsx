@@ -14,7 +14,7 @@ export const Column: React.FC<ColumnProps> = (props) => {
         ? 'align-items-center'
         : props.contentEnd
           ? 'align-items-end'
-          : ''
+          : 'align-items-start'
   ])
 
   if (!props.nospace) {

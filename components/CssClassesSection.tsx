@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { ClassesList } from "./ClassesList";
 import { Cssville } from './build/cssville';
 import { Display, Text } from './ui/simple/Typography';
+import { Column } from './ui/simple/Column';
 
 function getClasses(text: string): Array<{ cssClass: string, cssString: string }> {
   const classes = Array<{ cssClass: string, cssString: string }>();
@@ -42,7 +43,7 @@ export const CssClassesSection = (props: any) => {
     generatorNodes[generatorNodes.length] = node;
   })
   return (
-    <>
+    <Column xl nospace>
       <Display id="classes" tag="h2">
         CSS classes
       </Display>
@@ -52,6 +53,6 @@ export const CssClassesSection = (props: any) => {
         which might be used to define more complex styles, utility classes are very simple and focused on a single aspect of the style.
       </Text>
       {generatorNodes}
-    </>
+    </Column>
   );
 }
