@@ -15,7 +15,7 @@ export const HomePage = (props) => {
         <div className="position-absolute h-100 w-12 grad">
         </div>
         <Header />
-        <Section xl>
+        <Section xl contentCenter>
           <HeroSection />
         </Section>
       </div>

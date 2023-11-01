@@ -16,7 +16,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const filledBtnClasses = [
     'color-bg',
     getValueByStyle(props, ['bg-color-primary', 'bg-color-secondary', 'bg-color-success', 'bg-color-info', 'bg-color-warning', 'bg-color-error'], 'bg-color-text'),
-    'opacity-08-hover',
+    'opacity-09-hover',
     getValueByStyle(props, ['border-color-primary', 'border-color-secondary', 'border-color-success', 'border-color-info', 'border-color-warning', 'border-color-error'], 'border-color-bg'),
   ];
   const otherBtnClasses = props.filled ? filledBtnClasses
@@ -33,7 +33,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     props.rounded
       ? 'br-9999px'
       : props.square ? 'br-0'
-        : ['br-2', 'br-3', 'br-4', 'br-5', 'br-6'],
+        : ['br-2', 'br-3', 'br-4', 'br-5', 'br-5'],
     props.rounded
       ? ['px-3', 'px-4', 'px-5', 'px-6', 'px-7']
       : ['px-2', 'px-3', 'px-4', 'px-5', 'px-6'],

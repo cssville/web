@@ -20,6 +20,21 @@ export interface RowProps extends BaseProps {
   contentCenter?: boolean;
 }
 
+export interface ColumnProps extends BaseProps {
+  nospace?: boolean;
+  //justify content
+  contentStart?: boolean;
+  contentEnd?: boolean;
+  contentCenter?: boolean;
+}
+
+export interface SectionProps extends BaseProps {
+  //justify content
+  contentStart?: boolean;
+  contentEnd?: boolean;
+  contentCenter?: boolean;
+}
+
 export interface TextProps extends BaseProps {
   bold?: boolean;
   nopadding?: boolean;
