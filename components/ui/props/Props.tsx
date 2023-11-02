@@ -29,6 +29,8 @@ export interface ColumnProps extends BaseProps {
 }
 
 export interface SectionProps extends BaseProps {
+  fullWidth?: boolean;
+  nopadding?: boolean;
   //justify content
   contentStart?: boolean;
   contentEnd?: boolean;
