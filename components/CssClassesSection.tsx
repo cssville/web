@@ -43,7 +43,7 @@ export const CssClassesSection = (props: any) => {
   }, []); // Empty dependency array because there are no dependencies for this memoized value
 
   return (
-    <Column xl nospace>
+    <Column xl noSpace>
       <Display id="classes" tag="h2">
         CSS classes
       </Display>

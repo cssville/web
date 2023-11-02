@@ -31,7 +31,7 @@ export const CssPrefixesSection = (props: any) => {
       </div>;
   })
   return (
-    <Column xl nospace>
+    <Column xl noSpace>
       <Display id="prefixes" tag="h2">
         CSS prefixes
       </Display>

@@ -17,7 +17,7 @@ export const Column: React.FC<ColumnProps> = (props) => {
           : 'align-items-start'
   ])
 
-  if (!props.nospace) {
+  if (!props.noSpace) {
     const modifiedChildren = [];
     React.Children.forEach(props.children, (child, index) => {
       modifiedChildren.push(child);

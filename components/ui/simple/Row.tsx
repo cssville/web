@@ -15,7 +15,7 @@ export const Row: React.FC<RowProps> = (props) => {
           : ''
   ])
 
-  if (!props.nospace) {
+  if (!props.noSpace) {
     const modifiedChildren = [];
     React.Children.forEach(props.children, (child, index) => {
       modifiedChildren.push(child);

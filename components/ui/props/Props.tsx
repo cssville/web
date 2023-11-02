@@ -13,7 +13,7 @@ export interface BaseProps extends React.HTMLProps<HTMLElement>, SizeProps {
 }
 
 export interface RowProps extends BaseProps {
-  nospace?: boolean;
+  noSpace?: boolean;
   //justify content
   contentStart?: boolean;
   contentEnd?: boolean;
@@ -21,7 +21,7 @@ export interface RowProps extends BaseProps {
 }
 
 export interface ColumnProps extends BaseProps {
-  nospace?: boolean;
+  noSpace?: boolean;
   //justify content
   contentStart?: boolean;
   contentEnd?: boolean;
@@ -30,7 +30,7 @@ export interface ColumnProps extends BaseProps {
 
 export interface SectionProps extends BaseProps {
   fullWidth?: boolean;
-  nopadding?: boolean;
+  noPadding?: boolean;
   //justify content
   contentStart?: boolean;
   contentEnd?: boolean;
@@ -39,7 +39,7 @@ export interface SectionProps extends BaseProps {
 
 export interface TextProps extends BaseProps {
   bold?: boolean;
-  nopadding?: boolean;
+  noPadding?: boolean;
   centered?: boolean;
   dynamic?: boolean;
 }
@@ -65,8 +65,8 @@ export interface ButtonProps extends StyleProps {
   disabled?: boolean;
   rounded?: boolean;
   square?: boolean;
-  noborder?: boolean;
-  noshadow?: boolean;
+  noBorder?: boolean;
+  noShadow?: boolean;
   //variants
   outline?: boolean;
   filled?: boolean;

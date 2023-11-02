@@ -12,7 +12,7 @@ export const ButtonPage = (props) => {
       <Text xl>Default button:</Text>
       <Row>
         <Button>Default button</Button>
-        <Button noshadow>No shadow button</Button>
+        <Button noShadow>No shadow button</Button>
         <Button disabled>Disabled button</Button>
         <Button bold>Bold text button</Button>
         <Button startIcon={ghIcon}>Button with icon</Button>
@@ -66,12 +66,12 @@ export const ButtonPage = (props) => {
 
       <Text xl>Noborder buttons:</Text>
       <Row>
-        <Button primary noborder>Primary button</Button>
-        <Button secondary noborder>Secondary button</Button>
-        <Button success noborder>Success button</Button>
-        <Button info noborder>Info button</Button>
-        <Button warning noborder>Warning button</Button>
-        <Button error noborder>Error button</Button>
+        <Button primary noBorder>Primary button</Button>
+        <Button secondary noBorder>Secondary button</Button>
+        <Button success noBorder>Success button</Button>
+        <Button info noBorder>Info button</Button>
+        <Button warning noBorder>Warning button</Button>
+        <Button error noBorder>Error button</Button>
       </Row>
 
       <Text xl>Square buttons:</Text>

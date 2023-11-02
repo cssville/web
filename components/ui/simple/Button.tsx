@@ -29,7 +29,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     "d-flex align-items-center justify-content-center text-decoration-none text-wrap-nowrap h-min-content",
     ['py-1', 'py-2', 'py-3', 'py-4', 'py-5'],
     props.disabled ? 'opacity-05 cursor-default' : 'cursor-pointer',
-    props.noshadow ? 'box-shadow-none' : ['box-shadow-xs', 'box-shadow-sm', 'box-shadow-md', 'box-shadow-lg', 'box-shadow-xl'],
+    props.noShadow ? 'box-shadow-none' : ['box-shadow-xs', 'box-shadow-sm', 'box-shadow-md', 'box-shadow-lg', 'box-shadow-xl'],
     props.rounded
       ? 'br-9999px'
       : props.square ? 'br-0'
@@ -38,7 +38,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
       ? ['px-3', 'px-4', 'px-5', 'px-6', 'px-7']
       : ['px-2', 'px-3', 'px-4', 'px-5', 'px-6'],
     props.bold ? 'fw-bold' : 'fw-500',
-    props.noborder ? 'border-none' :
+    props.noBorder ? 'border-none' :
       props.filled ? 'border-none'
         : props.outline ? 'border-width-1px border-style-solid'
           : 'border-width-1px border-style-solid',
