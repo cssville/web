@@ -9,13 +9,10 @@ import { Column } from './ui/simple/Column';
 export const HeroSection = (props: any) => {
   const [isCopied, setIsCopied] = useState(false);
   const handleCopyClick = () => {
-    const textToCopy = "npm install cssville";
-
-    // Use the Clipboard API to copy text to clipboard
-    navigator.clipboard.writeText(textToCopy)
+    navigator.clipboard.writeText("npm install cssville")
       .then(() => {
         setIsCopied(true);
-        setTimeout(() => setIsCopied(false), 2000); // Revert the icon and state after 2 seconds
+        setTimeout(() => setIsCopied(false), 2000);
       })
       .catch((error) => {
         console.error('Failed to copy text: ', error);
