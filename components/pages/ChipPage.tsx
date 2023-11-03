@@ -49,12 +49,12 @@ export const ChipPage = (props) => {
 
       <Text xl>Noborder chips:</Text>
       <Row>
-        <Chip primary noborder>Primary chip</Chip>
-        <Chip secondary noborder>Secondary chip</Chip>
-        <Chip success noborder>Success chip</Chip>
-        <Chip info noborder>Info chip</Chip>
-        <Chip warning noborder>Warning chip</Chip>
-        <Chip error noborder>Error chip</Chip>
+        <Chip primary noBorder>Primary chip</Chip>
+        <Chip secondary noBorder>Secondary chip</Chip>
+        <Chip success noBorder>Success chip</Chip>
+        <Chip info noBorder>Info chip</Chip>
+        <Chip warning noBorder>Warning chip</Chip>
+        <Chip error noBorder>Error chip</Chip>
       </Row>
 
       <Text xl>Square chips:</Text>

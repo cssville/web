@@ -1,5 +1,5 @@
 import React from 'react';
-import { BaseProps } from '../props/Props';
+import { BaseProps } from "../props/BaseProps";
 import { buildSimpleComponent } from '../utils';
 
 export const Spacer: React.FC<BaseProps> = (props) => buildSimpleComponent(props, "div", [], [

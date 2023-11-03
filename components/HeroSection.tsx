@@ -28,7 +28,7 @@ export const HeroSection = (props: any) => {
           Cssville is a utility-first CSS framework with zero dependencies.
           Develop faster using classes like <Chip>d-flex</Chip>, <Chip>cursor-pointer</Chip>, and <Chip>py-2</Chip>.
         </Text>
-        <Divider lg noborder />
+        <Divider lg noBorder />
         <Row contentCenter>
           <Button secondary filled lg className="bg-color-blue-grey-900" onClick={handleCopyClick}
             startIcon={<img src="img/chevron-right.svg" alt=">" className="h-100 w-100" />}

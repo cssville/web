@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColumnProps } from '../props/Props';
+import { ColumnProps } from "../props/ColumnProps";
 import { buildSimpleComponent } from '../utils';
 import { Spacer } from './Spacer';
 import { Divider } from './Divider';
@@ -22,7 +22,7 @@ export const Column: React.FC<ColumnProps> = (props) => {
     React.Children.forEach(props.children, (child, index) => {
       modifiedChildren.push(child);
       if (index !== React.Children.count(props.children) - 1) {
-        modifiedChildren.push(<Divider noborder key={`divider-${index}`} {...props} />);
+        modifiedChildren.push(<Divider noBorder key={`divider-${index}`} {...props} />);
       }
     });
 

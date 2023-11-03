@@ -1,5 +1,6 @@
 import React from 'react';
-import { BaseProps, SectionProps } from '../props/Props';
+import { BaseProps } from "../props/BaseProps";
+import { SectionProps } from "../props/SectionProps";
 import { buildSimpleComponent } from '../utils';
 
 export const Section: React.FC<SectionProps> = (props) => buildSimpleComponent(props, "div", [], [

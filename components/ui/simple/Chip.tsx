@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChipProps } from '../props/Props';
+import { ChipProps } from "../props/ChipProps";
 import { buildSimpleComponent, getValueByStyle } from '../utils';
 
 export const Chip: React.FC<ChipProps> = (props) => {
@@ -32,7 +32,7 @@ export const Chip: React.FC<ChipProps> = (props) => {
       ? ['px-2', 'px-3', 'px-4', 'px-4', 'px-5']
       : ['px-2', 'px-2', 'px-3', 'px-3', 'px-4'],
     props.bold ? 'fw-bold' : 'fw-500',
-    props.noborder ? 'border-none' :
+    props.noBorder ? 'border-none' :
       props.filled ? 'border-none'
         : props.outline ? 'border-width-1px border-style-solid'
           : 'border-width-1px border-style-solid',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonProps } from '../props/Props';
+import { ButtonProps } from "../props/ButtonProps";
 import { buildSimpleComponent, getValueByStyle } from '../utils';
 import { ButtonText } from './ButtonText';
 import { Spacer } from './Spacer';

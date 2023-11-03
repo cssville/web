@@ -1,5 +1,5 @@
 import React from 'react';
-import { RowProps } from '../props/Props';
+import { RowProps } from "../props/RowProps";
 import { buildSimpleComponent } from '../utils';
 import { Spacer } from './Spacer';
 

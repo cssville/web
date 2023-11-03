@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextProps } from '../props/Props';
+import { TextProps } from "../props/TextProps";
 import { buildSimpleComponent } from '../utils';
 
 const commonTextClasses = (props: TextProps) => {

@@ -1,5 +1,7 @@
 import { ReactElement, ReactNode } from "react";
-import { BaseProps, SizeProps, StyleProps } from "./props/Props";
+import { SizeProps } from "./props/SizeProps";
+import { BaseProps } from "./props/BaseProps";
+import { StyleProps } from "./props/StyleProps";
 import React from "react";
 
 export function getValueByStyle(props: StyleProps, values: string[], defaultClass: string = ""): string {
