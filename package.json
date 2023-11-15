@@ -7,7 +7,8 @@
     "build": "webpack",
     "watch:build": "webpack --watch",
     "watch:server": "lite-server -c lite-server-config.json",
-    "start": "npm-run-all build --parallel watch:build watch:server --print-label"
+    "start": "npm-run-all build --parallel watch:build watch:server --print-label",
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "homepage": "https://github.com/cssville/cssville-web#readme",
   "dependencies": {
     "cssville": "^0.6.5",
+    "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0"
