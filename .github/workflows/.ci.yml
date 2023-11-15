@@ -21,3 +21,12 @@ jobs:
       - run: npm install typescript -g
       - run: npm install
       - run: npm run build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.API_TOKEN_GITHUB }}
+          branch: ${{ github.head_ref }}
+          repository: cssville/cssville.github.io
+          force: true
