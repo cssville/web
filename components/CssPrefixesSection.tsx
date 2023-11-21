@@ -3,7 +3,7 @@ import { Cssville } from './build/cssville';
 import { ReactNode } from "react";
 import hljs from 'highlight.js';
 import { Chip } from "./ui/simple/Chip";
-import { Display, Text } from './ui/simple/Typography';
+import { Display, Text, Title } from './ui/simple/Typography';
 import { Row } from './ui/simple/Row';
 import { Column } from './ui/simple/Column';
 
@@ -11,10 +11,8 @@ export const CssPrefixesSection = (props: any) => {
   const prefixesNodes: ReactNode[] = [];
   Cssville.breakpoints.forEach((val, prefix) => {
     prefixesNodes[prefixesNodes.length] =
-      <div key={`come-example-${prefix}`} className="pb-3 md-w-12 md-pb-4">
-        <div className="fs-x-large pb-3">
-          <span className="fw-bold">{val.name}</span>
-        </div>
+      <Column key={`come-example-${prefix}`} xl noSpace className="md-w-12">
+        <Title xl className='w-12'>{val.name}</Title>
         <div className="max-w-12 box-shadow-lg p-5 br-4">
           <pre className="m-0 overflow-auto">
             <code className="fs-large language-css hljs br-2 max-w-md mx-auto"
@@ -30,7 +28,7 @@ export const CssPrefixesSection = (props: any) => {
             />
           </pre>
         </div>
-      </div>;
+      </Column>;
   })
   return (
     <Column xl noSpace>
@@ -41,7 +39,7 @@ export const CssPrefixesSection = (props: any) => {
         The same classes can be used with predefined screen-size prefixes. When prefix is used, the style is applied only for specific screen resolution.
         See the example below for the <Chip>d-flex</Chip> property:
       </Text>
-      <Row>{prefixesNodes}</Row>
+      <Row xl>{prefixesNodes}</Row>
     </Column>
   );
 }
