@@ -19,16 +19,18 @@ export const ClassesList = (props: any) => {
             )
           })}
       </Row>
-      <div key={`come-example-${active}`} className="max-w-12 box-shadow-lg p-3 br-3">
-        <pre className="m-0">
-          <code className="fs-large language-css hljs br-2 max-w-sm mx-auto"
-            dangerouslySetInnerHTML={{
-              __html:
-                hljs.highlight(props.data[active].cssString, { language: 'css' }).value
-            }}
-          />
-        </pre>
-      </div>
+      <Row contentCenter>
+        <div key={`come-example-${active}`} className="max-w-12 box-shadow-lg p-5 br-3">
+          <pre className="m-0">
+            <code className="fs-large language-css hljs br-2 max-w-md mx-auto"
+              dangerouslySetInnerHTML={{
+                __html:
+                  hljs.highlight(props.data[active].cssString, { language: 'css' }).value
+              }}
+            />
+          </pre>
+        </div>
+      </Row>
     </Column>
   );
 }

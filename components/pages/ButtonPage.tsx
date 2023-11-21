@@ -21,7 +21,9 @@ export const ButtonPage = (props) => {
       <Divider lg />
 
       <Text xl>Button with custom text:</Text>
-      <Button buttonText={<span className="fw-bold fs-large color-green-500 text-decoration-underline">Custom text element</span>} />
+      <Row>
+        <Button buttonText={<span className="fw-bold fs-large color-green-500 text-decoration-underline">Custom text element</span>} />
+      </Row>
 
       <Divider lg />
 

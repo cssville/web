@@ -12,10 +12,12 @@ export const CssPrefixesSection = (props: any) => {
   Cssville.breakpoints.forEach((val, prefix) => {
     prefixesNodes[prefixesNodes.length] =
       <div key={`come-example-${prefix}`} className="pb-3 md-w-12 md-pb-4">
-        <div className="fs-x-large pb-3"><span className="fw-bold">{val.name}</span></div>
-        <div className="max-w-12 box-shadow-lg p-3 mr-3 br-3">
+        <div className="fs-x-large pb-3">
+          <span className="fw-bold">{val.name}</span>
+        </div>
+        <div className="max-w-12 box-shadow-lg p-5 br-4">
           <pre className="m-0 overflow-auto">
-            <code className="fs-large language-css hljs br-2 max-w-sm mx-auto"
+            <code className="fs-large language-css hljs br-2 max-w-md mx-auto"
               dangerouslySetInnerHTML={{
                 __html:
                   hljs.highlight(`
