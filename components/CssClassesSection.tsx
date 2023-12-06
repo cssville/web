@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { ReactNode } from "react";
 import { ClassesList } from "./ClassesList";
-import { Cssville } from './build/cssville';
+import { Cssville } from 'cssville-generators/build/cssville';
 import { Display, Text, Title } from './ui/simple/Typography';
 import { Column } from './ui/simple/Column';
 
@@ -27,20 +27,31 @@ function getClasses(text: string): Array<{ cssClass: string, cssString: string }
   return classes;
 };
 export const CssClassesSection = (props: any) => {
-  const generatorNodes: ReactNode[] = useMemo(() => {
-    return Cssville.generators.map((g, i) => {
-      let array = [];
-      g.cssData.map(d => getClasses(d.getCss("", []))).forEach(arr => {
-        array = array.concat(arr);
-      });
-      return (
-        <Column key={`node-${g.name}-${i}`}>
-          <Title xl className='w-12 border-bottom-1'>{g.name}</Title>
-          <ClassesList data={array} />
-        </Column>
-      );
-    });
-  }, []); // Empty dependency array because there are no dependencies for this memoized value
+  const generatorNodes: ReactNode[] = Cssville.generators.map((g, i) => {
+    //let array = [];
+    //g.cssData.map(d => getClasses(d.getCss("", []))).forEach(arr => {
+    //  array = array.concat(arr);
+    //});
+    //<ClassesList data={array} />
+    return (
+      <Column className="w-12" key={`node-${g.name}-${i}`}>
+        <Title xl className='w-12 border-bottom-1'>{g.name}</Title>
+        {
+          g.cssData.map(d =>
+            <div>
+              {d.className}: {d.cssProperties.map(
+                (p, i) =>
+                  <React.Fragment key={i}>
+                    <span>{p}</span>
+                    {i < d.cssProperties.length - 1 && <span>, </span>}
+                  </React.Fragment>
+              )}
+            </div>
+          )
+        }
+      </Column>
+    );
+  });
 
   return (
     <Column xl noSpace>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cssville } from './build/cssville';
+import { Cssville } from 'cssville-generators/build/cssville';
 import { ReactNode } from "react";
 import hljs from 'highlight.js';
 import { Chip } from "./ui/simple/Chip";
