@@ -1,7 +1,7 @@
 import React from 'react';
-import { Divider } from '../ui/simple/Divider';
+import { Divider } from 'cssville-ui/build/components/ui/simple/Divider';
 import { CommonPage } from './CommonPage';
-import { Headline, Title, Text, Label, Display } from '../ui/simple/Typography';
+import { Headline, Title, Text, Label, Display } from 'cssville-ui/build/components/ui/simple/Typography';
 
 export const TypographyPage = (props) => {
   return (

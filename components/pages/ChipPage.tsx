@@ -1,9 +1,9 @@
 import React from 'react';
-import { Chip } from '../ui/simple/Chip';
-import { Divider } from '../ui/simple/Divider';
+import { Chip } from 'cssville-ui/build/components/ui/simple/Chip';
+import { Divider } from 'cssville-ui/build/components/ui/simple/Divider';
 import { CommonPage } from './CommonPage';
-import { Text } from '../ui/simple/Typography';
-import { Row } from '../ui/simple/Row';
+import { Text } from 'cssville-ui/build/components/ui/simple/Typography';
+import { Row } from 'cssville-ui/build/components/ui/simple/Row';
 
 export const ChipPage = (props) => {
   return (

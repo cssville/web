@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Chip } from './ui/simple/Chip';
-import { Display, Text } from "./ui/simple/Typography"
-import { Divider } from './ui/simple/Divider';
-import { Row } from './ui/simple/Row';
-import { Button } from './ui/simple/Button';
-import { Column } from './ui/simple/Column';
+import { Chip } from 'cssville-ui/build/components/ui/simple/Chip';
+import { Display, Text } from "cssville-ui/build/components/ui/simple/Typography"
+import { Divider } from 'cssville-ui/build/components/ui/simple/Divider';
+import { Row } from 'cssville-ui/build/components/ui/simple/Row';
+import { Button } from 'cssville-ui/build/components/ui/simple/Button';
+import { Column } from 'cssville-ui/build/components/ui/simple/Column';
 
 export const HeroSection = (props: any) => {
   const [isCopied, setIsCopied] = useState(false);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Display, Text } from './ui/simple/Typography';
+import { Display, Text } from 'cssville-ui/build/components/ui/simple/Typography';
 
 export const AboutSection = (props: any) => {
   return (

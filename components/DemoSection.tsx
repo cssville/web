@@ -1,7 +1,7 @@
 import React from 'react';
 import hljs from 'highlight.js';
-import { Chip } from "./ui/simple/Chip";
-import { Display, Text } from "./ui/simple/Typography"
+import { Chip } from "cssville-ui/build/components/ui/simple/Chip";
+import { Display, Text } from "cssville-ui/build/components/ui/simple/Typography"
 
 
 export const DemoSection = (props: any) => {

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Header } from '../ui/Header';
-import { Footer } from '../ui/Footer';
-import { Section } from '../ui/simple/Section';
-import { Display } from '../ui/simple/Typography';
-import { Divider } from '../ui/simple/Divider';
+import { Header } from '../Header';
+import { Footer } from '../Footer';
+import { Section } from 'cssville-ui/build/components/ui/simple/Section';
+import { Display } from 'cssville-ui/build/components/ui/simple/Typography';
+import { Divider } from 'cssville-ui/build/components/ui/simple/Divider';
 
 export const CommonPage = (props) => {
   return (

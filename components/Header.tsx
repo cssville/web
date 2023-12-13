@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './simple/Button';
+import { Button } from 'cssville-ui/build/components/ui/simple/Button';
 
 export const Header = (props: any) => {
   return (

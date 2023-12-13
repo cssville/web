@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from '../ui/simple/Button';
-import { Divider } from '../ui/simple/Divider';
+import { Button } from 'cssville-ui/build/components/ui/simple/Button';
+import { Divider } from 'cssville-ui/build/components/ui/simple/Divider';
 import { CommonPage } from './CommonPage';
-import { Text } from '../ui/simple/Typography';
-import { Row } from '../ui/simple/Row';
+import { Text } from 'cssville-ui/build/components/ui/simple/Typography';
+import { Row } from 'cssville-ui/build/components/ui/simple/Row';
 
 export const ButtonPage = (props) => {
   const ghIcon = <img src="img/mark-github.svg" alt="mark-github" className="h-100 w-100" />;

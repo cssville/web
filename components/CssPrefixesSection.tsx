@@ -2,10 +2,10 @@ import React from 'react';
 import { Cssville } from 'cssville-generators/build/cssville';
 import { ReactNode } from "react";
 import hljs from 'highlight.js';
-import { Chip } from "./ui/simple/Chip";
-import { Display, Text, Title } from './ui/simple/Typography';
-import { Row } from './ui/simple/Row';
-import { Column } from './ui/simple/Column';
+import { Chip } from "cssville-ui/build/components/ui/simple/Chip";
+import { Display, Text, Title } from 'cssville-ui/build/components/ui/simple/Typography';
+import { Row } from 'cssville-ui/build/components/ui/simple/Row';
+import { Column } from 'cssville-ui/build/components/ui/simple/Column';
 
 export const CssPrefixesSection = (props: any) => {
   const prefixesNodes: ReactNode[] = [];

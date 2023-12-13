@@ -2,8 +2,8 @@ import React, { useMemo } from 'react';
 import { ReactNode } from "react";
 import { ClassesList } from "./ClassesList";
 import { Cssville } from 'cssville-generators/build/cssville';
-import { Display, Text, Title } from './ui/simple/Typography';
-import { Column } from './ui/simple/Column';
+import { Display, Text, Title } from 'cssville-ui/build/components/ui/simple/Typography';
+import { Column } from 'cssville-ui/build/components/ui/simple/Column';
 
 function getClasses(text: string): Array<{ cssClass: string, cssString: string }> {
   const classes = Array<{ cssClass: string, cssString: string }>();

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import React from 'react';
 import hljs from 'highlight.js';
-import { Row } from "./ui/simple/Row";
-import { Chip } from "./ui/simple/Chip";
-import { Column } from "./ui/simple/Column";
+import { Row } from "cssville-ui/build/components/ui/simple/Row";
+import { Chip } from "cssville-ui/build/components/ui/simple/Chip";
+import { Column } from "cssville-ui/build/components/ui/simple/Column";
 
 export const ClassesList = (props: any) => {
   const [active, setActive] = useState(0);

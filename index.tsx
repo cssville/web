@@ -3,6 +3,7 @@ import React from 'react';
 import hljs from 'highlight.js';
 import "./site.css";
 import "cssville/cssville.css";
+import "cssville-ui/cssville-ui.bundle.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from './components/pages/HomePage';
 import { ChipPage } from './components/pages/ChipPage';

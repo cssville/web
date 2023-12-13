@@ -44,6 +44,7 @@ module.exports = {
     new PurgeCSSPlugin({
       paths: [PATHS.index, ...glob.sync(`${PATHS.components}/**/*`, { nodir: true })],
       safelist: collectSafelist,
+      only: ["web.bundle.css"],
     }),
   ],
   module: {
