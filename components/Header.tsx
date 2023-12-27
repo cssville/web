@@ -9,7 +9,7 @@ export const Header = (props: any) => {
           <div className="d-flex flex-direction-row py-3 align-items-center justify-content-center">
             <div className="d-flex align-items-center justify-content-center">
               <a href="/" className="d-flex text-decoration-none color-green-500">
-                <img src="img/cssville.svg" alt="logo" className="h-32px w-32px py-3" />
+                <img src="/img/cssville.svg" alt="logo" className="h-32px w-32px py-3" />
                 <div className="d-flex align-items-center justify-content-center md-d-none pl-3">
                   <span className="fw-900 fs-x-large font-family-code">cssville</span>
                 </div>
@@ -30,7 +30,7 @@ export const Header = (props: any) => {
               }
             </div>
             <Button bold tag={"a"} href="https://github.com/cssville/cssville" target="_blank" rel="noopener"
-              icon={<img src="img/mark-github.svg" alt="mark-github" className="h-100 w-100" />} >
+              icon={<img src="/img/mark-github.svg" alt="mark-github" className="h-100 w-100" />} >
               Open source
             </Button>
           </div>

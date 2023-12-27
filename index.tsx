@@ -6,6 +6,7 @@ import "cssville/cssville.css";
 import "cssville-ui/cssville-ui.bundle.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from './components/pages/HomePage';
+import { ClassPage } from './components/pages/ClassPage';
 import { ChipPage } from './components/pages/ChipPage';
 import { TypographyPage } from './components/pages/TypographyPage';
 import { ButtonPage } from './components/pages/ButtonPage';
@@ -26,14 +27,14 @@ const router = createBrowserRouter([
   {
     path: "/typography",
     element: <TypographyPage />
-  }
-  //{
-  //  path: "/posts/:url",
-  //  element: <BlogPage />,
-  //  loader: async ({ params }) => {
-  //    return params.url;
-  //  },
-  //},
+  },
+  {
+    path: "/docs/:name",
+    element: <ClassPage />,
+    loader: async ({ params }) => {
+      return params.name;
+    },
+  },
 ]);
 
 function docReady(fn: () => void) {

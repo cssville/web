@@ -24,8 +24,8 @@ export const HomePage = (props) => {
         <DemoSection />
         <CssPrefixesSection />
         <CssClassesSection />
-        <Footer />
       </Section>
+      <Footer />
     </>
   );
 };
