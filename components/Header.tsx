@@ -16,7 +16,7 @@ export const Header = (props: any) => {
               </a>
             </div>
             <div className="md-d-none flex-grow-1"></div>
-            <div className="d-flex flex-direction-row md-flex-direction-column md-mx-auto align-items-center justify-content-center">
+            <div className="d-flex flex-direction-row md-flex-direction-column md-mx-auto align-items-center justify-content-center mr-4">
               {
                 [
                   ['Demo', '#demo'],

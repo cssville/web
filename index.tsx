@@ -10,11 +10,17 @@ import { ClassPage } from './components/pages/ClassPage';
 import { ChipPage } from './components/pages/ChipPage';
 import { TypographyPage } from './components/pages/TypographyPage';
 import { ButtonPage } from './components/pages/ButtonPage';
+import { NotFoundPage } from './components/pages/NotFoundPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/404",
+    element: <NotFoundPage />,
   },
   {
     path: "/chip",
