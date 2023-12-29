@@ -6,6 +6,7 @@ import { IGenerator } from 'cssville-generators/build/IGenerator';
 import { NotFoundPage } from './NotFoundPage';
 import { ClassesList } from '../ClassesList';
 import { Title } from 'cssville-ui/build/components/ui/simple/Typography';
+import { Chip } from 'cssville-ui/build/components/ui/simple/Chip';
 
 function getClasses(text: string): Array<{ cssClass: string, cssString: string }> {
   const classes = Array<{ cssClass: string, cssString: string }>();
@@ -46,32 +47,48 @@ export const ClassPage = (props) => {
       : <CommonPage title={generator.name}>
         <Title xl>CSS classes and properties</Title>
         <table style={{ borderCollapse: "collapse" }} className="my-4">
-          <tr>
-            <th className="p-3 border-1">Class name</th>
-            <th className="p-3 border-1">Properties</th>
+          <tr className="bg-color-grey-100">
+            <th className="p-3 border-1">Class name property</th>
+            <th className="p-3 border-1">CSS properties</th>
           </tr>
           {
             generator.cssData.map(cssClassData =>
               <tr>
-                <td className="p-3 border-1">{cssClassData.className}</td>
-                <td className="p-3 border-1">{cssClassData.cssProperties.join(", ")}</td>
+                <td className="p-3 border-1"><Chip>{cssClassData.className}-*</Chip></td>
+                <td className="p-3 border-1">
+                  {cssClassData.cssProperties.map(
+                    (p, i) =>
+                      <React.Fragment key={i}>
+                        <Chip>{p}</Chip>
+                        {i < cssClassData.cssProperties.length - 1 && <span>, </span>}
+                      </React.Fragment>
+                  )}
+                </td>
               </tr>
             )
           }
         </table>
         <Title xl>CSS property values</Title>
         <table style={{ borderCollapse: "collapse" }} className="my-4">
-          <tr>
-            <th className="p-3 border-1">Property</th>
-            <th className="p-3 border-1">Value</th>
+          <tr className="bg-color-grey-100">
+            <th className="p-3 border-1">Class name value</th>
+            <th className="p-3 border-1">CSS value</th>
           </tr>
           {
             Array.from(generator.cssData[0].postfixValuesMap.keys()).map(key => {
               var values = generator.cssData[0].postfixValuesMap.get(key);
               return (
                 <tr>
-                  <td className="p-3 border-1">{key}</td>
-                  <td className="p-3 border-1">{values.join(", ")}</td>
+                  <td className="p-3 border-1"><Chip>{key}</Chip></td>
+                  <td className="p-3 border-1">
+                    {values.map(
+                      (p, i) =>
+                        <React.Fragment key={i}>
+                          <Chip>{p}</Chip>
+                          {i < values.length - 1 && <span>, </span>}
+                        </React.Fragment>
+                    )}
+                  </td>
                 </tr>
               )
             })
