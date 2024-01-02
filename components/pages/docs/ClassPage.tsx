@@ -1,34 +1,14 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Cssville } from "cssville-generators/build/cssville";
-import { CommonPage } from './CommonPage';
+import { CommonPage } from '../CommonPage';
 import { IGenerator } from 'cssville-generators/build/IGenerator';
-import { NotFoundPage } from './NotFoundPage';
-import { ClassesList } from '../ClassesList';
+import { NotFoundPage } from '../NotFoundPage';
+import { ClassesList } from '../../ClassesList';
 import { Title } from 'cssville-ui/build/components/ui/simple/Typography';
 import { Chip } from 'cssville-ui/build/components/ui/simple/Chip';
+import { getClasses } from '../../utils';
 
-function getClasses(text: string): Array<{ cssClass: string, cssString: string }> {
-  const classes = Array<{ cssClass: string, cssString: string }>();
-  text.split("}").forEach((el, i) => {
-    var line = el.trim();
-    var cl = line.split("{")[0].trim();
-    var inner = line.split("{")[1];
-    var properties = []
-    if (inner !== undefined) {
-      var props = inner.trim().split(";").map(p => p.trim());
-      props.forEach((p, j) => {
-        if (p !== "") {
-          properties[properties.length] = "  " + p + ";\n";
-        }
-      });
-    }
-    if (cl !== "") {
-      classes.push({ cssClass: cl, cssString: cl + " {\n" + properties.join("") + "}\n" });
-    }
-  });
-  return classes;
-};
 
 export const ClassPage = (props) => {
   const name = useLoaderData();

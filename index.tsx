@@ -6,7 +6,7 @@ import "cssville/cssville.css";
 import "cssville-ui/cssville-ui.bundle.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from './components/pages/HomePage';
-import { ClassPage } from './components/pages/ClassPage';
+import { ClassPage } from './components/pages/docs/ClassPage';
 import { ChipPage } from './components/pages/ChipPage';
 import { TypographyPage } from './components/pages/TypographyPage';
 import { ButtonPage } from './components/pages/ButtonPage';

@@ -14,7 +14,7 @@ export const ClassesList = (props: any) => {
             var cl = value.cssClass;
             var isActive = i === active;
             return (
-              <Chip sm bold={isActive} disabled={!isActive} onClick={(e) => { setActive(i) }} className="cursor-pointer my-1">{cl}</Chip>
+              <Chip sm bold={isActive} disabled={!isActive} onClick={(e) => { setActive(i) }} className="cursor-pointer my-1">{cl.split(":")[0]}</Chip>
             )
           })}
       </Row>
