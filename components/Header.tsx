@@ -1,12 +1,13 @@
 import React from 'react';
 import { Button } from 'cssville-ui/build/components/ui/simple/Button';
+import { Section } from 'cssville-ui/build/components/ui/simple/Section';
 
 export const Header = (props: any) => {
   return (
     <>
-      <div className="position-fixed w-12 border-bottom-1 mb-6 h-64px md-h-inherit z-10 bg-color-white">
-        <div className="mx-auto max-w-xl px-6 lg-px-5 md-px-4">
-          <div className="d-flex flex-direction-row py-3 align-items-center justify-content-center">
+      <div className="w-12 border-bottom-1 position-relative">
+        <Section lg>
+          <div className="d-flex flex-direction-row align-items-center justify-content-center">
             <div className="d-flex align-items-center justify-content-center">
               <a href="/" className="d-flex text-decoration-none color-green-500">
                 <img src="/img/cssville.svg" alt="logo" className="h-32px w-32px py-3" />
@@ -24,7 +25,7 @@ export const Header = (props: any) => {
                   ['Classes', '#classes'],
                 ].map(([text, href]) => (
                   <a className="d-flex px-4 py-3 text-decoration-none bg-color-grey-100-hover br-4 color-blue-grey-900" href={href}>
-                    <span className="fs-medium fw-bold">{text}</span>
+                    <span className="fs-medium fw-500">{text}</span>
                   </a>
                 ))
               }
@@ -34,10 +35,8 @@ export const Header = (props: any) => {
               Open source
             </Button>
           </div>
-        </div>
+        </Section>
       </div>
-      <div className="w-12 h-64px position-relative"></div>
-      <div className="w-12 h-64px d-none md-d-flex position-relative"></div>
     </>
   );
 }

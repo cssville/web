@@ -19,12 +19,12 @@ export const HeroSection = (props: any) => {
       });
   };
   return (
-    <Column xl className="w-8 lg-w-12">
+    <Column xl className="w-10 lg-w-12">
       <Column xl noSpace contentCenter>
         <Display xl centered dynamic>
           The <span className="color-light-blue-700">most simple</span> CSS utility-first framework
         </Display>
-        <Text xl centered className="w-7 md-w-12">
+        <Text xl centered className="w-6 md-w-12">
           Cssville is a utility-first CSS framework with zero dependencies.
           Develop faster using classes like <Chip>d-flex</Chip>, <Chip>cursor-pointer</Chip>, and <Chip>py-2</Chip>.
         </Text>

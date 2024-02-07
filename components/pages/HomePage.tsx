@@ -15,11 +15,11 @@ export const HomePage = (props) => {
         <div className="position-absolute h-100 w-12 grad">
         </div>
         <Header />
-        <Section xl contentCenter>
+        <Section lg contentCenter>
           <HeroSection />
         </Section>
       </div>
-      <Section xl>
+      <Section lg>
         <AboutSection />
         <DemoSection />
         <CssPrefixesSection />

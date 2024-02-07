@@ -9,7 +9,7 @@ export const CommonPage = (props) => {
   return (
     <>
       <Header />
-      <Section xl className='mh'>
+      <Section lg className='mh'>
         <Display>{props.title}</Display>
         <Divider lg />
         {props.children}
