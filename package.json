@@ -27,7 +27,7 @@
   "dependencies": {
     "cssville": "^0.6.7",
     "cssville-generators": "^0.3.0",
-    "cssville-ui": "^0.1.7",
+    "cssville-ui": "^0.1.9",
     "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
