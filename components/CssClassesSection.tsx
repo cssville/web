@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { ClassesList } from "./ClassesList";
 import { Cssville } from 'cssville-generators/build/cssville';
 import { Display, Text, Title } from 'cssville-ui/build/components/ui/simple/Typography';
-import { Column } from 'cssville-ui/build/components/ui/simple/Column';
+import { Stack } from 'cssville-ui/build/components/ui/simple/Stack';
 
 function getClasses(text: string): Array<{ cssClass: string, cssString: string }> {
   const classes = Array<{ cssClass: string, cssString: string }>();
@@ -34,7 +34,7 @@ export const CssClassesSection = (props: any) => {
     //});
     //<ClassesList data={array} />
     return (
-      <Column className="w-12" key={`node-${g.name}-${i}`}>
+      <Stack column className="w-12" key={`node-${g.name}-${i}`}>
         <Title xl className='w-12 border-bottom-1'>{g.name}</Title>
         {
           g.cssData.map(d =>
@@ -49,12 +49,12 @@ export const CssClassesSection = (props: any) => {
             </div>
           )
         }
-      </Column>
+      </Stack>
     );
   });
 
   return (
-    <Column xl noSpace>
+    <Stack column xl noSpace>
       <Display id="classes" tag="h2">
         CSS classes
       </Display>
@@ -64,6 +64,6 @@ export const CssClassesSection = (props: any) => {
         which might be used to define more complex styles, utility classes are very simple and focused on a single aspect of the style.
       </Text>
       {generatorNodes}
-    </Column>
+    </Stack>
   );
 }

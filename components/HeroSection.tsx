@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Chip } from 'cssville-ui/build/components/ui/simple/Chip';
 import { Display, Text } from "cssville-ui/build/components/ui/simple/Typography"
 import { Divider } from 'cssville-ui/build/components/ui/simple/Divider';
-import { Row } from 'cssville-ui/build/components/ui/simple/Row';
+import { Stack } from 'cssville-ui/build/components/ui/simple/Stack';
 import { Button } from 'cssville-ui/build/components/ui/simple/Button';
-import { Column } from 'cssville-ui/build/components/ui/simple/Column';
 
 export const HeroSection = (props: any) => {
   const [isCopied, setIsCopied] = useState(false);
@@ -19,8 +18,8 @@ export const HeroSection = (props: any) => {
       });
   };
   return (
-    <Column xl className="w-10 lg-w-12">
-      <Column xl noSpace contentCenter>
+    <Stack column xl className="w-10 lg-w-12">
+      <Stack column xl noSpace contentCenter>
         <Display xl centered dynamic>
           The <span className="color-light-blue-700">most simple</span> CSS utility-first framework
         </Display>
@@ -29,13 +28,13 @@ export const HeroSection = (props: any) => {
           Develop faster using classes like <Chip>d-flex</Chip>, <Chip>cursor-pointer</Chip>, and <Chip>py-2</Chip>.
         </Text>
         <Divider lg noBorder />
-        <Row contentCenter>
+        <Stack row contentCenter>
           <Button secondary filled lg className="bg-color-blue-grey-900" onClick={handleCopyClick}
             startIcon={<img src="img/chevron-right.svg" alt=">" className="h-100 w-100" />}
             endIcon={<img id="copy-icon" src={isCopied ? "img/copied.svg" : "img/copy.svg"} alt={isCopied ? "copied" : "copy"} className="h-100 w-100" />}
             buttonText={<span className="fs-xl md-fs-lg fw-bold font-family-code color-blue-grey-200"><span className="hljs-name">npm</span> install <span className="hljs-attr">cssville</span></span>} />
-        </Row>
-      </Column>
-    </Column>
+        </Stack>
+      </Stack>
+    </Stack>
   );
 }
