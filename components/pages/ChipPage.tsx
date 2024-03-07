@@ -9,7 +9,7 @@ export const ChipPage = (props) => {
   return (
     <CommonPage title="Chip">
       <Text xl>Default chip:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Chip>Default chip</Chip>
         <Chip disabled>Disabled chip</Chip>
         <Chip bold>Bold text chip</Chip>
@@ -18,7 +18,7 @@ export const ChipPage = (props) => {
       <Divider lg />
 
       <Text xl>Default chip sizes:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Chip xs>Extra small</Chip>
         <Chip sm>Small size</Chip>
         <Chip md>Medium size</Chip>
@@ -27,7 +27,7 @@ export const ChipPage = (props) => {
       </Stack>
 
       <Text xl>Rounded chip sizes:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Chip xs rounded>Extra small</Chip>
         <Chip sm rounded>Small size</Chip>
         <Chip md rounded>Medium size</Chip>
@@ -38,7 +38,7 @@ export const ChipPage = (props) => {
       <Divider lg />
 
       <Text xl>Default chips:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Chip primary>Primary chip</Chip>
         <Chip secondary>Secondary chip</Chip>
         <Chip success>Success chip</Chip>
@@ -48,7 +48,7 @@ export const ChipPage = (props) => {
       </Stack>
 
       <Text xl>Noborder chips:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Chip primary noBorder>Primary chip</Chip>
         <Chip secondary noBorder>Secondary chip</Chip>
         <Chip success noBorder>Success chip</Chip>
@@ -58,7 +58,7 @@ export const ChipPage = (props) => {
       </Stack>
 
       <Text xl>Square chips:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Chip primary square>Primary chip</Chip>
         <Chip secondary square>Secondary chip</Chip>
         <Chip success square>Success chip</Chip>
@@ -68,7 +68,7 @@ export const ChipPage = (props) => {
       </Stack>
 
       <Text xl>Filled chips:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Chip primary filled>Primary chip</Chip>
         <Chip secondary filled>Secondary chip</Chip>
         <Chip success filled>Success chip</Chip>
@@ -78,7 +78,7 @@ export const ChipPage = (props) => {
       </Stack>
 
       <Text xl>Outline chips:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Chip primary outline>Primary chip</Chip>
         <Chip secondary outline>Secondary chip</Chip>
         <Chip success outline>Success chip</Chip>
@@ -88,7 +88,7 @@ export const ChipPage = (props) => {
       </Stack>
 
       <Text xl>Filled rounded chips:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Chip primary filled rounded>Primary chip</Chip>
         <Chip secondary filled rounded>Secondary chip</Chip>
         <Chip success filled rounded>Success chip</Chip>
@@ -98,7 +98,7 @@ export const ChipPage = (props) => {
       </Stack>
 
       <Text xl>Outline rounded chips:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Chip primary outline rounded>Primary chip</Chip>
         <Chip secondary outline rounded>Secondary chip</Chip>
         <Chip success outline rounded>Success chip</Chip>

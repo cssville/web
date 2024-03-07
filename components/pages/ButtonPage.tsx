@@ -10,7 +10,7 @@ export const ButtonPage = (props) => {
   return (
     <CommonPage title="Button">
       <Text xl>Default button:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button>Default button</Button>
         <Button noShadow>No shadow button</Button>
         <Button disabled>Disabled button</Button>
@@ -21,14 +21,14 @@ export const ButtonPage = (props) => {
       <Divider lg />
 
       <Text xl>Button with custom text:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button buttonText={<span className="fw-bold fs-large color-green-500 text-decoration-underline">Custom text element</span>} />
       </Stack>
 
       <Divider lg />
 
       <Text xl>Default button sizes:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button xs>Extra small</Button>
         <Button sm>Small size</Button>
         <Button md>Medium size</Button>
@@ -37,7 +37,7 @@ export const ButtonPage = (props) => {
       </Stack>
 
       <Text xl>Rounded button sizes:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button xs rounded>Extra small</Button>
         <Button sm rounded>Small size</Button>
         <Button md rounded>Medium size</Button>
@@ -46,7 +46,7 @@ export const ButtonPage = (props) => {
       </Stack>
 
       <Text xl>Button with icon sizes:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button xs icon={ghIcon}>Extra small</Button>
         <Button sm icon={ghIcon}>Small size</Button>
         <Button md icon={ghIcon}>Medium size</Button>
@@ -57,7 +57,7 @@ export const ButtonPage = (props) => {
       <Divider lg />
 
       <Text xl>Default buttons:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button primary>Primary button</Button>
         <Button secondary>Secondary button</Button>
         <Button success>Success button</Button>
@@ -67,7 +67,7 @@ export const ButtonPage = (props) => {
       </Stack>
 
       <Text xl>Noborder buttons:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button primary noBorder>Primary button</Button>
         <Button secondary noBorder>Secondary button</Button>
         <Button success noBorder>Success button</Button>
@@ -77,7 +77,7 @@ export const ButtonPage = (props) => {
       </Stack>
 
       <Text xl>Square buttons:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button primary square>Primary button</Button>
         <Button secondary square>Secondary button</Button>
         <Button success square>Success button</Button>
@@ -87,7 +87,7 @@ export const ButtonPage = (props) => {
       </Stack>
 
       <Text xl>Filled buttons:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button primary filled>Primary button</Button>
         <Button secondary filled>Secondary button</Button>
         <Button success filled>Success button</Button>
@@ -97,7 +97,7 @@ export const ButtonPage = (props) => {
       </Stack>
 
       <Text xl>Outline buttons:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button primary outline>Primary button</Button>
         <Button secondary outline>Secondary button</Button>
         <Button success outline>Success button</Button>
@@ -107,7 +107,7 @@ export const ButtonPage = (props) => {
       </Stack>
 
       <Text xl>Filled rounded buttons:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button primary filled rounded>Primary button</Button>
         <Button secondary filled rounded>Secondary button</Button>
         <Button success filled rounded>Success button</Button>
@@ -117,7 +117,7 @@ export const ButtonPage = (props) => {
       </Stack>
 
       <Text xl>Outline rounded buttons:</Text>
-      <Stack row>
+      <Stack row flexWrap itemsCenter>
         <Button primary outline rounded>Primary button</Button>
         <Button secondary outline rounded>Secondary button</Button>
         <Button success outline rounded>Success button</Button>

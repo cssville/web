@@ -10,10 +10,10 @@ export const CssPrefixesSection = (props: any) => {
   const prefixesNodes: ReactNode[] = [];
   Cssville.breakpoints.forEach((val, prefix) => {
     prefixesNodes[prefixesNodes.length] =
-      <Stack column key={`come-example-${prefix}`} xl noSpace className="md-w-12">
+      <Stack column key={`come-example-${prefix}`} xl noGap className="md-w-12">
         <Title xl className='w-12'>{val.name}</Title>
-        <div className="max-w-12 box-shadow-lg p-5 br-4">
-          <pre className="m-0 overflow-auto">
+        <div className="max-w-12 overflow-auto box-shadow-lg br-4">
+          <pre className="m-0">
             <code className="fs-large language-css hljs br-2 max-w-md mx-auto"
               dangerouslySetInnerHTML={{
                 __html:
@@ -30,15 +30,15 @@ export const CssPrefixesSection = (props: any) => {
       </Stack>;
   })
   return (
-    <Stack column xl noSpace>
+    <Stack column xl noGap itemsStart>
       <Display id="prefixes" tag="h2">
         CSS prefixes
       </Display>
-      <Text xl className="max-w-8 md-max-w-12">
+      <Text lg className="max-w-8 md-max-w-12">
         The same classes can be used with predefined screen-size prefixes. When prefix is used, the style is applied only for specific screen resolution.
         See the example below for the <Chip>d-flex</Chip> property:
       </Text>
-      <Stack row xl>{prefixesNodes}</Stack>
+      <Stack row xl flexWrap>{prefixesNodes}</Stack>
     </Stack>
   );
 }

@@ -4,7 +4,7 @@ export const Footer = (props: any) => {
   return (
     <div className="d-flex flex-direction-row md-flex-direction-column align-items-center justify-content-center w-12 py-5 bg-color-grey-100 opacity-07">
       <div className="mr-4">
-        <span>© Cssville 2023</span>
+        <span>© Cssville 2024</span>
       </div>
       <div className="d-flex flex-direction-row md-flex-direction-column">
         <span className="d-flex align-items-center justify-content-center mr-4">

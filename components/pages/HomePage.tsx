@@ -11,9 +11,8 @@ import { Section } from 'cssville-ui/build/components/ui/simple/Section';
 export const HomePage = (props) => {
   return (
     <>
-      <div className="w-12 position-relative">
-        <div className="position-absolute h-100 w-12 grad">
-        </div>
+      <div className="w-12 position-relative overflow-hidden bg-color-grey-50">
+          <img className="position-absolute max-w-lg left-0 right-0 mx-auto object-fit-cover" src="img/grid.svg" alt="grid" />
         <Header />
         <Section lg contentCenter>
           <HeroSection />

@@ -1,9 +1,9 @@
 import * as ReactDOM from 'react-dom/client';
 import React from 'react';
 import hljs from 'highlight.js';
-import "./site.css";
-import "cssville/cssville.css";
 import "cssville-ui/cssville-ui.bundle.css"
+import "cssville/cssville.css";
+import "./site.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from './components/pages/HomePage';
 import { ClassPage } from './components/pages/docs/ClassPage';

@@ -1,8 +1,5 @@
 :root {
-}
-
-.grad {
-  background-image: radial-gradient(#d0e7ff 5%, white 50%);
+  --cssville-primary-font-family: "Poppins",sans-serif;
 }
 
 .mh {

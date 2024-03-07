@@ -5,7 +5,7 @@ import { Section } from 'cssville-ui/build/components/ui/simple/Section';
 export const Header = (props: any) => {
   return (
     <>
-      <div className="w-12 border-bottom-1 position-relative">
+      <div className="w-12 border-bottom-1 position-relative z-1 bg-color-white">
         <Section lg>
           <div className="d-flex flex-direction-row align-items-center justify-content-center">
             <div className="d-flex align-items-center justify-content-center">
