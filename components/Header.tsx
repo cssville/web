@@ -7,7 +7,7 @@ export const Header = (props: any) => {
     <>
       <div className="w-12 border-bottom-1 position-relative z-1 bg-color-white">
         <Section lg>
-          <div className="d-flex flex-direction-row align-items-center justify-content-center">
+          <div className="d-flex flex-direction-row align-items-center justify-content-center w-12">
             <div className="d-flex align-items-center justify-content-center">
               <a href="/" className="d-flex text-decoration-none color-green-500">
                 <img src="/img/cssville.svg" alt="logo" className="h-32px w-32px py-3" />

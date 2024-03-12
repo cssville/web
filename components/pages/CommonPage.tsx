@@ -9,7 +9,7 @@ export const CommonPage = (props) => {
   return (
     <>
       <Header />
-      <Section lg className='mh'>
+      <Section lg className="flex-grow-1">
         <Display>{props.title}</Display>
         <Divider lg />
         {props.children}

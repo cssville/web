@@ -7,17 +7,18 @@ import { CssPrefixesSection } from '../CssPrefixesSection';
 import { CssClassesSection } from '../CssClassesSection';
 import { Footer } from '../Footer';
 import { Section } from 'cssville-ui/build/components/ui/simple/Section';
+import { Stack } from "cssville-ui/build/components/ui/simple/Stack";
 
 export const HomePage = (props) => {
   return (
     <>
-      <div className="w-12 position-relative overflow-hidden bg-color-grey-50">
-          <img className="position-absolute max-w-lg left-0 right-0 mx-auto object-fit-cover" src="img/grid.svg" alt="grid" />
+      <Stack column className="position-relative overflow-hidden bg-color-grey-50">
+        <img className="position-absolute max-w-lg left-0 right-0 mx-auto object-fit-cover" src="img/grid.svg" alt="grid" />
         <Header />
         <Section lg contentCenter>
           <HeroSection />
         </Section>
-      </div>
+      </Stack>
       <Section lg>
         <AboutSection />
         <DemoSection />

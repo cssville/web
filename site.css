@@ -1,7 +1,3 @@
 :root {
   --cssville-primary-font-family: "Poppins",sans-serif;
 }
-
-.mh {
-  min-height: calc(100vh - 168px);
-}

@@ -8,12 +8,13 @@ const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const PATHS = {
   components: path.join(__dirname, "components"),
   index: path.join(__dirname, "index.tsx"),
+  indexHtml: path.join(__dirname, "index.tsx"),
   root: path.resolve(__dirname, './'),
 };
 
 function collectSafelist() {
   return {
-    standard: ["safelisted", /^safelisted-/],
+    standard: ["min-h-100vh", /^safelisted-/],
     deep: [/^safelisted-deep-/],
     greedy: [/^safelisted-greedy/],
   };
@@ -21,6 +22,7 @@ function collectSafelist() {
 
 module.exports = {
   target: "web",
+  cache: false,
   mode: "production",
   //devtool: "inline-source-map",
   entry: {
@@ -42,7 +44,7 @@ module.exports = {
       filename: 'web.bundle.css', // Name of the output bundle file
     }),
     new PurgeCSSPlugin({
-      paths: [PATHS.index, ...glob.sync(`${PATHS.components}/**/*`, { nodir: true })],
+      paths: [PATHS.index, PATHS.indexHtml, ...glob.sync(`${PATHS.components}/**/*`, { nodir: true })],
       safelist: collectSafelist,
       only: ["web.bundle.css"],
     }),

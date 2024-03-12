@@ -18,7 +18,7 @@ export const DemoSection = (props: any) => {
       <Text lg>
         The example below shows some classes in action:
       </Text>
-      <div className="d-flex flex-direction-column position-relative br-5 py-6 lg-p-4 mb-6 box-shadow-xl">
+      <div className="d-flex flex-direction-column position-relative br-5 py-6 lg-p-4 mb-6 box-shadow-xl w-12 box-sizing-border-box">
         <div className="w-12 d-flex justify-content-center mb--5">
           <div id="example" className="w-12 d-flex justify-content-center">
             <div className="d-flex w-12 position-relative max-w-sm">
