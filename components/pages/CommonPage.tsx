@@ -10,8 +10,7 @@ export const CommonPage = (props) => {
     <>
       <Header />
       <Section lg className="flex-grow-1">
-        <Display>{props.title}</Display>
-        <Divider lg />
+        <Display className="border-bottom-1 w-12 mb-6">{props.title}</Display>
         {props.children}
       </Section>
       <Footer />

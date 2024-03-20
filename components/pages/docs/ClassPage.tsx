@@ -1,13 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Cssville } from "cssville-generators/build/cssville";
-import { CommonPage } from '../CommonPage';
 import { IGenerator } from 'cssville-generators/build/IGenerator';
 import { NotFoundPage } from '../NotFoundPage';
 import { ClassesList } from '../../ClassesList';
 import { Title } from 'cssville-ui/build/components/ui/simple/Typography';
 import { Chip } from 'cssville-ui/build/components/ui/simple/Chip';
 import { getClasses } from '../../utils';
+import { DocsPage } from "./DocsPage";
 
 
 export const ClassPage = (props) => {
@@ -24,9 +24,9 @@ export const ClassPage = (props) => {
   return (
     generator === undefined
       ? <NotFoundPage />
-      : <CommonPage title={generator.name}>
+      : <DocsPage title={generator.name}>
         <Title xl>CSS classes and properties</Title>
-        <table style={{ borderCollapse: "collapse" }} className="my-4">
+        <table style={{ borderCollapse: "collapse" }} className="my-4 w-12">
           <tr className="bg-color-grey-100">
             <th className="p-3 border-1">Class name property</th>
             <th className="p-3 border-1">CSS properties</th>
@@ -90,6 +90,6 @@ export const ClassPage = (props) => {
             </>
           )
         }
-      </CommonPage>
+      </DocsPage>
   );
 };

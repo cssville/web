@@ -6,8 +6,8 @@ import { Stack } from 'cssville-ui/build/components/ui/simple/Stack';
 export const ClassesList = (props: any) => {
   const [active, setActive] = useState(0);
   return (
-    <Stack column>
-      <Stack row>
+    <Stack column fullWidth>
+      <Stack row xs flexWrap>
         {
           props.data.map((value: any, i: number) => {
             var cl = value.cssClass;
@@ -17,8 +17,8 @@ export const ClassesList = (props: any) => {
             )
           })}
       </Stack>
-      <Stack row contentCenter>
-        <div key={`come-example-${active}`} className="max-w-12 box-shadow-lg p-5 br-3">
+      <Stack column contentCenter fullWidth>
+        <div key={`code-example-${active}`} className="max-w-12 overflow-auto box-shadow-lg p-5 br-3">
           <pre className="m-0">
             <code className="fs-large language-css hljs br-2 max-w-md mx-auto"
               dangerouslySetInnerHTML={{

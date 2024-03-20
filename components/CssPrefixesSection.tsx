@@ -30,7 +30,7 @@ export const CssPrefixesSection = (props: any) => {
       </Stack>;
   })
   return (
-    <Stack column xl noGap itemsStart>
+    <Stack column xl noGap itemsStart fullWidth>
       <Display id="prefixes" tag="h2">
         CSS prefixes
       </Display>
@@ -38,7 +38,7 @@ export const CssPrefixesSection = (props: any) => {
         The same classes can be used with predefined screen-size prefixes. When prefix is used, the style is applied only for specific screen resolution.
         See the example below for the <Chip>d-flex</Chip> property:
       </Text>
-      <Stack row xl flexWrap>{prefixesNodes}</Stack>
+      <Stack row xl flexWrap fullWidth>{prefixesNodes}</Stack>
     </Stack>
   );
 }
