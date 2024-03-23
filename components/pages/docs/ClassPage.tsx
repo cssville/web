@@ -23,8 +23,10 @@ export const ClassPage = (props) => {
 
   return (
     generator === undefined
-      ? <NotFoundPage />
-      : <DocsPage title={generator.name}>
+      ?
+      <NotFoundPage />
+      :
+      <DocsPage generator={generator.name}>
         <Title xl>CSS classes and properties</Title>
         <table style={{ borderCollapse: "collapse" }} className="my-4 w-12">
           <tr className="bg-color-grey-100">
