@@ -12,7 +12,7 @@ export const CssPrefixesSection = (props: any) => {
     prefixesNodes[prefixesNodes.length] =
       <Stack column key={`come-example-${prefix}`} xl noGap className="md-w-12">
         <Title xl className='w-12'>{val.name}</Title>
-        <div className="max-w-12 overflow-auto box-shadow-lg br-4">
+        <div className="box-sizing-border-box max-w-12 overflow-auto box-shadow-lg br-4">
           <pre className="m-0">
             <code className="fs-large language-css hljs br-2 max-w-md mx-auto"
               dangerouslySetInnerHTML={{

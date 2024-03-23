@@ -6,7 +6,7 @@ import { Stack } from 'cssville-ui/build/components/ui/simple/Stack';
 export const ClassesList = (props: any) => {
   const [active, setActive] = useState(0);
   return (
-    <Stack column fullWidth>
+    <Stack column fullWidth className="max-w-12">
       <Stack row xs flexWrap>
         {
           props.data.map((value: any, i: number) => {
@@ -18,7 +18,7 @@ export const ClassesList = (props: any) => {
           })}
       </Stack>
       <Stack column contentCenter fullWidth>
-        <div key={`code-example-${active}`} className="max-w-12 overflow-auto box-shadow-lg p-5 br-3">
+        <div key={`code-example-${active}`} className="box-sizing-border-box max-w-12 overflow-auto box-shadow-lg p-5 br-3">
           <pre className="m-0">
             <code className="fs-large language-css hljs br-2 max-w-md mx-auto"
               dangerouslySetInnerHTML={{

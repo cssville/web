@@ -13,8 +13,8 @@ export const DocsPage = (props) => {
     <>
       <Header />
       <Section lg>
-        <Stack sm row>
-          <Stack sm column className="max-w-xs min-w-3">
+        <Stack noGap row fullWidth className="max-w-12">
+          <Stack sm column className="max-w-xs min-w-3 pr-6">
             <div className="fw-bold w-12">
               CSS classes
             </div>
@@ -26,7 +26,7 @@ export const DocsPage = (props) => {
               )
             }
           </Stack>
-          <Stack xs column>
+          <Stack xs column fullWidth className="max-w-9">
             <Display className="border-bottom-1 w-12 mb-6">{props.title}</Display>
             {props.children}
           </Stack>
