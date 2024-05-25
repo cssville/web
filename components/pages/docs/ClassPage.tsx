@@ -28,16 +28,16 @@ export const ClassPage = (props) => {
       :
       <DocsPage generator={generator.name}>
         <Title xl>CSS classes and properties</Title>
-        <table style={{ borderCollapse: "collapse" }} className="my-4 w-12">
-          <tr className="bg-color-grey-100">
-            <th className="p-3 border-1">Class name property</th>
-            <th className="p-3 border-1">CSS properties</th>
+        <table style={{ borderCollapse: "collapse" }} className="mar-y-4 wid-12">
+          <tr className="bac-col-grey-100">
+            <th className="pad-3 bor-1">Class name property</th>
+            <th className="pad-3 bor-1">CSS properties</th>
           </tr>
           {
             generator.cssData.map(cssClassData =>
               <tr>
-                <td className="p-3 border-1"><Chip>{cssClassData.className}-*</Chip></td>
-                <td className="p-3 border-1">
+                <td className="pad-3 bor-1"><Chip>{cssClassData.className}-*</Chip></td>
+                <td className="pad-3 bor-1">
                   {cssClassData.cssProperties.map(
                     (p, i) =>
                       <React.Fragment key={i}>
@@ -51,18 +51,18 @@ export const ClassPage = (props) => {
           }
         </table>
         <Title xl>CSS property values</Title>
-        <table style={{ borderCollapse: "collapse" }} className="my-4">
-          <tr className="bg-color-grey-100">
-            <th className="p-3 border-1">Class name value</th>
-            <th className="p-3 border-1">CSS value</th>
+        <table style={{ borderCollapse: "collapse" }} className="mar-y-4">
+          <tr className="bac-col-grey-100">
+            <th className="pad-3 bor-1">Class name value</th>
+            <th className="pad-3 bor-1">CSS value</th>
           </tr>
           {
             Array.from(generator.cssData[0].postfixValuesMap.keys()).map(key => {
               var values = generator.cssData[0].postfixValuesMap.get(key);
               return (
                 <tr>
-                  <td className="p-3 border-1"><Chip>{key}</Chip></td>
-                  <td className="p-3 border-1">
+                  <td className="pad-3 bor-1"><Chip>{key}</Chip></td>
+                  <td className="pad-3 bor-1">
                     {values.map(
                       (p, i) =>
                         <React.Fragment key={i}>

@@ -34,8 +34,8 @@ export const CssClassesSection = (props: any) => {
     //});
     //<ClassesList data={array} />
     return (
-      <Stack column className="w-12" key={`node-${g.name}-${i}`}>
-        <Title xl className='w-12 border-bottom-1'>{g.name}</Title>
+      <Stack column className="wid-12" key={`node-${g.name}-${i}`}>
+        <Title xl className='wid-12 bor-bot-1'>{g.name}</Title>
         {
           g.cssData.map(d =>
             <div>
@@ -58,7 +58,7 @@ export const CssClassesSection = (props: any) => {
       <Display id="classes" tag="h2">
         CSS classes
       </Display>
-      <Text lg className="max-w-8 md-max-w-12">
+      <Text lg className="max-wid-8 md-max-wid-12">
         Utility classes are a specific type of class that is designed to provide a single,
         focused styling property, such as padding, margin, or font size. Unlike traditional classes,
         which might be used to define more complex styles, utility classes are very simple and focused on a single aspect of the style.

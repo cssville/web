@@ -12,8 +12,8 @@ import { Stack } from "cssville-ui/build/components/ui/simple/Stack";
 export const HomePage = (props) => {
   return (
     <>
-      <Stack column className="position-relative overflow-hidden bg-color-grey-50">
-        <img className="position-absolute max-w-lg left-0 right-0 mx-auto object-fit-cover" src="img/grid.svg" alt="grid" />
+      <Stack column className="pos-relative ove-hidden bac-col-grey-50">
+        <img className="pos-absolute max-wid-lg lef-0 rig-0 mar-x-auto obj-fit-cover" src="img/grid.svg" alt="grid" />
         <Header />
         <Section lg contentCenter>
           <HeroSection />

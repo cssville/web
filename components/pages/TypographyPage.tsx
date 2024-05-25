@@ -43,14 +43,14 @@ export const TypographyPage = (props) => {
       <Divider lg />
 
       <Text xl>Default Label:</Text>
-      <div className="d-flex w-12"><Label>Default label</Label></div>
+      <div className="dis-flex wid-12"><Label>Default label</Label></div>
       <Divider lg />
       <Text xl>Label sizes:</Text>
-      <div className="d-flex w-12"><Label xl>Extra large label</Label></div>
-      <div className="d-flex w-12"><Label lg>Large body label</Label></div>
-      <div className="d-flex w-12"><Label md>Medium body label</Label></div>
-      <div className="d-flex w-12"><Label sm>Small body label</Label></div>
-      <div className="d-flex w-12"><Label xs>Extra small label</Label></div>
+      <div className="dis-flex wid-12"><Label xl>Extra large label</Label></div>
+      <div className="dis-flex wid-12"><Label lg>Large body label</Label></div>
+      <div className="dis-flex wid-12"><Label md>Medium body label</Label></div>
+      <div className="dis-flex wid-12"><Label sm>Small body label</Label></div>
+      <div className="dis-flex wid-12"><Label xs>Extra small label</Label></div>
 
       <Divider lg />
 

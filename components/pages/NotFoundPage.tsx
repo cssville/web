@@ -8,7 +8,7 @@ export const NotFoundPage = (props) => {
 
   return (
     <CommonPage title="404 - Not found">
-      <Stack column md className="w-12">
+      <Stack column md className="wid-12">
         <Text>The page you are looking for can not be found</Text>
         <Stack row>
           <Button primary href="/" tag="a">Home</Button>

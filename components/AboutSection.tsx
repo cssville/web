@@ -8,7 +8,7 @@ export const AboutSection = (props: any) => {
       <Display tag="h2">
         About
       </Display>
-      <Stack row xl className="sm-flex-direction-column">
+      <Stack row xl className="sm-fle-dir-column">
         <Text lg noPadding>
           A CSS utility-first framework is a CSS framework that provides pre-built utility classes to style HTML elements.
           Unlike traditional CSS frameworks, where styles are defined in large blocks or files, utility-first frameworks provide small,

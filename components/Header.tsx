@@ -5,33 +5,33 @@ import { Section } from 'cssville-ui/build/components/ui/simple/Section';
 export const Header = (props: any) => {
   return (
     <>
-      <div className="w-12 border-bottom-1 position-relative z-1 bg-color-white">
+      <div className="wid-12 bor-bot-1 pos-relative z-ind-1 bac-col-white">
         <Section lg>
-          <div className="d-flex flex-direction-row align-items-center justify-content-center w-12">
-            <div className="d-flex align-items-center justify-content-center">
-              <a href="/" className="d-flex text-decoration-none color-green-500">
-                <img src="/img/cssville.svg" alt="logo" className="h-32px w-32px py-3" />
-                <div className="d-flex align-items-center justify-content-center md-d-none pl-3">
-                  <span className="fw-900 fs-x-large font-family-code">cssville</span>
+          <div className="dis-flex fle-dir-row ali-ite-center jus-con-center wid-12">
+            <div className="dis-flex ali-ite-center jus-con-center">
+              <a href="/" className="dis-flex tex-dec-none col-green-500">
+                <img src="/img/cssville.svg" alt="logo" className="hei-32px wid-32px pad-y-3" />
+                <div className="dis-flex ali-ite-center jus-con-center md-dis-none pad-lef-3">
+                  <span className="fon-wei-900 fon-siz-x-large fon-fam-code">cssville</span>
                 </div>
               </a>
             </div>
-            <div className="md-d-none flex-grow-1"></div>
-            <div className="d-flex flex-direction-row md-flex-direction-column md-mx-auto align-items-center justify-content-center mr-4">
+            <div className="md-dis-none fle-gro-1"></div>
+            <div className="dis-flex fle-dir-row md-fle-dir-column md-mar-x-auto ali-ite-center jus-con-center mar-rig-4">
               {
                 [
                   ['Demo', '#demo'],
                   ['Prefixes', '#prefixes'],
                   ['Classes', '#classes'],
                 ].map(([text, href]) => (
-                  <a className="d-flex px-4 py-3 text-decoration-none bg-color-grey-100-hover br-4 color-blue-grey-900" href={href}>
-                    <span className="fs-medium fw-500">{text}</span>
+                  <a className="dis-flex pad-x-4 pad-y-3 tex-dec-none bac-col-grey-100-hover bor-rad-4 col-blue-grey-900" href={href}>
+                    <span className="fon-siz-medium fon-wei-500">{text}</span>
                   </a>
                 ))
               }
             </div>
             <Button bold tag={"a"} href="https://github.com/cssville/cssville" target="_blank" rel="noopener"
-              icon={<img src="/img/mark-github.svg" alt="mark-github" className="h-100 w-100" />} >
+              icon={<img src="/img/mark-github.svg" alt="mark-github" className="hei-100 wid-100" />} >
               Open source
             </Button>
           </div>

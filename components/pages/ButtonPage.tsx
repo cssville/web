@@ -6,7 +6,7 @@ import { Text } from 'cssville-ui/build/components/ui/simple/Typography';
 import { Stack } from 'cssville-ui/build/components/ui/simple/Stack';
 
 export const ButtonPage = (props) => {
-  const ghIcon = <img src="img/mark-github.svg" alt="mark-github" className="h-100 w-100" />;
+  const ghIcon = <img src="img/mark-github.svg" alt="mark-github" className="hei-100 wid-100" />;
   return (
     <CommonPage title="Button">
       <Text xl>Default button:</Text>
@@ -22,7 +22,7 @@ export const ButtonPage = (props) => {
 
       <Text xl>Button with custom text:</Text>
       <Stack row flexWrap itemsCenter>
-        <Button buttonText={<span className="fw-bold fs-large color-green-500 text-decoration-underline">Custom text element</span>} />
+        <Button buttonText={<span className="fon-wei-bold fon-siz-large col-green-500 text-decoration-underline">Custom text element</span>} />
       </Stack>
 
       <Divider lg />

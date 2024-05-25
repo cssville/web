@@ -14,21 +14,21 @@ export const DocsPage = (props) => {
     <>
       <Header />
       <Section lg>
-        <Stack noGap row fullWidth className="max-w-12">
-          <Stack xs column className="max-w-xs min-w-3 pr-6">
-            <Text lg bold className="w-12">
+        <Stack noGap row fullWidth className="max-wid-12">
+          <Stack xs column className="max-wid-xs min-wid-3 pad-rig-6">
+            <Text lg bold className="wid-12">
               CSS classes
             </Text>
             {
               generators.map(g =>
                 <a href={`/docs/${g.name}`} key={g.name} 
-                className={`${g.name === currentGenerator ? "bg-color-blue-50 fw-bold" : ""} bg-color-blue-50-hover br-3 pl-4 px-3 py-2 w-12 box-sizing-border-box text-decoration-none color-blue-800`}>
+                className={`${g.name === currentGenerator ? "bac-col-blue-50 fon-wei-bold" : ""} bac-col-blue-50-hover bor-rad-3 pad-lef-4 pad-x-3 pad-y-2 wid-12 box-siz-border-box tex-dec-none col-blue-800`}>
                   {g.name}
                 </a>)
             }
           </Stack>
-          <Stack xs column fullWidth className="max-w-9">
-            <Display className="border-bottom-1 w-12 mb-6">{props.title}</Display>
+          <Stack xs column fullWidth className="max-wid-9">
+            <Display className="bor-bot-1 wid-12 mar-bot-6">{props.title}</Display>
             {props.children}
           </Stack>
         </Stack>
