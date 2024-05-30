@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     element: <TypographyPage />
   },
   {
-    path: "/docs/:name",
+    path: "/docs/css-classes/:name",
     element: <ClassPage />,
     loader: async ({ params }) => {
       return params.name;

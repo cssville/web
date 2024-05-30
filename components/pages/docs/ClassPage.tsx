@@ -26,7 +26,7 @@ export const ClassPage = (props) => {
       ?
       <NotFoundPage />
       :
-      <DocsPage generator={generator.name}>
+      <DocsPage title={generator.name} activeItem={generator.name}>
         <Title xl>CSS classes and properties</Title>
         <table style={{ borderCollapse: "collapse" }} className="mar-y-4 wid-12">
           <tr className="bac-col-grey-100">
