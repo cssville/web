@@ -8,13 +8,14 @@ import { LeftMenu } from "./LeftMenu";
 
 export const DocsPage = (props) => {
   var activeItem = props.activeItem;
+  var activeCategory = props.activeCategory;
   var title = props.title;
   return (
     <>
       <Header />
       <Section lg>
         <Stack noGap row fullWidth className="max-wid-12 pos-relative">
-          <LeftMenu activeItem={activeItem} />
+          <LeftMenu activeItem={activeItem} activeCategory={activeCategory}/>
           <Stack xs column fullWidth className="max-wid-9">
             <Display className="bor-bot-1 wid-12 mar-bot-6">{title}</Display>
             {props.children}

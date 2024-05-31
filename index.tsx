@@ -11,6 +11,7 @@ import { ChipPage } from './components/pages/ChipPage';
 import { TypographyPage } from './components/pages/TypographyPage';
 import { ButtonPage } from './components/pages/ButtonPage';
 import { NotFoundPage } from './components/pages/NotFoundPage';
+import { GettingStartedPage } from "./components/pages/docs/introduction/GettingStartedPage";
 
 const router = createBrowserRouter([
   {
@@ -35,8 +36,12 @@ const router = createBrowserRouter([
     element: <TypographyPage />
   },
   {
+    path: "/docs/intro/getting-started",
+    element: <GettingStartedPage activeCategory={"Introduction"} activeItem={"Getting started"}/>
+  },
+  {
     path: "/docs/css-classes/:name",
-    element: <ClassPage />,
+    element: <ClassPage activeCategory={"CSS classes"}/>,
     loader: async ({ params }) => {
       return params.name;
     },
