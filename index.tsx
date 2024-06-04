@@ -12,8 +12,9 @@ import { TypographyPage } from './components/pages/TypographyPage';
 import { ButtonPage } from './components/pages/ButtonPage';
 import { NotFoundPage } from './components/pages/NotFoundPage';
 import { GettingStartedPage } from "./components/pages/docs/introduction/GettingStartedPage";
+import { RouteObjects } from "./data/pagesData";
 
-const router = createBrowserRouter([
+var routes = [
   {
     path: "/",
     element: <HomePage />,
@@ -37,16 +38,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/docs/intro/getting-started",
-    element: <GettingStartedPage activeCategory={"Introduction"} activeItem={"Getting started"}/>
+    element: <GettingStartedPage />
   },
   {
     path: "/docs/css-classes/:name",
-    element: <ClassPage activeCategory={"CSS classes"}/>,
+    element: <ClassPage activeCategory={"CSS classes"} />,
     loader: async ({ params }) => {
       return params.name;
     },
   },
-]);
+]
+
+//const router = createBrowserRouter(routes);
+const router = createBrowserRouter(RouteObjects);
 
 function docReady(fn: () => void) {
   // see if DOM is already available
