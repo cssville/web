@@ -20,14 +20,14 @@ export const LeftMenu = (props) => {
     <Stack noGap column className="max-wid-xs min-wid-3 pad-rig-3 mar-rig-6 max-hei-100vh ove-auto pos-sticky top-0">
       {
         MenuItems.map(i =>
-          <>
+          <div key={i.category}>
             <Text xl className="wid-12">
               {i.category}
             </Text>
             <Stack xs column className="wid-12">
-              {i.values.map(v => <MenuItem item={v.item} href={v.href} activeItem={activeItem} category={i.category} activeCategory={activeCategory} />)}
+              {i.values.map(v => <MenuItem key={`text-${i.category}-${v.item}`} item={v.item} href={v.href} activeItem={activeItem} category={i.category} activeCategory={activeCategory} />)}
             </Stack>
-          </>
+          </div>
         )
       }
     </Stack>

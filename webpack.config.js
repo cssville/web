@@ -20,11 +20,13 @@ function collectSafelist() {
   };
 }
 
+
+const isProduction = process.env.NODE_ENV === 'production';
+
 module.exports = {
   target: "web",
   cache: false,
-  mode: "production",
-  //devtool: "inline-source-map",
+  mode: isProduction ? "production" : "development",
   entry: {
     web: "./index.tsx",
   },
@@ -62,11 +64,11 @@ module.exports = {
       },
     ]
   },
-  optimization: {
+  optimization: isProduction ? {
     minimizer: [
       new CssMinimizerPlugin(), // Minimize CSS
       new TerserPlugin(), // Minimize JavaScript
     ],
     minimize: true,
-  },
+  } : {},
 };

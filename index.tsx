@@ -50,7 +50,10 @@ var routes = [
 ]
 
 //const router = createBrowserRouter(routes);
-const router = createBrowserRouter(RouteObjects);
+//console.log('RouteObjects', RouteObjects)
+//console.log('routes', routes)
+//const router = createBrowserRouter(RouteObjects);
+const router = createBrowserRouter(routes);
 
 function docReady(fn: () => void) {
   // see if DOM is already available
