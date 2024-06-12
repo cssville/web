@@ -30,7 +30,7 @@ export const HeroSection = (props: any) => {
           <Button secondary filled lg className="bac-col-blue-grey-900" onClick={handleCopyClick}
             startIcon={<img src="img/chevron-right.svg" alt=">" className="hei-100 wid-100" />}
             endIcon={<img id="copy-icon" src={isCopied ? "img/copied.svg" : "img/copy.svg"} alt={isCopied ? "copied" : "copy"} className="hei-100 wid-100" />}
-            buttonText={<span className="fon-siz-xl md-fon-siz-lg fon-wei-bold fon-fam-code col-blue-grey-200"><span className="hljs-name">npm</span> install <span className="hljs-attr">cssville</span></span>} />
+            buttonText={<span key="text" className="fon-siz-xl md-fon-siz-lg fon-wei-bold fon-fam-code col-blue-grey-200"><span className="hljs-name">npm</span> install <span className="hljs-attr">cssville</span></span>} />
         </Stack>
       </Stack>
     </Stack>

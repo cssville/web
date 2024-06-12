@@ -1,3 +1,10 @@
 :root {
   --cssville-primary-font-family: "Poppins",sans-serif;
+  scrollbar-color: #c4c4c4 transparent;
+  scrollbar-width: thin;
+}
+
+html, body * {
+  scrollbar-color: #c4c4c4 transparent;
+  scrollbar-width: thin;
 }

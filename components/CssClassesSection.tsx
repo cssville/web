@@ -1,49 +1,23 @@
 import React, { useMemo } from 'react';
 import { ReactNode } from "react";
-import { ClassesList } from "./ClassesList";
 import { Cssville } from 'cssville-generators/build/cssville';
 import { Display, Text, Title } from 'cssville-ui/build/components/ui/simple/Typography';
 import { Stack } from 'cssville-ui/build/components/ui/simple/Stack';
 
-function getClasses(text: string): Array<{ cssClass: string, cssString: string }> {
-  const classes = Array<{ cssClass: string, cssString: string }>();
-  text.split("}").forEach((el, i) => {
-    var line = el.trim();
-    var cl = line.split("{")[0].trim();
-    var inner = line.split("{")[1];
-    var properties = []
-    if (inner !== undefined) {
-      var props = inner.trim().split(";").map(p => p.trim());
-      props.forEach((p, j) => {
-        if (p !== "") {
-          properties[properties.length] = "  " + p + ";\n";
-        }
-      });
-    }
-    if (cl !== "") {
-      classes.push({ cssClass: cl, cssString: cl + " {\n" + properties.join("") + "}\n" });
-    }
-  });
-  return classes;
-};
+
 export const CssClassesSection = (props: any) => {
   const generatorNodes: ReactNode[] = Cssville.generators.map((g, i) => {
-    //let array = [];
-    //g.cssData.map(d => getClasses(d.getCss("", []))).forEach(arr => {
-    //  array = array.concat(arr);
-    //});
-    //<ClassesList data={array} />
     return (
       <Stack column className="wid-12" key={`node-${g.name}-${i}`}>
         <Title xl className='wid-12 bor-bot-1'>{g.name}</Title>
         {
           g.cssData.map(d =>
-            <div>
+            <div key={`node-${g.name}-${i}-${d.className}`}>
               {d.className}: {d.cssProperties.map(
-                (p, i) =>
-                  <React.Fragment key={i}>
+                (p, j) =>
+                  <React.Fragment key={`node-${g.name}-${j}-${p}`}>
                     <span>{p}</span>
-                    {i < d.cssProperties.length - 1 && <span>, </span>}
+                    {j < d.cssProperties.length - 1 && <span>, </span>}
                   </React.Fragment>
               )}
             </div>
