@@ -1,16 +1,17 @@
 import React from 'react';
 import { Button } from 'cssville-ui/build/components/ui/simple/Button';
 import { Section } from 'cssville-ui/build/components/ui/simple/Section';
+import { Stack } from "cssville-ui/build/components/ui/simple/Stack";
 
 export const Header = (props: any) => {
   return (
     <>
       <div className="wid-12 bor-bot-1 pos-relative z-ind-1 bac-col-white">
-        <Section lg>
-          <div className="dis-flex fle-dir-row ali-ite-center jus-con-center wid-12">
+        <Section lg noPadding>
+          <Stack row fullWidth itemsCenter className="pad-3">
             <div className="dis-flex ali-ite-center jus-con-center">
               <a href="/" className="dis-flex tex-dec-none col-green-500">
-                <img src="/img/cssville.svg" alt="logo" className="hei-32px wid-32px pad-y-3" />
+                <img src="/img/cssville.svg" alt="logo" className="hei-32px wid-32px" />
                 <div className="dis-flex ali-ite-center jus-con-center md-dis-none pad-lef-3">
                   <span className="fon-wei-900 fon-siz-x-large fon-fam-code">cssville</span>
                 </div>
@@ -34,7 +35,7 @@ export const Header = (props: any) => {
               icon={<img src="/img/mark-github.svg" alt="mark-github" className="hei-100 wid-100" />} >
               Open source
             </Button>
-          </div>
+          </Stack>
         </Section>
       </div>
     </>

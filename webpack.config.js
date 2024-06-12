@@ -32,7 +32,7 @@ module.exports = {
   },
   output: {
     path: PATHS.root,
-    filename: "[name].bundle.js" // <--- Will be compiled to this single file
+    filename: "[name].bundle.js"
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
@@ -43,7 +43,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'web.bundle.css', // Name of the output bundle file
+      filename: 'web.bundle.css'
     }),
     new PurgeCSSPlugin({
       paths: [PATHS.index, PATHS.indexHtml, ...glob.sync(`${PATHS.components}/**/*`, { nodir: true })],

@@ -12,7 +12,7 @@ export const DemoSection = (props: any) => {
       </Display>
       <Text lg className="max-wid-8 md-max-wid-12">
         In a utility-first framework, each class is designed to target a specific aspect of the style, such as font size, color, margin, or padding.
-        The classes are named according to the property they control, such as <Chip>fle-dir-row</Chip>, <Chip>cur-pointer</Chip>, <Chip>mx-4</Chip>, <Chip>pad-y-2</Chip>, and so on.
+        The classes are named according to the property they control, such as <Chip>fle-dir-row</Chip>, <Chip>cur-pointer</Chip>, <Chip>mar-x-4</Chip>, <Chip>pad-y-2</Chip>, and so on.
         These classes can be added directly to HTML elements, without the need for additional CSS styling.
       </Text>
       <Text lg>

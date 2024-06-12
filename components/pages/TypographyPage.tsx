@@ -1,11 +1,11 @@
 import React from 'react';
 import { Divider } from 'cssville-ui/build/components/ui/simple/Divider';
-import { CommonPage } from './CommonPage';
 import { Headline, Title, Text, Label, Display } from 'cssville-ui/build/components/ui/simple/Typography';
+import { DocsPage } from "./docs/DocsPage";
 
 export const TypographyPage = (props) => {
   return (
-    <CommonPage title="Typography">
+    <DocsPage title="Typography" activeCategory={props.activeCategory} activeItem={props.activeItem}>
       <Text xl>Default Display:</Text>
       <Display>Default display</Display>
       <Divider lg />
@@ -63,6 +63,6 @@ export const TypographyPage = (props) => {
       <Text md>Medium body text</Text>
       <Text sm>Small body text</Text>
       <Text xs>Extra small text</Text>
-    </CommonPage>
+    </DocsPage>
   );
 };

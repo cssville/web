@@ -1,14 +1,14 @@
 import React from 'react';
 import { Button } from 'cssville-ui/build/components/ui/simple/Button';
 import { Divider } from 'cssville-ui/build/components/ui/simple/Divider';
-import { CommonPage } from './CommonPage';
 import { Text } from 'cssville-ui/build/components/ui/simple/Typography';
 import { Stack } from 'cssville-ui/build/components/ui/simple/Stack';
+import { DocsPage } from "./docs/DocsPage";
 
 export const ButtonPage = (props) => {
-  const ghIcon = <img src="img/mark-github.svg" alt="mark-github" className="hei-100 wid-100" />;
+  const ghIcon = <img src="/img/mark-github.svg" alt="mark-github" className="hei-100 wid-100" />;
   return (
-    <CommonPage title="Button">
+    <DocsPage title="Button" activeCategory={props.activeCategory} activeItem={props.activeItem}>
       <Text xl>Default button:</Text>
       <Stack row flexWrap itemsCenter>
         <Button>Default button</Button>
@@ -22,7 +22,7 @@ export const ButtonPage = (props) => {
 
       <Text xl>Button with custom text:</Text>
       <Stack row flexWrap itemsCenter>
-        <Button buttonText={<span className="fon-wei-bold fon-siz-large col-green-500 text-decoration-underline">Custom text element</span>} />
+        <Button buttonText={<span key={"text"} className="fon-wei-bold fon-siz-large col-green-500 tex-dec-underline">Custom text element</span>} />
       </Stack>
 
       <Divider lg />
@@ -125,6 +125,6 @@ export const ButtonPage = (props) => {
         <Button warning outline rounded>Warning button</Button>
         <Button error outline rounded>Error button</Button>
       </Stack>
-    </CommonPage>
+    </DocsPage>
   );
 };
