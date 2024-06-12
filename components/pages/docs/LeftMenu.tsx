@@ -5,15 +5,18 @@ import { MenuItems } from './../../../data/pagesData';
 
 const MenuItem = ({ href, item, category, activeCategory, activeItem }) => {
   const isActive = category === activeCategory && item === activeItem;
-  const activeClasses = isActive ? "bac-col-blue-50 fon-wei-600" : "";
+  const activeLinkClasses = isActive ? "bor-lef-col-blue-300" : "bor-lef-col-blue-100";
+  const activeTextClasses = isActive ? "bac-col-blue-100-hover bac-col-blue-100 fon-wei-600" : "bac-col-blue-50-hover";
 
   return (
     <a
       href={href}
       key={item}
-      className={`${activeClasses} bac-col-blue-50-hover bor-rad-3 pad-lef-4 pad-x-3 pad-y-2 wid-12 box-siz-border-box tex-dec-none col-blue-800`}
+      className={`${activeLinkClasses} bor-lef-col-blue-300-hover bor-lef-sty-solid bor-lef-wid-2px wid-12 box-siz-border-box tex-dec-none col-text`}
     >
-      {item}
+      <Text className={`${activeTextClasses} mar-lef-3 bor-rad-3 pad-lef-4 pad-x-3 pad-y-2`}>
+        {item}
+      </Text>
     </a>
   );
 };
@@ -26,11 +29,11 @@ export const LeftMenu = ({ activeItem, activeCategory }) => {
     >
       {MenuItems.map(i => (
         <Stack noGap key={i.category}>
-          <Text xl>
+          <Text xl bold>
             {i.category}
           </Text>
-          <Stack xs column fullWidth>
-            {i.values.map(v => (
+          <Stack noGap column fullWidth>
+            {i.values.map((v: { item: any; href: any; }) => (
               <MenuItem
                 key={`text-${i.category}-${v.item}`}
                 item={v.item}
