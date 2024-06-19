@@ -14,10 +14,10 @@ export const DocsPage = (props) => {
     <>
       <Header />
       <Section lg>
-        <Stack noGap row fullWidth className="max-wid-12 pos-relative">
+        <Stack noGap row fullWidth className="max-wid-full pos-relative">
           <LeftMenu activeItem={activeItem} activeCategory={activeCategory}/>
           <Stack xs column fullWidth className="max-wid-9">
-            <Display className="bor-bot-1 wid-12 mar-bot-6">{title}</Display>
+            <Display className="bor-bot-1 wid-full mar-bot-6">{title}</Display>
             {props.children}
           </Stack>
         </Stack>

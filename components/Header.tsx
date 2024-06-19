@@ -6,7 +6,7 @@ import { Stack } from "cssville-ui/build/components/ui/simple/Stack";
 export const Header = (props: any) => {
   return (
     <>
-      <div className="wid-12 bor-bot-1 pos-relative z-ind-1 bac-col-white">
+      <div className="wid-full bor-bot-1 pos-relative z-ind-1 bac-col-white">
         <Section lg noPadding>
           <Stack row fullWidth itemsCenter className="pad-3">
             <div className="dis-flex ali-ite-center jus-con-center">
@@ -32,7 +32,7 @@ export const Header = (props: any) => {
               }
             </div>
             <Button bold tag={"a"} href="https://github.com/cssville/cssville" target="_blank" rel="noopener"
-              icon={<img src="/img/mark-github.svg" alt="mark-github" className="hei-100 wid-100" />} >
+              icon={<img src="/img/mark-github.svg" alt="mark-github" className="hei-100 wid-full" />} >
               Open source
             </Button>
           </Stack>

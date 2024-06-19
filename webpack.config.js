@@ -14,7 +14,7 @@ const PATHS = {
 
 function collectSafelist() {
   return {
-    standard: ["min-hei-100vh", /^safelisted-/],
+    standard: [".wid-1/2", /^safelisted-/],
     deep: [/^safelisted-deep-/],
     greedy: [/^safelisted-greedy/],
   };

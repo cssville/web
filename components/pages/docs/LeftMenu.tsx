@@ -12,7 +12,7 @@ const MenuItem = ({ href, item, category, activeCategory, activeItem }) => {
     <a
       href={href}
       key={item}
-      className={`${activeLinkClasses} bor-lef-col-blue-300-hover bor-lef-sty-solid bor-lef-wid-2px wid-12 box-siz-border-box tex-dec-none col-text`}
+      className={`${activeLinkClasses} bor-lef-col-blue-300-hover bor-lef-sty-solid bor-lef-wid-2px wid-full box-siz-border-box tex-dec-none col-text`}
     >
       <Text className={`${activeTextClasses} mar-lef-3 bor-rad-3 pad-lef-4 pad-x-3 pad-y-2`}>
         {item}

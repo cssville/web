@@ -6,7 +6,7 @@ import { Stack } from 'cssville-ui/build/components/ui/simple/Stack';
 import { DocsPage } from "./docs/DocsPage";
 
 export const ButtonPage = (props) => {
-  const ghIcon = <img src="/img/mark-github.svg" alt="mark-github" className="hei-100 wid-100" />;
+  const ghIcon = <img src="/img/mark-github.svg" alt="mark-github" className="hei-100 wid-full" />;
   return (
     <DocsPage title="Button" activeCategory={props.activeCategory} activeItem={props.activeItem}>
       <Text xl>Default button:</Text>

@@ -11,8 +11,8 @@ export const NotFoundPage = (props) => {
     <>
       <Header />
       <Section lg className="fle-gro-1">
-        <Display className="bor-bot-1 wid-12 mar-bot-6">{props.title}</Display>
-        <Stack column md className="wid-12">
+        <Display className="bor-bot-1 wid-full mar-bot-6">{props.title}</Display>
+        <Stack column md className="wid-full">
           <Text>The page you are looking for can not be found</Text>
           <Stack row>
             <Button primary href="/" tag="a">Home</Button>

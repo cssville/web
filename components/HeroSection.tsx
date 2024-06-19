@@ -17,19 +17,19 @@ export const HeroSection = (props: any) => {
       });
   };
   return (
-    <Stack column xl fullWidth className="wid-10 lg-wid-12 pad-y-10">
+    <Stack column xl fullWidth className="wid-10/12 lg-wid-full pad-y-10">
       <Stack column xl itemsCenter fullWidth>
-        <Display lg centered dynamic noPadding className="wid-9 md-wid-12">
+        <Display lg centered dynamic noPadding className="wid-3/4 md-wid-full">
           The <span className="col-light-blue-700">most simple</span> CSS utility-first framework
         </Display>
-        <Text xl centered className="wid-6 md-wid-12">
+        <Text xl centered className="wid-1/2 md-wid-full">
           Cssville is a utility-first CSS framework with zero dependencies.
           Develop faster using classes like <Chip>dis-flex</Chip>, <Chip>cur-pointer</Chip>, and <Chip>pad-y-2</Chip>.
         </Text>
         <Stack row contentCenter>
           <Button secondary filled lg className="bac-col-blue-grey-900" onClick={handleCopyClick}
-            startIcon={<img src="img/chevron-right.svg" alt=">" className="hei-100 wid-100" />}
-            endIcon={<img id="copy-icon" src={isCopied ? "img/copied.svg" : "img/copy.svg"} alt={isCopied ? "copied" : "copy"} className="hei-100 wid-100" />}
+            startIcon={<img src="img/chevron-right.svg" alt=">" className="hei-100 wid-full" />}
+            endIcon={<img id="copy-icon" src={isCopied ? "img/copied.svg" : "img/copy.svg"} alt={isCopied ? "copied" : "copy"} className="hei-100 wid-full" />}
             buttonText={<span key="text" className="fon-siz-xl md-fon-siz-lg fon-wei-bold fon-fam-code col-blue-grey-200"><span className="hljs-name">npm</span> install <span className="hljs-attr">cssville</span></span>} />
         </Stack>
       </Stack>

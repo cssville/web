@@ -28,7 +28,7 @@ export const ClassPage = (props) => {
       :
       <DocsPage title={generator.name} activeItem={generator.name} activeCategory={props.activeCategory}>
         <Title xl>CSS classes and properties</Title>
-        <table style={{ borderCollapse: "collapse" }} className="mar-y-4 wid-12">
+        <table style={{ borderCollapse: "collapse" }} className="mar-y-4 wid-full">
           <thead>
             <tr className="bac-col-grey-100">
               <th className="pad-3 bor-1">Class name property</th>
