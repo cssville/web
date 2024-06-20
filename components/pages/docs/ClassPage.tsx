@@ -2,12 +2,11 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Cssville } from "cssville-generators/build/cssville";
 import { IGenerator } from 'cssville-generators/build/IGenerator';
-import { NotFoundPage } from '../NotFoundPage';
 import { ClassesList } from '../../ClassesList';
 import { Title } from 'cssville-ui/build/components/ui/simple/Typography';
 import { Chip } from 'cssville-ui/build/components/ui/simple/Chip';
 import { getClasses } from '../../utils';
-import { DocsPage } from "./DocsPage";
+import { NotFoundSection } from "../NotFoundSection";
 
 
 export const ClassPage = (props) => {
@@ -24,9 +23,9 @@ export const ClassPage = (props) => {
   return (
     generator === undefined
       ?
-      <NotFoundPage />
+      <NotFoundSection />
       :
-      <DocsPage title={generator.name} activeItem={generator.name} activeCategory={props.activeCategory}>
+      <>
         <Title xl>CSS classes and properties</Title>
         <table style={{ borderCollapse: "collapse" }} className="mar-y-4 wid-full">
           <thead>
@@ -100,6 +99,6 @@ export const ClassPage = (props) => {
             </div>
           )
         }
-      </DocsPage>
+      </>
   );
 };

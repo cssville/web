@@ -3,11 +3,10 @@ import { Chip } from 'cssville-ui/build/components/ui/simple/Chip';
 import { Divider } from 'cssville-ui/build/components/ui/simple/Divider';
 import { Text } from 'cssville-ui/build/components/ui/simple/Typography';
 import { Stack } from 'cssville-ui/build/components/ui/simple/Stack';
-import { DocsPage } from "./docs/DocsPage";
 
 export const ChipPage = (props) => {
   return (
-    <DocsPage title="Chip" activeCategory={props.activeCategory} activeItem={props.activeItem}>
+    <>
       <Text xl>Default chip:</Text>
       <Stack row flexWrap itemsCenter>
         <Chip>Default chip</Chip>
@@ -106,6 +105,6 @@ export const ChipPage = (props) => {
         <Chip warning outline rounded>Warning chip</Chip>
         <Chip error outline rounded>Error chip</Chip>
       </Stack>
-    </DocsPage>
+    </>
   );
 };

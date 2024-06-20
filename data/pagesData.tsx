@@ -8,6 +8,7 @@ import { NotFoundPage } from "../components/pages/NotFoundPage";
 import { ChipPage } from "../components/pages/ChipPage";
 import { ButtonPage } from "../components/pages/ButtonPage";
 import { TypographyPage } from "../components/pages/TypographyPage";
+import { DocsLayout } from "../components/pages/docs/DocsLayout";
 
 export const Routes: RouteObject[] = [
   {
@@ -20,27 +21,38 @@ export const Routes: RouteObject[] = [
     element: <NotFoundPage />,
   },
   {
-    path: "/docs/components/chip",
-    element: <ChipPage activeCategory={"React Components"} activeItem={"Chip"}/>,
-  },
-  {
-    path: "/docs/components/button",
-    element: <ButtonPage activeCategory={"React Components"} activeItem={"Button"}/>,
-  },
-  {
-    path: "/docs/components/typography",
-    element: <TypographyPage activeCategory={"React Components"} activeItem={"Typography"}/>
-  },
-  {
-    path: "/docs/intro/getting-started",
-    element: <GettingStartedPage />
-  },
-  {
-    path: "/docs/css-classes/:name",
-    element: <ClassPage activeCategory={"CSS classes"} />,
-    loader: async ({ params }) => {
-      return params.name;
-    },
+    path: "/docs",
+    element: <DocsLayout />,
+    children: [
+      {
+        path: "components/chip",
+        element: <ChipPage />,
+        handle: { title: "Chip", category: "React Components", item: "Chip" }
+      },
+      {
+        path: "components/button",
+        element: <ButtonPage />,
+        handle: { title: "Button", category: "React Components", item: "Button" }
+      },
+      {
+        path: "components/typography",
+        element: <TypographyPage />,
+        handle: { title: "Typography", category: "React Components", item: "Typography" }
+      },
+      {
+        path: "intro/getting-started",
+        element: <GettingStartedPage />,
+        handle: { title: "Getting started", category: "Introduction", item: "Getting started" }
+      },
+      {
+        path: "css-classes/:name",
+        element: <ClassPage />,
+        handle: { title: "", category: "CSS Classes", item: "" },
+        loader: async ({ params }) => {
+          return params.name;
+        },
+      },
+    ],
   },
 ]
 
@@ -55,7 +67,7 @@ export const MenuItems: any[] = [
     ]
   },
   {
-    category: "CSS classes",
+    category: "CSS Classes",
     values: [
       ...Cssville.generators.map(g => (
         {

@@ -3,12 +3,11 @@ import { Button } from 'cssville-ui/build/components/ui/simple/Button';
 import { Divider } from 'cssville-ui/build/components/ui/simple/Divider';
 import { Text } from 'cssville-ui/build/components/ui/simple/Typography';
 import { Stack } from 'cssville-ui/build/components/ui/simple/Stack';
-import { DocsPage } from "./docs/DocsPage";
 
 export const ButtonPage = (props) => {
   const ghIcon = <img src="/img/mark-github.svg" alt="mark-github" className="hei-100 wid-full" />;
   return (
-    <DocsPage title="Button" activeCategory={props.activeCategory} activeItem={props.activeItem}>
+    <>
       <Text xl>Default button:</Text>
       <Stack row flexWrap itemsCenter>
         <Button>Default button</Button>
@@ -125,6 +124,6 @@ export const ButtonPage = (props) => {
         <Button warning outline rounded>Warning button</Button>
         <Button error outline rounded>Error button</Button>
       </Stack>
-    </DocsPage>
+    </>
   );
 };
