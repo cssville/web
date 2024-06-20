@@ -2,11 +2,12 @@ import React from 'react';
 import hljs from 'highlight.js';
 import { Chip } from "cssville-ui/build/components/ui/simple/Chip";
 import { Display, Text } from "cssville-ui/build/components/ui/simple/Typography"
+import { Section } from "cssville-ui/build/components/ui/simple/Section";
 
 
 export const DemoSection = (props: any) => {
   return (
-    <>
+    <Section lg>
       <Display id="demo" tag="h2">
         Demo
       </Display>
@@ -28,7 +29,7 @@ export const DemoSection = (props: any) => {
                   <img src="img/star.svg" className="hei-6 wid-6" />
                   <div className="fle-gro-1"></div>
                   <div className="dis-flex wid-full">
-                    <img src="img/profile.svg" className="hei-48px wid-48px bac-col-white bor-rad-9999px" />
+                    <img src="img/profile.svg" className="hei-9 wid-9 bac-col-white bor-rad-9999px" />
                     <div className="dis-flex jus-con-center pad-lef-2 fle-dir-column fle-gro-1">
                       <span className="fon-wei-bold col-white">Naomi Rivers</span>
                       <span className="fon-siz-small col-white opa-07">Available for hire</span>
@@ -55,7 +56,7 @@ export const DemoSection = (props: any) => {
         <img src="img/star.svg" className="hei-6 wid-6" />
         <div className="fle-gro-1"></div>
         <div className="dis-flex wid-full">
-          <img src="img/profile.svg" className="hei-48px wid-48px bac-col-white bor-rad-9999px" />
+          <img src="img/profile.svg" className="hei-9 wid-9 bac-col-white bor-rad-9999px" />
           <div className="dis-flex jus-con-center pad-lef-2 fle-dir-column fle-gro-1">
             <span className="fon-wei-bold col-white">Naomi Rivers</span>
             <span className="fon-siz-small col-white opa-07">Available for hire</span>
@@ -72,6 +73,6 @@ export const DemoSection = (props: any) => {
           </pre>
         </div>
       </div>
-    </>
+    </Section>
   );
 }

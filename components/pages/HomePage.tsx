@@ -19,12 +19,12 @@ export const HomePage = (props) => {
           <HeroSection />
         </Section>
       </Stack>
-      <Section lg>
+      <Stack>
         <AboutSection />
         <DemoSection />
         <CssPrefixesSection />
         <CssClassesSection />
-      </Section>
+      </Stack>
       <Footer />
     </>
   );

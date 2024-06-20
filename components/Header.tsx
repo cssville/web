@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'cssville-ui/build/components/ui/simple/Button';
 import { Section } from 'cssville-ui/build/components/ui/simple/Section';
 import { Stack } from "cssville-ui/build/components/ui/simple/Stack";
+import { Logo } from "./Logo";
 
 export const Header = (props: any) => {
   return (
@@ -9,14 +10,7 @@ export const Header = (props: any) => {
       <div className="wid-full bor-bot-1 pos-relative z-ind-1 bac-col-white">
         <Section lg noPadding>
           <Stack row fullWidth itemsCenter className="pad-3">
-            <div className="dis-flex ali-ite-center jus-con-center">
-              <a href="/" className="dis-flex tex-dec-none col-green-500">
-                <img src="/img/cssville.svg" alt="logo" className="hei-32px wid-32px" />
-                <div className="dis-flex ali-ite-center jus-con-center md-dis-none pad-lef-3">
-                  <span className="fon-wei-900 fon-siz-x-large fon-fam-code">cssville</span>
-                </div>
-              </a>
-            </div>
+            <Logo/>
             <div className="md-dis-none fle-gro-1"></div>
             <div className="dis-flex fle-dir-row md-fle-dir-column md-mar-x-auto ali-ite-center jus-con-center mar-rig-4">
               {

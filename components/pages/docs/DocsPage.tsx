@@ -1,5 +1,4 @@
 import React from 'react';
-import { Header } from '../../Header';
 import { Footer } from '../../Footer';
 import { Section } from 'cssville-ui/build/components/ui/simple/Section';
 import { Display, Text } from 'cssville-ui/build/components/ui/simple/Typography';
@@ -11,18 +10,17 @@ export const DocsPage = (props) => {
   var activeCategory = props.activeCategory;
   var title = props.title;
   return (
-    <>
-      <Header />
-      <Section lg>
-        <Stack noGap row fullWidth className="max-wid-full pos-relative">
-          <LeftMenu activeItem={activeItem} activeCategory={activeCategory}/>
-          <Stack xs column fullWidth className="max-wid-9">
+    <Section lg noPadding>
+      <Stack noGap row fullWidth className="pad-x-4 pos-relative">
+        <LeftMenu activeItem={activeItem} activeCategory={activeCategory} />
+        <Stack xl fullWidth>
+          <Stack xs fullWidth className="pad-x-7">
             <Display className="bor-bot-1 wid-full mar-bot-6">{title}</Display>
             {props.children}
           </Stack>
+          <Footer />
         </Stack>
-      </Section>
-      <Footer />
-    </>
+      </Stack>
+    </Section>
   );
 };

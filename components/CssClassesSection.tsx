@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { Cssville } from 'cssville-generators/build/cssville';
 import { Display, Text, Title } from 'cssville-ui/build/components/ui/simple/Typography';
 import { Stack } from 'cssville-ui/build/components/ui/simple/Stack';
+import { Section } from "cssville-ui/build/components/ui/simple/Section";
 
 
 export const CssClassesSection = (props: any) => {
@@ -28,16 +29,18 @@ export const CssClassesSection = (props: any) => {
   });
 
   return (
-    <Stack column xl noGap>
-      <Display id="classes" tag="h2">
-        CSS classes
-      </Display>
-      <Text lg className="max-wid-2/3 md-max-wid-full">
-        Utility classes are a specific type of class that is designed to provide a single,
-        focused styling property, such as padding, margin, or font size. Unlike traditional classes,
-        which might be used to define more complex styles, utility classes are very simple and focused on a single aspect of the style.
-      </Text>
-      {generatorNodes}
-    </Stack>
+    <Section lg>
+      <Stack xl noGap>
+        <Display id="classes" tag="h2">
+          CSS classes
+        </Display>
+        <Text lg className="max-wid-2/3 md-max-wid-full">
+          Utility classes are a specific type of class that is designed to provide a single,
+          focused styling property, such as padding, margin, or font size. Unlike traditional classes,
+          which might be used to define more complex styles, utility classes are very simple and focused on a single aspect of the style.
+        </Text>
+        {generatorNodes}
+      </Stack>
+    </Section>
   );
 }

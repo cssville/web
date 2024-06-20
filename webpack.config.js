@@ -12,15 +12,6 @@ const PATHS = {
   root: path.resolve(__dirname, './'),
 };
 
-function collectSafelist() {
-  return {
-    standard: [".wid-1/2", /^safelisted-/],
-    deep: [/^safelisted-deep-/],
-    greedy: [/^safelisted-greedy/],
-  };
-}
-
-
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -42,13 +33,14 @@ module.exports = {
     }
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'web.bundle.css'
-    }),
     new PurgeCSSPlugin({
       paths: [PATHS.index, PATHS.indexHtml, ...glob.sync(`${PATHS.components}/**/*`, { nodir: true })],
-      safelist: collectSafelist,
-      only: ["web.bundle.css"],
+      safelist: {
+        standard: [/wid-*/],
+      },
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'web.bundle.css'
     }),
   ],
   module: {
@@ -59,8 +51,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        //use: 'css-loader',
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ],
       },
     ]
   },
@@ -70,5 +64,10 @@ module.exports = {
       new TerserPlugin(), // Minimize JavaScript
     ],
     minimize: true,
-  } : {},
+  } : {
+    minimizer: [
+      new CssMinimizerPlugin(), // Minimize CSS
+    ],
+    minimize: true,
+  },
 };
