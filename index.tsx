@@ -4,7 +4,7 @@ import hljs from 'highlight.js';
 import "cssville-ui/cssville-ui.bundle.css"
 import "cssville/cssville.css";
 import "./site.css";
-import { BrowserRouter, createBrowserRouter, Route, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Routes } from "./data/pagesData";
 
 

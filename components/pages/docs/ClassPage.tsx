@@ -7,7 +7,36 @@ import { Title } from 'cssville-ui/build/components/ui/simple/Typography';
 import { Chip } from 'cssville-ui/build/components/ui/simple/Chip';
 import { getClasses } from '../../utils';
 import { NotFoundSection } from "../NotFoundSection";
+import { CssClassData } from "cssville-generators/build/data/cssClassData";
+import Table from "../../Table";
 
+const renderRowPrefixes = (cssClassData: CssClassData, index: number) => (
+  <tr key={index}>
+    <td className="pad-3 bor-bot-1"><Chip noBorder>{cssClassData.className}-*</Chip></td>
+    <td className="pad-3 bor-bot-1">
+      {cssClassData.cssProperties.map((p, i) => (
+        <React.Fragment key={i}>
+          <Chip noBorder>{p}</Chip>
+          {i < cssClassData.cssProperties.length - 1 && <span>, </span>}
+        </React.Fragment>
+      ))}
+    </td>
+  </tr>
+);
+
+const renderRowSuffixes = (key: string, values: string[]) => (
+  <tr key={key}>
+    <td className="pad-3 bor-bot-1"><Chip noBorder>*-{key}</Chip></td>
+    <td className="pad-3 bor-bot-1">
+      {values.map((p, i) => (
+        <React.Fragment key={i}>
+          <Chip noBorder>{p}</Chip>
+          {i < values.length - 1 && <span>, </span>}
+        </React.Fragment>
+      ))}
+    </td>
+  </tr>
+);
 
 export const ClassPage = (props) => {
   const name = useLoaderData();
@@ -26,63 +55,18 @@ export const ClassPage = (props) => {
       <NotFoundSection />
       :
       <>
-        <Title xl>CSS classes and properties</Title>
-        <table style={{ borderCollapse: "collapse" }} className="mar-y-4 wid-full">
-          <thead>
-            <tr className="bac-col-grey-100">
-              <th className="pad-3 bor-1">Class name property</th>
-              <th className="pad-3 bor-1">CSS properties</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              generator.cssData.map((cssClassData, i) =>
-                <tr key={i}>
-                  <td className="pad-3 bor-1"><Chip>{cssClassData.className}-*</Chip></td>
-                  <td className="pad-3 bor-1">
-                    {cssClassData.cssProperties.map(
-                      (p, i) =>
-                        <React.Fragment key={i}>
-                          <Chip>{p}</Chip>
-                          {i < cssClassData.cssProperties.length - 1 && <span>, </span>}
-                        </React.Fragment>
-                    )}
-                  </td>
-                </tr>
-              )
-            }
-          </tbody>
-        </table>
-        <Title xl>CSS property values</Title>
-        <table style={{ borderCollapse: "collapse" }} className="mar-y-4">
-          <thead>
-            <tr className="bac-col-grey-100">
-              <th className="pad-3 bor-1">Class name value</th>
-              <th className="pad-3 bor-1">CSS value</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              Array.from(generator.cssData[0].postfixValuesMap.keys()).map(key => {
-                var values = generator.cssData[0].postfixValuesMap.get(key);
-                return (
-                  <tr key={key}>
-                    <td className="pad-3 bor-1"><Chip>{key}</Chip></td>
-                    <td className="pad-3 bor-1">
-                      {values.map(
-                        (p, i) =>
-                          <React.Fragment key={i}>
-                            <Chip>{p}</Chip>
-                            {i < values.length - 1 && <span>, </span>}
-                          </React.Fragment>
-                      )}
-                    </td>
-                  </tr>
-                )
-              })
-            }
-          </tbody>
-        </table>
+        <Title xl>CSS class prefixes and related properties</Title>
+        <Table<CssClassData>
+          headers={["Class name prefix", "CSS properties"]}
+          data={generator.cssData as CssClassData[]}
+          renderRow={renderRowPrefixes}
+        />
+        <Title xl>CSS class suffixes and property values</Title>
+        <Table<[string, string[]]>
+          headers={["Class name suffix", "CSS properties value"]}
+          data={Array.from(generator.cssData[0].postfixValuesMap.entries())}
+          renderRow={([key, values]) => renderRowSuffixes(key, values)}
+        />
         {
           generator.cssData.map(cssClassData =>
             <div key={cssClassData.className}>
