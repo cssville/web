@@ -9,34 +9,18 @@ import { getClasses } from '../../utils';
 import { NotFoundSection } from "../NotFoundSection";
 import { CssClassData } from "cssville-generators/build/data/cssClassData";
 import Table from "../../Table";
+import { Chips } from "../../Chips";
+import { Stack } from "cssville-ui/build/components/ui/simple/Stack";
 
-const renderRowPrefixes = (cssClassData: CssClassData, index: number) => (
-  <tr key={index}>
-    <td className="pad-3 bor-bot-1"><Chip noBorder>{cssClassData.className}-*</Chip></td>
-    <td className="pad-3 bor-bot-1">
-      {cssClassData.cssProperties.map((p, i) => (
-        <React.Fragment key={i}>
-          <Chip noBorder>{p}</Chip>
-          {i < cssClassData.cssProperties.length - 1 && <span>, </span>}
-        </React.Fragment>
-      ))}
-    </td>
-  </tr>
-);
+export const prefixColumnRenderers = {
+  'Class name prefix': (item: any) => <Chip noBorder>{item.className}-*</Chip>,
+  'CSS properties': (item: any) => <Chips data={item.cssProperties} />,
+};
 
-const renderRowSuffixes = (key: string, values: string[]) => (
-  <tr key={key}>
-    <td className="pad-3 bor-bot-1"><Chip noBorder>*-{key}</Chip></td>
-    <td className="pad-3 bor-bot-1">
-      {values.map((p, i) => (
-        <React.Fragment key={i}>
-          <Chip noBorder>{p}</Chip>
-          {i < values.length - 1 && <span>, </span>}
-        </React.Fragment>
-      ))}
-    </td>
-  </tr>
-);
+export const suffixColumnRenderers = {
+  'Class name suffix': (item: [string, string[]]) => <Chip noBorder>*-{item[0]}</Chip>,
+  'CSS properties value': (item: [string, string[]]) => <Chips data={item[1]} />,
+};
 
 export const ClassPage = (props) => {
   const name = useLoaderData();
@@ -55,34 +39,38 @@ export const ClassPage = (props) => {
       <NotFoundSection />
       :
       <>
-        <Title xl>CSS class prefixes and related properties</Title>
-        <Table<CssClassData>
-          headers={["Class name prefix", "CSS properties"]}
-          data={generator.cssData as CssClassData[]}
-          renderRow={renderRowPrefixes}
-        />
-        <Title xl>CSS class suffixes and property values</Title>
-        <Table<[string, string[]]>
-          headers={["Class name suffix", "CSS properties value"]}
-          data={Array.from(generator.cssData[0].postfixValuesMap.entries())}
-          renderRow={([key, values]) => renderRowSuffixes(key, values)}
-        />
-        {
-          generator.cssData.map(cssClassData =>
-            <div key={cssClassData.className}>
-              <Title xl id={cssClassData.className}>
-                {cssClassData.className}: {cssClassData.cssProperties.map(
-                  (p, i) =>
-                    <React.Fragment key={i}>
-                      <span>{p}</span>
-                      {i < cssClassData.cssProperties.length - 1 && <span>, </span>}
-                    </React.Fragment>
-                )}
-              </Title>
-              <ClassesList data={getClasses(cssClassData.getCss("", []))} />
-            </div>
-          )
-        }
+        <Stack noGap fullWidth>
+          <Title xl>CSS class prefixes and related properties</Title>
+          <Table<CssClassData>
+            data={generator.cssData as CssClassData[]}
+            columnRenderers={prefixColumnRenderers}
+          />
+        </Stack>
+        <Stack noGap fullWidth>
+          <Title xl>CSS class suffixes and property values</Title>
+          <Table<[string, string[]]>
+            data={Array.from(generator.cssData[0].postfixValuesMap.entries())}
+            columnRenderers={suffixColumnRenderers}
+          />
+        </Stack>
+        <Stack noGap fullWidth>
+          {
+            generator.cssData.map(cssClassData =>
+              <div key={cssClassData.className}>
+                <Title xl id={cssClassData.className}>
+                  {cssClassData.className}: {cssClassData.cssProperties.map(
+                    (p, i) =>
+                      <React.Fragment key={i}>
+                        <span>{p}</span>
+                        {i < cssClassData.cssProperties.length - 1 && <span>, </span>}
+                      </React.Fragment>
+                  )}
+                </Title>
+                <ClassesList data={getClasses(cssClassData.getCss("", []))} />
+              </div>
+            )
+          }
+        </Stack>
       </>
   );
 };

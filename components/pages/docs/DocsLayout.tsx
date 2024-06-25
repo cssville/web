@@ -41,7 +41,7 @@ export const DocsLayout = () => {
       <Stack noGap fullWidth row className="pad-x-4">
         <LeftMenu activeItem={activeItem} activeCategory={activeCategory} />
         <Stack xl fullWidth className="min-hei-100vh">
-          <Stack xs fullWidth className="pad-x-7 fle-gro-1">
+          <Stack fullWidth className="pad-x-7 fle-gro-1">
             {title === ""
               ? <NotFoundSection />
               : <>
