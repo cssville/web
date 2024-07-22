@@ -38,16 +38,18 @@ export const DocsLayout = () => {
 
   return (
     <Section lg noPadding>
-      <Stack noGap fullWidth row className="pad-x-4">
+      <Stack noGap fullWidth row className="pad-x-4 sm-fle-dir-column">
         <LeftMenu activeItem={activeItem} activeCategory={activeCategory} />
         <Stack xl fullWidth className="min-hei-100vh">
-          <Stack fullWidth className="pad-x-7 fle-gro-1">
-            {title === ""
-              ? <NotFoundSection />
-              : <>
-                <Display className="bor-bot-1 wid-full mar-bot-6">{title}</Display>
-                <Outlet />
-              </>}
+          <Stack fullWidth className="pad-x-7 md-pad-x-5 sm-pad-x-0 fle-gro-1">
+            {
+              title === ""
+                ? <NotFoundSection />
+                : <>
+                  <Display className="bor-bot-1 wid-full mar-bot-6">{title}</Display>
+                  <Outlet />
+                </>
+            }
           </Stack>
           <Footer />
         </Stack>
