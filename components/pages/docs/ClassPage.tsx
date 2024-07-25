@@ -56,7 +56,7 @@ export const ClassPage = (props) => {
         <Stack noGap fullWidth>
           {
             generator.cssData.map(cssClassData =>
-              <div key={cssClassData.className}>
+              <div key={cssClassData.className} className="wid-full">
                 <Title xl id={cssClassData.className}>
                   {cssClassData.className}: {cssClassData.cssProperties.map(
                     (p, i) =>

@@ -30,7 +30,7 @@ export const ClassesList: React.FC<ClassesListProps> = ({
             const cl = value.cssClass;
             const isActive = i === active;
             return (
-              <Chip key={i} sm bold={isActive} disabled={!isActive} onClick={() => { setActive(i) }} className="cur-pointer mar-y-1">
+              <Chip key={i} sm bold={isActive} disabled={!isActive} onClick={() => { setActive(i) }} className="cur-pointer mar-y-2">
                 {cl.split(":")[0]}
               </Chip>
             );
@@ -38,14 +38,14 @@ export const ClassesList: React.FC<ClassesListProps> = ({
         }
       </Stack>
       {visibleItems < data.length && (
-        <Button sm noShadow onClick={handleLoadMore} className="mar-bot-3">
+        <Button sm noShadow onClick={handleLoadMore} className="mar-bot-4">
           Load more...
         </Button>
       )}
       <Stack column contentCenter fullWidth>
-        <div key={`code-example-${active}`} className="box-siz-border-box max-wid-full ove-auto box-sha-lg pad-5 bor-rad-3">
+        <div key={`code-example-${active}`} className="box-siz-border-box max-wid-full ove-auto box-sha-lg pad-6 bor-rad-4">
           <pre className="mar-0">
-            <code className="fon-siz-large language-css hljs bor-rad-2 max-wid-md mar-x-auto"
+            <code className="fon-siz-large language-css hljs bor-rad-3 max-wid-md mar-x-auto"
               dangerouslySetInnerHTML={{
                 __html:
                   hljs.highlight(data[active].cssString, { language: 'css' }).value

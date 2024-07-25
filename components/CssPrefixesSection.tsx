@@ -13,9 +13,9 @@ export const CssPrefixesSection = (props: any) => {
     prefixesNodes[prefixesNodes.length] =
       <Stack column key={`come-example-${prefix}`} xl noGap className="md-wid-full">
         <Title xl bold className='wid-full'>{val.name}</Title>
-        <div className="box-siz-border-box max-wid-full ove-auto box-sha-lg bor-rad-4">
+        <div className="box-siz-border-box max-wid-full ove-auto box-sha-lg bor-rad-5">
           <pre className="mar-0">
-            <code className="fon-siz-large language-css hljs bor-rad-2 max-wid-md mar-x-auto"
+            <code className="fon-siz-large language-css hljs bor-rad-3 max-wid-md mar-x-auto"
               dangerouslySetInnerHTML={{
                 __html:
                   hljs.highlight(`@media screen and (max-width: ${val.value}) {

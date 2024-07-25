@@ -19,23 +19,23 @@ export const DemoSection = (props: any) => {
       <Text lg>
         The example below shows some classes in action:
       </Text>
-      <div className="dis-flex fle-dir-column pos-relative bor-rad-5 pad-y-6 lg-pad-4 mar-bot-6 box-sha-xl wid-full box-siz-border-box">
-        <div className="wid-full dis-flex jus-con-center mar-bot--5">
+      <div className="dis-flex fle-dir-column pos-relative bor-rad-6 pad-y-7 lg-pad-5 mar-bot-7 box-sha-xl wid-full box-siz-border-box">
+        <div className="wid-full dis-flex jus-con-center mar-bot--6">
           <div id="example" className="wid-full dis-flex jus-con-center">
             <div className="dis-flex wid-full pos-relative max-wid-sm">
-              <img src="img/house.webp" className="wid-full max-wid-full bor-rad-3 obj-fit-cover" />
+              <img src="img/house.webp" className="wid-full max-wid-full bor-rad-4 obj-fit-cover" />
               <div className="dis-flex pos-absolute hei-100 wid-full">
-                <div className="dis-flex fle-dir-column pad-3 wid-full">
-                  <img src="img/star.svg" className="hei-6 wid-6" />
+                <div className="dis-flex fle-dir-column pad-4 wid-full">
+                  <img src="img/star.svg" className="hei-7 wid-7" />
                   <div className="fle-gro-1"></div>
                   <div className="dis-flex wid-full">
-                    <img src="img/profile.svg" className="hei-9 wid-9 bac-col-white bor-rad-9999px" />
-                    <div className="dis-flex jus-con-center pad-lef-2 fle-dir-column fle-gro-1">
+                    <img src="img/profile.svg" className="hei-10 wid-10 bac-col-white bor-rad-max" />
+                    <div className="dis-flex jus-con-center pad-lef-3 fle-dir-column fle-gro-1">
                       <span className="fon-wei-bold col-white">Naomi Rivers</span>
                       <span className="fon-siz-small col-white opa-07">Available for hire</span>
                     </div>
                     <div className="dis-flex ali-ite-flex-end">
-                      <img src="img/bookmark.svg" className="hei-6 wid-6" />
+                      <img src="img/bookmark.svg" className="hei-7 wid-7" />
                     </div>
                   </div>
                 </div>
@@ -45,24 +45,24 @@ export const DemoSection = (props: any) => {
         </div>
         <div className="dis-flex jus-con-center">
           <pre className="ove-auto mar-0">
-            <code className="fon-siz-large language-xml hljs bor-rad-3"
+            <code className="fon-siz-large language-xml hljs bor-rad-4"
               dangerouslySetInnerHTML={{
                 __html:
                   hljs.highlight(`
   <div className="dis-flex wid-full pos-relative max-wid-sm">
-    <img src="img/house.webp" className="wid-full max-wid-full bor-rad-3 obj-fit-cover" />
+    <img src="img/house.webp" className="wid-full max-wid-full bor-rad-4 obj-fit-cover" />
     <div className="dis-flex pos-absolute hei-100 wid-full">
-      <div className="dis-flex fle-dir-column pad-3 wid-full">
-        <img src="img/star.svg" className="hei-6 wid-6" />
+      <div className="dis-flex fle-dir-column pad-4 wid-full">
+        <img src="img/star.svg" className="hei-7 wid-7" />
         <div className="fle-gro-1"></div>
         <div className="dis-flex wid-full">
-          <img src="img/profile.svg" className="hei-9 wid-9 bac-col-white bor-rad-9999px" />
-          <div className="dis-flex jus-con-center pad-lef-2 fle-dir-column fle-gro-1">
+          <img src="img/profile.svg" className="hei-10 wid-10 bac-col-white bor-rad-max" />
+          <div className="dis-flex jus-con-center pad-lef-3 fle-dir-column fle-gro-1">
             <span className="fon-wei-bold col-white">Naomi Rivers</span>
             <span className="fon-siz-small col-white opa-07">Available for hire</span>
           </div>
           <div className="dis-flex ali-ite-flex-end">
-            <img src="img/bookmark.svg" className="hei-6 wid-6" />
+            <img src="img/bookmark.svg" className="hei-7 wid-7" />
           </div>
         </div>
       </div>

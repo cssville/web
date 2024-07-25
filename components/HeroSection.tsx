@@ -17,7 +17,7 @@ export const HeroSection = (props: any) => {
       });
   };
   return (
-    <Stack column xl fullWidth className="wid-10/12 lg-wid-full pad-y-10">
+    <Stack column xl fullWidth className="wid-10/12 lg-wid-full pad-y-11">
       <Stack column xl itemsCenter fullWidth>
         <Display lg centered dynamic noPadding className="wid-3/4 md-wid-full">
           The <span className="col-light-blue-700">most simple</span> CSS utility-first framework

@@ -8,7 +8,7 @@ export function NotFoundSection(props: any) {
   const title = props.title ? props.title : "404"
   return (
     <Section lg className="fle-gro-1">
-      <Display className="bor-bot-1 wid-full mar-bot-6">{title}</Display>
+      <Display className="bor-bot-1 wid-full mar-bot-7">{title}</Display>
       <Stack column md className="wid-full">
         <Text>The page you are looking for can not be found</Text>
         <Stack row>

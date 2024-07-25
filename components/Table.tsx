@@ -22,11 +22,11 @@ const Table = <T,>({ data, columnRenderers, initialVisibleRows = 20, loadMoreRow
 
   return (
     <>
-      <table className="mar-y-4 wid-full bor-col-collapse">
+      <table className="mar-y-5 wid-full bor-col-collapse">
         <thead>
           <tr className="bac-col-grey-100">
             {headers.map((header, index) => (
-              <th key={index} className="pad-4 tex-ali-start">
+              <th key={index} className="pad-5 tex-ali-start">
                 {header}
               </th>
             ))}
@@ -36,7 +36,7 @@ const Table = <T,>({ data, columnRenderers, initialVisibleRows = 20, loadMoreRow
           {data.slice(0, visibleRows).map((item, rowIndex) => (
             <tr key={rowIndex}>
               {headers.map((header, colIndex) => (
-                <td key={colIndex} className="pad-3 bor-bot-1">
+                <td key={colIndex} className="pad-4 bor-bot-1">
                   {columnRenderers[header](item, rowIndex)}
                 </td>
               ))}
@@ -45,12 +45,12 @@ const Table = <T,>({ data, columnRenderers, initialVisibleRows = 20, loadMoreRow
 
           {visibleRows < data.length && (
             <tr>
-              <td key={"load-more"} className="pad-3 bor-bot-1">
+              <td key={"load-more"} className="pad-4 bor-bot-1">
                 <Button sm noShadow onClick={handleLoadMore}>
                   Load more...
                 </Button>
               </td>
-              <td className="pad-3 bor-bot-1"></td>
+              <td className="pad-4 bor-bot-1"></td>
             </tr>
           )}
         </tbody>

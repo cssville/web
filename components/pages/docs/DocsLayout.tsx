@@ -38,15 +38,15 @@ export const DocsLayout = () => {
 
   return (
     <Section lg noPadding>
-      <Stack noGap fullWidth row className="pad-x-4 sm-fle-dir-column">
+      <Stack noGap fullWidth row className="pad-x-5 md-fle-dir-column">
         <LeftMenu activeItem={activeItem} activeCategory={activeCategory} />
         <Stack xl fullWidth className="min-hei-100vh">
-          <Stack fullWidth className="pad-x-7 md-pad-x-5 sm-pad-x-0 fle-gro-1">
+          <Stack fullWidth className="pad-x-8 md-pad-x-6 sm-pad-x-0 fle-gro-1">
             {
               title === ""
                 ? <NotFoundSection />
                 : <>
-                  <Display className="bor-bot-1 wid-full mar-bot-6">{title}</Display>
+                  <Display className="bor-bot-1 wid-full mar-bot-7">{title}</Display>
                   <Outlet />
                 </>
             }
