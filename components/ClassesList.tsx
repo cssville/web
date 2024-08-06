@@ -23,14 +23,14 @@ export const ClassesList: React.FC<ClassesListProps> = ({
   };
 
   return (
-    <Stack xs column fullWidth className="max-wid-full">
-      <Stack row xs flexWrap>
+    <Stack sm column fullWidth className="max-wid-full">
+      <Stack row noGap flexWrap className="gap-3">
         {
           data.slice(0, visibleItems).map((value, i) => {
             const cl = value.cssClass;
             const isActive = i === active;
             return (
-              <Chip key={i} sm bold={isActive} disabled={!isActive} onClick={() => { setActive(i) }} className="cur-pointer mar-y-2">
+              <Chip key={i} sm bold={isActive} disabled={!isActive} onClick={() => { setActive(i) }} className="cur-pointer">
                 {cl.split(":")[0]}
               </Chip>
             );
