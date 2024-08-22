@@ -4,13 +4,14 @@
   "description": "Cssville website",
   "main": "index.js",
   "scripts": {
+    "build:sitemap": "tsc sitemap.ts && node sitemap.js",
     "build:prod": "cross-env NODE_ENV=production webpack",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "watch:build:prod": "cross-env NODE_ENV=production webpack --watch",
     "watch:build:dev": "cross-env NODE_ENV=development webpack --watch",
     "watch:server": "lite-server -c lite-server-config.json",
-    "start:prod": "npm-run-all build:prod --parallel watch:build:prod watch:server --print-label",
-    "start:dev": "npm-run-all build:dev --parallel watch:build:dev watch:server --print-label",
+    "start:prod": "npm-run-all build:sitemap build:prod --parallel watch:build:prod watch:server --print-label",
+    "start:dev": "npm-run-all build:sitemap build:dev --parallel watch:build:dev watch:server --print-label",
     "server": "node server.js"
   },
   "repository": {
