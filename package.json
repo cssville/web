@@ -4,7 +4,7 @@
   "description": "Cssville website",
   "main": "index.js",
   "scripts": {
-    "build:sitemap": "webpack && node sitemap.js",
+    "build:sitemap": "tsc sitemap.ts && node sitemap.js",
     "build:prod": "cross-env NODE_ENV=production webpack",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "watch:build:prod": "cross-env NODE_ENV=production webpack --watch",
@@ -35,7 +35,8 @@
     "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.16.0"
+    "react-router-dom": "^6.16.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
     "@types/highlight.js": "^10.1.0",

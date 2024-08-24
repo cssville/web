@@ -1,40 +1,41 @@
 "use strict";
 exports.__esModule = true;
+var paths_1 = require("./data/paths");
 var cssville_1 = require("cssville-generators/build/cssville");
-var pagesData_1 = require("./data/pagesData");
 var path = require('path');
 var fs = require('fs');
-function buildSitemapEntries(routes, basePath) {
+function traversePaths(obj, basePath) {
     if (basePath === void 0) { basePath = ''; }
     var entries = [];
-    routes.forEach(function (route) {
-        var fullPath = "".concat(basePath).concat(route.path || '').replace(/\/+$/, ''); // Remove trailing slashes
-        if (!fullPath.includes(':')) {
-            // Static routes
+    Object.keys(obj).forEach(function (key) {
+        var value = obj[key];
+        if (typeof value === 'string') {
+            // If the value is a string, it's a path
             entries.push({
-                loc: fullPath || '/',
+                loc: "".concat(basePath, "/").concat(value).replace(/\/+/g, '/'),
                 lastmod: new Date().toISOString().split('T')[0]
             });
         }
-        else if (fullPath.includes('css-classes/:name')) {
-            // Dynamic routes for css-classes/:name
-            cssville_1.Cssville.generators.forEach(function (g) {
-                var dynamicPath = fullPath.replace(':name', g.name);
-                entries.push({
-                    loc: dynamicPath,
-                    lastmod: new Date().toISOString().split('T')[0]
-                });
-            });
+        else if (typeof value === 'function' && key === 'cssClasses') {
+            // Special case for dynamic paths, such as cssClasses
+            entries.push.apply(entries, cssville_1.Cssville.generators.map(function (g) { return ({
+                loc: "".concat(basePath, "/").concat(value(g.name)).replace(/\/+/g, '/'),
+                lastmod: new Date().toISOString().split('T')[0]
+            }); }));
         }
-        if (route.children) {
-            // Recursively add children routes
-            entries.push.apply(entries, buildSitemapEntries(route.children, "".concat(fullPath, "/")));
+        else if (typeof value === 'object') {
+            // If the value is an object, recurse
+            entries = entries.concat(traversePaths(value, "".concat(basePath, "/").concat(key)));
         }
     });
     return entries;
 }
-// Generate the sitemap entries from the routes
-var urls = buildSitemapEntries(pagesData_1.Routes);
+// Generate the sitemap entries from the paths
+function buildSitemapEntries() {
+    return traversePaths(paths_1.paths);
+}
+// Generate the sitemap entries
+var urls = buildSitemapEntries();
 var domain = "cssville.xyz";
 var xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  ".concat(urls
     .map(function (url) { return "\n    <url>\n      <loc>".concat("https://".concat(domain).concat(url.loc), "</loc>\n      <lastmod>").concat(url.lastmod, "</lastmod>\n    </url>"); })

@@ -9,43 +9,44 @@ import { ChipPage } from "../components/pages/ChipPage";
 import { ButtonPage } from "../components/pages/ButtonPage";
 import { TypographyPage } from "../components/pages/TypographyPage";
 import { DocsLayout } from "../components/pages/docs/DocsLayout";
+import { paths }from "./paths"
 
 export const Routes: RouteObject[] = [
   {
-    path: "/",
+    path: paths.home,
     element: <HomePage />,
     errorElement: <NotFoundPage />,
   },
   {
-    path: "/404",
+    path: paths.notFound,
     element: <NotFoundPage />,
   },
   {
-    path: "/docs",
+    path: paths.docs,
     element: <DocsLayout />,
     children: [
       {
-        path: "components/chip",
+        path: paths.components.chip,
         element: <ChipPage />,
         handle: { title: "Chip", category: "React Components", item: "Chip" }
       },
       {
-        path: "components/button",
+        path: paths.components.button,
         element: <ButtonPage />,
         handle: { title: "Button", category: "React Components", item: "Button" }
       },
       {
-        path: "components/typography",
+        path: paths.components.typography,
         element: <TypographyPage />,
         handle: { title: "Typography", category: "React Components", item: "Typography" }
       },
       {
-        path: "intro/getting-started",
+        path: paths.intro.gettingStarted,
         element: <GettingStartedPage />,
         handle: { title: "Getting started", category: "Introduction", item: "Getting started" }
       },
       {
-        path: "css-classes/:name",
+        path: paths.cssClasses(":name"),
         element: <ClassPage />,
         handle: { title: "", category: "CSS Classes", item: "" },
         loader: async ({ params }) => {
@@ -54,7 +55,7 @@ export const Routes: RouteObject[] = [
       },
     ],
   },
-]
+];
 
 export const MenuItems: any[] = [
   {

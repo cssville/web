@@ -1,55 +1,51 @@
-import { RouteObject } from "react-router-dom";
-import { Cssville } from "cssville-generators/build/cssville"
-import { Routes } from "./data/pagesData";
+import { paths } from './data/paths';
+import { Cssville } from "cssville-generators/build/cssville";
 
 const path = require('path');
 const fs = require('fs');
 
-// Define the structure of your sitemap entries
 interface SitemapEntry {
   loc: string;
   lastmod: string;
 }
 
-function buildSitemapEntries(
-  routes: RouteObject[],
-  basePath: string = ''
-): SitemapEntry[] {
-  const entries: SitemapEntry[] = [];
+function traversePaths(obj: any, basePath: string = ''): SitemapEntry[] {
+  let entries: SitemapEntry[] = [];
 
-  routes.forEach((route) => {
-    const fullPath = `${basePath}${route.path || ''}`.replace(/\/+$/, ''); // Remove trailing slashes
-
-    if (!fullPath.includes(':')) {
-      // Static routes
+  Object.keys(obj).forEach((key) => {
+    const value = obj[key];
+    if (typeof value === 'string') {
+      // If the value is a string, it's a path
       entries.push({
-        loc: fullPath || '/', // Ensure root path is '/'
-        lastmod: new Date().toISOString().split('T')[0], // Current date in YYYY-MM-DD format
+        loc: `${basePath}/${value}`.replace(/\/+/g, '/'), // Normalize slashes
+        lastmod: new Date().toISOString().split('T')[0],
       });
-    } else if (fullPath.includes('css-classes/:name')) {
-      // Dynamic routes for css-classes/:name
-      Cssville.generators.forEach((g) => {
-        const dynamicPath = fullPath.replace(':name', g.name);
-        entries.push({
-          loc: dynamicPath,
+    } else if (typeof value === 'function' && key === 'cssClasses') {
+      // Special case for dynamic paths, such as cssClasses
+      entries.push(
+        ...Cssville.generators.map((g) => ({
+          loc: `${basePath}/${value(g.name)}`.replace(/\/+/g, '/'),
           lastmod: new Date().toISOString().split('T')[0],
-        });
-      });
-    }
-
-    if (route.children) {
-      // Recursively add children routes
-      entries.push(...buildSitemapEntries(route.children, `${fullPath}/`));
+        }))
+      );
+    } else if (typeof value === 'object') {
+      // If the value is an object, recurse
+      entries = entries.concat(traversePaths(value, `${basePath}/${key}`));
     }
   });
 
   return entries;
 }
 
-// Generate the sitemap entries from the routes
-const urls: SitemapEntry[] = buildSitemapEntries(Routes);
+// Generate the sitemap entries from the paths
+function buildSitemapEntries(): SitemapEntry[] {
+  return traversePaths(paths);
+}
 
-const domain = "cssville.xyz"
+// Generate the sitemap entries
+const urls: SitemapEntry[] = buildSitemapEntries();
+
+const domain = "cssville.xyz";
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${urls
