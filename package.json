@@ -4,7 +4,7 @@
   "description": "Cssville website",
   "main": "index.js",
   "scripts": {
-    "build:sitemap": "tsc sitemap.ts && node sitemap.js",
+    "build:sitemap": "webpack && node sitemap.js",
     "build:prod": "cross-env NODE_ENV=production webpack",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "watch:build:prod": "cross-env NODE_ENV=production webpack --watch",

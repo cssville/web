@@ -1,6 +1,6 @@
 import React from 'react';
 import { Cssville } from "cssville-generators/build/cssville"
-import { ClassPage } from './../components/pages/docs/ClassPage'
+import { ClassPage } from '../components/pages/docs/ClassPage'
 import type { RouteObject } from "react-router";
 import { GettingStartedPage } from "../components/pages/docs/introduction/GettingStartedPage";
 import { HomePage } from "../components/pages/HomePage";

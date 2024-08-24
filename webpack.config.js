@@ -20,6 +20,7 @@ module.exports = {
   mode: isProduction ? "production" : "development",
   entry: {
     web: "./index.tsx",
+    sitemap: "./sitemap.ts"
   },
   output: {
     path: PATHS.root,

@@ -1,3 +1,7 @@
+import { RouteObject } from "react-router-dom";
+import { Cssville } from "cssville-generators/build/cssville"
+import { Routes } from "./data/pagesData";
+
 const path = require('path');
 const fs = require('fs');
 
@@ -7,23 +11,52 @@ interface SitemapEntry {
   lastmod: string;
 }
 
-// Define your sitemap URLs here
-const urls: SitemapEntry[] = [
-  { loc: '/', lastmod: '2024-08-22' },
-  { loc: '/docs/intro/getting-started', lastmod: '2024-08-22' },
-  { loc: '/docs/components/button', lastmod: '2024-08-22' },
-  { loc: '/docs/components/chip', lastmod: '2024-08-22' },
-  { loc: '/docs/components/typography', lastmod: '2024-08-22' },
-  // Add more routes as needed
-];
+function buildSitemapEntries(
+  routes: RouteObject[],
+  basePath: string = ''
+): SitemapEntry[] {
+  const entries: SitemapEntry[] = [];
 
+  routes.forEach((route) => {
+    const fullPath = `${basePath}${route.path || ''}`.replace(/\/+$/, ''); // Remove trailing slashes
+
+    if (!fullPath.includes(':')) {
+      // Static routes
+      entries.push({
+        loc: fullPath || '/', // Ensure root path is '/'
+        lastmod: new Date().toISOString().split('T')[0], // Current date in YYYY-MM-DD format
+      });
+    } else if (fullPath.includes('css-classes/:name')) {
+      // Dynamic routes for css-classes/:name
+      Cssville.generators.forEach((g) => {
+        const dynamicPath = fullPath.replace(':name', g.name);
+        entries.push({
+          loc: dynamicPath,
+          lastmod: new Date().toISOString().split('T')[0],
+        });
+      });
+    }
+
+    if (route.children) {
+      // Recursively add children routes
+      entries.push(...buildSitemapEntries(route.children, `${fullPath}/`));
+    }
+  });
+
+  return entries;
+}
+
+// Generate the sitemap entries from the routes
+const urls: SitemapEntry[] = buildSitemapEntries(Routes);
+
+const domain = "cssville.xyz"
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${urls
     .map(
       (url) => `
     <url>
-      <loc>${`https://your-domain.com${url.loc}`}</loc>
+      <loc>${`https://${domain}${url.loc}`}</loc>
       <lastmod>${url.lastmod}</lastmod>
     </url>`
     )
