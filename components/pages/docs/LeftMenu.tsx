@@ -11,8 +11,8 @@ const MenuItem = ({ href, item, category, activeCategory, activeItem, onClick })
   const activeLinkClasses = isActive ? "bor-lef-col-blue-400 bor-lef-col-blue-400-hover" : "bor-lef-col-blue-100 bor-lef-col-blue-200-hover";
   const activeTextClasses = isActive ? "bac-col-blue-100-hover bac-col-blue-100 fon-wei-600" : "bac-col-blue-50-hover";
   return (
-    <Link to={href} key={item} onClick={onClick} className={`${activeLinkClasses} bor-lef-sty-solid bor-lef-wid-2 wid-full box-siz-border-box tex-dec-none col-text`}>
-      <Text className={`${activeTextClasses} mar-x-5 bor-rad-4 pad-x-5 pad-y-3`}>
+    <Link to={href} key={item} onClick={onClick} className={`${activeLinkClasses} dis-flex hei-8 bor-lef-sty-solid bor-lef-wid-2 wid-full box-siz-border-box tex-dec-none col-text`}>
+      <Text tag="span" className={`${activeTextClasses} mar-x-5 bor-rad-4 pad-x-5 pad-y-3`}>
         {item}
       </Text>
     </Link>
