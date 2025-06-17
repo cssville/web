@@ -8,6 +8,7 @@ import { Outlet, useMatches, useLocation } from "react-router-dom";
 import { IGenerator } from "cssville-generators/build/IGenerator";
 import { Cssville } from "cssville-generators/build/cssville";
 import { NotFoundSection } from "../NotFoundSection";
+import { PageMetadata } from "../../PageMetadata";
 
 
 export const DocsLayout = () => {
@@ -38,6 +39,7 @@ export const DocsLayout = () => {
 
   return (
     <Section lg noPadding>
+      <PageMetadata />
       <Stack noGap fullWidth row className="pad-x-5 md-fle-dir-column">
         <LeftMenu activeItem={activeItem} activeCategory={activeCategory} />
         <Stack xl fullWidth className="min-hei-100vh">

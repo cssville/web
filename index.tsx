@@ -6,6 +6,7 @@ import "cssville/cssville.css";
 import "./site.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Routes } from "./data/pagesData";
+import { PageMetadata } from "./components/PageMetadata";
 
 
 const router = createBrowserRouter(Routes);

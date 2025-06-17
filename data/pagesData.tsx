@@ -16,10 +16,22 @@ export const Routes: RouteObject[] = [
     path: paths.home,
     element: <HomePage />,
     errorElement: <NotFoundPage />,
+    handle: { 
+      title: "Cssville - The most simple utility-first CSS framework",
+      description: "Enhance your UI with ready-to-use CSS utility classes",
+      category: "Home", 
+      item: "Home" 
+    }
   },
   {
     path: paths.notFound,
     element: <NotFoundPage />,
+    handle: { 
+      title: "Page Not Found - Cssville",
+      description: "The page you are looking for does not exist.",
+      category: "Error", 
+      item: "Not Found" 
+    }
   },
   {
     path: paths.docs,
@@ -28,27 +40,52 @@ export const Routes: RouteObject[] = [
       {
         path: paths.components.chip,
         element: <ChipPage />,
-        handle: { title: "Chip", category: "React Components", item: "Chip" }
+        handle: { 
+          title: "Chip", 
+          description: "Learn how to use Cssville's Chip component in your projects.",
+          category: "React Components", 
+          item: "Chip" 
+        }
       },
       {
         path: paths.components.button,
         element: <ButtonPage />,
-        handle: { title: "Button", category: "React Components", item: "Button" }
+        handle: { 
+          title: "Button", 
+          description: "Learn how to use Cssville's Button component in your projects.",
+          category: "React Components", 
+          item: "Button" 
+        }
       },
       {
         path: paths.components.typography,
         element: <TypographyPage />,
-        handle: { title: "Typography", category: "React Components", item: "Typography" }
+        handle: { 
+          title: "Typography", 
+          description: "Learn how to use Cssville's Typography components in your projects.",
+          category: "React Components", 
+          item: "Typography" 
+        }
       },
       {
         path: paths.intro.gettingStarted,
         element: <GettingStartedPage />,
-        handle: { title: "Getting started", category: "Introduction", item: "Getting started" }
+        handle: { 
+          title: "Getting started", 
+          description: "Learn how to get started with Cssville, the most simple utility-first CSS framework.",
+          category: "Introduction", 
+          item: "Getting started" 
+        }
       },
       {
         path: paths.cssClasses(":name"),
         element: <ClassPage />,
-        handle: { title: "", category: "CSS Classes", item: "" },
+        handle: { 
+          title: "", 
+          description: "Learn about Cssville's CSS utility classes.",
+          category: "CSS Classes", 
+          item: "" 
+        },
         loader: async ({ params }) => {
           return params.name;
         },

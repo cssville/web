@@ -11,21 +11,26 @@ function traversePaths(obj, basePath) {
         var value = obj[key];
         if (typeof value === 'string') {
             // If the value is a string, it's a path
+            // Add /docs prefix for components and css-classes paths
+            var needsDocsPrefix = (basePath === 'components' || value.startsWith('components/') ||
+                value.startsWith('css-classes/') || basePath === 'intro' ||
+                value.startsWith('intro/'));
+            var prefix = needsDocsPrefix ? '/docs' : '';
             entries.push({
-                loc: "".concat(basePath, "/").concat(value).replace(/\/+/g, '/'),
+                loc: "".concat(prefix, "/").concat(value).replace(/\/+/g, '/'),
                 lastmod: new Date().toISOString().split('T')[0]
             });
         }
         else if (typeof value === 'function' && key === 'cssClasses') {
             // Special case for dynamic paths, such as cssClasses
             entries.push.apply(entries, cssville_1.Cssville.generators.map(function (g) { return ({
-                loc: "".concat(basePath, "/").concat(value(g.name)).replace(/\/+/g, '/'),
+                loc: "/docs/".concat(value(g.name)).replace(/\/+/g, '/'),
                 lastmod: new Date().toISOString().split('T')[0]
             }); }));
         }
         else if (typeof value === 'object') {
             // If the value is an object, recurse
-            entries = entries.concat(traversePaths(value, "".concat(basePath, "/").concat(key)));
+            entries = entries.concat(traversePaths(value, key));
         }
     });
     return entries;

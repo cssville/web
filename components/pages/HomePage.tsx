@@ -8,10 +8,12 @@ import { CssClassesSection } from '../CssClassesSection';
 import { Footer } from '../Footer';
 import { Section } from 'cssville-ui/build/components/ui/simple/Section';
 import { Stack } from "cssville-ui/build/components/ui/simple/Stack";
+import { PageMetadata } from '../PageMetadata';
 
 export const HomePage = (props) => {
   return (
     <>
+      <PageMetadata />
       <Stack column className="pos-relative ove-hidden bac-col-grey-50">
         <img className="pos-absolute max-wid-lg lef-0 rig-0 mar-x-auto obj-fit-cover" src="img/grid.svg" alt="grid" />
         <Header />
