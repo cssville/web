@@ -20,6 +20,25 @@
   <meta name="twitter:image" content="https://cssville.xyz" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="keywords" content="CSS utility-first framework" />
+  <style>
+    /* Hide the root element until everything is loaded and metadata is set */
+    #root {
+      visibility: hidden;
+    }
+    /* Add a loading indicator that will be shown until the page is ready */
+    .loading-indicator {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+      z-index: 9999;
+    }
+  </style>
   <link rel="stylesheet" type="text/css" href="/web.bundle.css">
   <link rel="stylesheet" href="/github-dark-dimmed.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,6 +68,10 @@
     });
     myCookieBanner.init(); 
   </script>
+  <!-- Loading indicator that will be shown until the page is ready -->
+  <div id="loading-indicator" class="loading-indicator">
+    <div>Loading...</div>
+  </div>
   <div class="dis-flex min-hei-100vh fle-dir-column wid-full" id="root"></div>
   <script src="/web.bundle.js"></script>
 </body>

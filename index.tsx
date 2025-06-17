@@ -63,24 +63,47 @@ function initializeMetadata() {
 const router = createBrowserRouter(Routes);
 
 function docReady(fn: () => void) {
-  // see if DOM is already available
-  if (document.readyState === "complete" || document.readyState === "interactive") {
-    // Initialize metadata before rendering React app
-    initializeMetadata();
-    // call on next available tick
-    setTimeout(fn, 1);
+  // Initialize metadata as early as possible
+  initializeMetadata();
+
+  // Only render when document is fully loaded (all resources including images, stylesheets, etc.)
+  if (document.readyState === "complete") {
+    // Document is already fully loaded, call function immediately
+    fn();
   } else {
-    document.addEventListener("DOMContentLoaded", () => {
-      initializeMetadata();
+    // Wait for window.onload which ensures all resources are loaded
+    window.addEventListener("load", () => {
       fn();
     });
   }
 }
 
+// Function to show the page content and hide the loading indicator
+function showPageContent() {
+  // Show the root element
+  const rootElement = document.getElementById('root');
+  if (rootElement) {
+    rootElement.style.visibility = 'visible';
+  }
+
+  // Hide the loading indicator
+  const loadingIndicator = document.getElementById('loading-indicator');
+  if (loadingIndicator) {
+    loadingIndicator.style.display = 'none';
+  }
+}
+
 docReady(function () {
+  // Initialize React app
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <RouterProvider router={router} />
   );
+
+  // Initialize syntax highlighting
   hljs.highlightAll();
+
+  // Show the page content after a small delay to ensure React has rendered
+  // and all metadata has been applied
+  setTimeout(showPageContent, 50);
 });
