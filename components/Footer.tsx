@@ -14,8 +14,8 @@ export const Footer = (props: any) => {
           <Stack xs fullWidth className="ali-ite-end sm-ali-ite-start">
             <span className="dis-flex ali-ite-center jus-con-center">
               Hosted by
-              <a className="hei-7 tex-dec-none" href="https://github.com/" target="_blank">
-                <span className="dis-flex ali-ite-center jus-con-center"><img src="/img/github.svg" className="hei-6 wid-6 mar-3" /> GitHub.</span>
+              <a className="hei-7 tex-dec-none" href="https://vercel.com/" target="_blank">
+                <span className="dis-flex ali-ite-center jus-con-center"><img src="/img/vercel.svg" className="hei-6 wid-6 mar-3" /> Vercel.</span>
               </a>
             </span>
             <span className="dis-flex ali-ite-center jus-con-center">
