@@ -3,5 +3,15 @@
   "framework": null,
   "buildCommand": "npm run build:prod",
   "outputDirectory": ".",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "cssville-web\\.vercel\\.app" }],
+      "destination": "https://cssville.xyz/:path*",
+      "permanent": true
+    },
+    { "source": "/docs", "destination": "/docs/intro/getting-started", "permanent": true }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }

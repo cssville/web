@@ -9,12 +9,17 @@ interface SitemapEntry {
   lastmod: string;
 }
 
+// The 404 page and /docs (redirects to getting started) are not indexable pages
+const excludedKeys = ['notFound', 'docs'];
+
 function traversePaths(obj: any, basePath: string = ''): SitemapEntry[] {
   let entries: SitemapEntry[] = [];
 
   Object.keys(obj).forEach((key) => {
     const value = obj[key];
-    if (typeof value === 'string') {
+    if (excludedKeys.indexOf(key) !== -1) {
+      return;
+    } else if (typeof value === 'string') {
       // If the value is a string, it's a path
       // Add /docs prefix for components and css-classes paths
       const needsDocsPrefix = (basePath === 'components' || value.startsWith('components/') || 

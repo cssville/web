@@ -4,12 +4,17 @@ var paths_1 = require("./data/paths");
 var cssville_1 = require("cssville-generators/build/cssville");
 var path = require('path');
 var fs = require('fs');
+// The 404 page and /docs (redirects to getting started) are not indexable pages
+var excludedKeys = ['notFound', 'docs'];
 function traversePaths(obj, basePath) {
     if (basePath === void 0) { basePath = ''; }
     var entries = [];
     Object.keys(obj).forEach(function (key) {
         var value = obj[key];
-        if (typeof value === 'string') {
+        if (excludedKeys.indexOf(key) !== -1) {
+            return;
+        }
+        else if (typeof value === 'string') {
             // If the value is a string, it's a path
             // Add /docs prefix for components and css-classes paths
             var needsDocsPrefix = (basePath === 'components' || value.startsWith('components/') ||
