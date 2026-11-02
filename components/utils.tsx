@@ -1,3 +1,7 @@
+import { IGenerator } from "cssville-generators/build/IGenerator";
+
+export const classCount = (generator: IGenerator) => generator.cssData.reduce((n, d) => n + d.postfixValuesMap.size, 0);
+
 export function getClasses(text: string): Array<{ cssClass: string; cssString: string; }> {
   const classes = Array<{ cssClass: string; cssString: string; }>();
   text.split("}").forEach((el, i) => {

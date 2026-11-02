@@ -6,8 +6,7 @@ import "cssville/cssville.css";
 import "./site.css";
 import { createBrowserRouter, RouterProvider, matchRoutes } from "react-router-dom";
 import { Routes } from "./data/pagesData";
-import { PageMetadata, setCanonical } from "./components/PageMetadata";
-import { Cssville } from "cssville-generators/build/cssville";
+import { PageMetadata, setCanonical, getPageMetadata } from "./components/PageMetadata";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -23,22 +22,7 @@ function initializeMetadata() {
     const handle = match.route.handle as any;
 
     if (handle) {
-      let title = handle.title || "Cssville - The most simple utility-first CSS framework";
-      let description = handle.description || "Enhance your UI with ready-to-use CSS utility classes";
-
-      // Handle CSS Classes pages with dynamic titles
-      if (handle.category === "CSS Classes" && handle.title === "") {
-        const parts = pathname.split("/");
-        const className = parts[parts.length - 1];
-        const generator = Cssville.generators.find(g => g.name === className);
-
-        if (generator) {
-          title = `${generator.name} - Cssville CSS Classes`;
-          description = `All Cssville ${generator.name} utility classes, with the CSS properties and values each class sets.`;
-        }
-      } else if (handle.title && handle.category !== "Home") {
-        title += " - Cssville";
-      }
+      const { title, description } = getPageMetadata(handle, pathname);
 
       // Update document head immediately
       document.title = title;

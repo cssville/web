@@ -18,7 +18,7 @@ export const Routes: RouteObject[] = [
     errorElement: <NotFoundPage />,
     handle: { 
       title: "Cssville - The most simple utility-first CSS framework",
-      description: "Enhance your UI with ready-to-use CSS utility classes",
+      description: "Cssville is a utility-first CSS framework with zero dependencies. Style HTML with small classes like dis-flex and pad-y-2, with responsive and hover variants.",
       category: "Home", 
       item: "Home" 
     }
@@ -42,7 +42,7 @@ export const Routes: RouteObject[] = [
         element: <ChipPage />,
         handle: { 
           title: "Chip", 
-          description: "Learn how to use Cssville's Chip component in your projects.",
+          description: "The Cssville React Chip component for tags and labels: sizes from xs to xl, rounded and square chips, color variants and filled styles in live examples.",
           category: "React Components", 
           item: "Chip" 
         }
@@ -52,7 +52,7 @@ export const Routes: RouteObject[] = [
         element: <ButtonPage />,
         handle: { 
           title: "Button", 
-          description: "Learn how to use Cssville's Button component in your projects.",
+          description: "The Cssville React Button component: sizes from xs to xl, rounded, square and icon buttons, color variants, and filled and borderless styles in live examples.",
           category: "React Components", 
           item: "Button" 
         }
@@ -62,7 +62,7 @@ export const Routes: RouteObject[] = [
         element: <TypographyPage />,
         handle: { 
           title: "Typography", 
-          description: "Learn how to use Cssville's Typography components in your projects.",
+          description: "Cssville React typography components: Display, Headline, Title, Label and Text, each shown in every size from xs to xl with live examples.",
           category: "React Components", 
           item: "Typography" 
         }
@@ -72,7 +72,7 @@ export const Routes: RouteObject[] = [
         element: <GettingStartedPage />,
         handle: { 
           title: "Getting started", 
-          description: "Learn how to get started with Cssville, the most simple utility-first CSS framework.",
+          description: "Install Cssville from npm or a CDN, learn how its utility class names are built, and use responsive prefixes, hover classes and smaller production builds.",
           category: "Introduction", 
           item: "Getting started" 
         }

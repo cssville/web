@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect } from 'react';
 import { useMatches, useLocation } from 'react-router-dom';
 import { Cssville } from "cssville-generators/build/cssville";
+import { classCount } from "./utils";
 
 interface MetadataProps {
   defaultTitle?: string;
@@ -8,7 +9,7 @@ interface MetadataProps {
 }
 
 const DEFAULT_TITLE = "Cssville - The most simple utility-first CSS framework";
-const DEFAULT_DESCRIPTION = "Enhance your UI with ready-to-use CSS utility classes";
+const DEFAULT_DESCRIPTION = "Cssville is a utility-first CSS framework with zero dependencies. Style HTML with small classes like dis-flex and pad-y-2, with responsive and hover variants.";
 
 export const canonicalUrl = (pathname: string) => `https://cssville.xyz${pathname.replace(/\/+$/, '') || '/'}`;
 
@@ -35,7 +36,7 @@ export const getPageMetadata = (handle: any, pathname: string, defaultTitle = DE
 
       if (generator) {
         title = `${generator.name} - Cssville CSS Classes`;
-        description = `All Cssville ${generator.name} utility classes, with the CSS properties and values each class sets.`;
+        description = `The ${classCount(generator).toLocaleString('en-US')} Cssville utility classes for ${generator.name}, with the CSS each class sets. Add them to your HTML to style elements without writing your own CSS.`;
       }
     } else if (handle.title) {
       title = handle.title;
