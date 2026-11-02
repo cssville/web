@@ -6,7 +6,7 @@ import "cssville/cssville.css";
 import "./site.css";
 import { createBrowserRouter, RouterProvider, matchRoutes } from "react-router-dom";
 import { Routes } from "./data/pagesData";
-import { PageMetadata } from "./components/PageMetadata";
+import { PageMetadata, setCanonical } from "./components/PageMetadata";
 import { Cssville } from "cssville-generators/build/cssville";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -34,7 +34,7 @@ function initializeMetadata() {
 
         if (generator) {
           title = `${generator.name} - Cssville CSS Classes`;
-          description = `Learn about Cssville's ${generator.name} utility classes.`;
+          description = `All Cssville ${generator.name} utility classes, with the CSS properties and values each class sets.`;
         }
       } else if (handle.title && handle.category !== "Home") {
         title += " - Cssville";
@@ -60,6 +60,8 @@ function initializeMetadata() {
       if (twitterDescription) twitterDescription.setAttribute('content', description);
     }
   }
+
+  setCanonical(pathname);
 }
 
 const router = createBrowserRouter(Routes);

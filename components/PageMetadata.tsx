@@ -7,6 +7,17 @@ interface MetadataProps {
   defaultDescription?: string;
 }
 
+// Injected by JS only: a static canonical in index.html would point every route at the home page
+export const setCanonical = (pathname: string) => {
+  let link = document.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    document.head.appendChild(link);
+  }
+  link.setAttribute('href', `https://cssville.xyz${pathname.replace(/\/+$/, '') || '/'}`);
+};
+
 export const PageMetadata: React.FC<MetadataProps> = ({ 
   defaultTitle = "Cssville - The most simple utility-first CSS framework",
   defaultDescription = "Enhance your UI with ready-to-use CSS utility classes"
@@ -30,7 +41,7 @@ export const PageMetadata: React.FC<MetadataProps> = ({
 
         if (generator) {
           title = `${generator.name} - Cssville CSS Classes`;
-          description = `Learn about Cssville's ${generator.name} utility classes.`;
+          description = `All Cssville ${generator.name} utility classes, with the CSS properties and values each class sets.`;
         }
       } else if (handle.title) {
         title = handle.title;
@@ -78,6 +89,8 @@ export const PageMetadata: React.FC<MetadataProps> = ({
     if (ogDescription) ogDescription.setAttribute('content', description);
     if (twitterTitle) twitterTitle.setAttribute('content', title);
     if (twitterDescription) twitterDescription.setAttribute('content', description);
+
+    setCanonical(location.pathname);
 
   }, [matches, location.pathname, defaultTitle, defaultDescription]);
 
