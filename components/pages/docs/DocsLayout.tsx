@@ -42,7 +42,7 @@ export const DocsLayout = () => {
       <PageMetadata />
       <Stack noGap fullWidth row className="pad-x-5 md-fle-dir-column">
         <LeftMenu activeItem={activeItem} activeCategory={activeCategory} />
-        <Stack xl fullWidth className="min-hei-100vh">
+        <Stack xl fullWidth className="min-hei-100vh min-wid-0">
           <Stack fullWidth className="pad-x-8 md-pad-x-6 sm-pad-x-0 fle-gro-1">
             {
               title === ""
