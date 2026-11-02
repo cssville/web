@@ -8,6 +8,8 @@ import { createBrowserRouter, RouterProvider, matchRoutes } from "react-router-d
 import { Routes } from "./data/pagesData";
 import { PageMetadata } from "./components/PageMetadata";
 import { Cssville } from "cssville-generators/build/cssville";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Initialize metadata as early as possible based on current URL
 function initializeMetadata() {
@@ -97,7 +99,11 @@ docReady(function () {
   // Initialize React app
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
-    <RouterProvider router={router} />
+    <>
+      <RouterProvider router={router} />
+      <Analytics />
+      <SpeedInsights />
+    </>
   );
 
   // Initialize syntax highlighting

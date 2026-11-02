@@ -29,6 +29,8 @@
   },
   "homepage": "https://github.com/cssville/cssville-web#readme",
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "cssville": "^0.9.2",
     "cssville-generators": "^0.9.2",
     "cssville-ui": "^0.9.2",
