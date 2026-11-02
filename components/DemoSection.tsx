@@ -23,19 +23,19 @@ export const DemoSection = (props: any) => {
         <div className="wid-full dis-flex jus-con-center mar-bot--6">
           <div id="example" className="wid-full dis-flex jus-con-center">
             <div className="dis-flex wid-full pos-relative max-wid-sm">
-              <img src="img/house.webp" className="wid-full max-wid-full bor-rad-4 obj-fit-cover" />
+              <img src="img/house.webp" alt="White house with a wooden deck at dusk" className="wid-full max-wid-full bor-rad-4 obj-fit-cover" />
               <div className="dis-flex pos-absolute hei-100 wid-full">
                 <div className="dis-flex fle-dir-column pad-4 wid-full">
-                  <img src="img/star.svg" className="hei-7 wid-7" />
+                  <img src="img/star.svg" alt="" className="hei-7 wid-7" />
                   <div className="fle-gro-1"></div>
                   <div className="dis-flex wid-full">
-                    <img src="img/profile.svg" className="hei-10 wid-10 bac-col-white bor-rad-max" />
+                    <img src="img/profile.svg" alt="" className="hei-10 wid-10 bac-col-white bor-rad-max" />
                     <div className="dis-flex jus-con-center pad-lef-3 fle-dir-column fle-gro-1">
                       <span className="fon-wei-bold col-white">Naomi Rivers</span>
                       <span className="fon-siz-small col-white opa-07">Available for hire</span>
                     </div>
                     <div className="dis-flex ali-ite-flex-end">
-                      <img src="img/bookmark.svg" className="hei-7 wid-7" />
+                      <img src="img/bookmark.svg" alt="" className="hei-7 wid-7" />
                     </div>
                   </div>
                 </div>

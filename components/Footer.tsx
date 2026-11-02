@@ -15,13 +15,13 @@ export const Footer = (props: any) => {
             <span className="dis-flex ali-ite-center jus-con-center">
               Hosted by
               <a className="hei-7 tex-dec-none" href="https://vercel.com/" target="_blank">
-                <span className="dis-flex ali-ite-center jus-con-center"><img src="/img/vercel.svg" className="hei-6 wid-6 mar-3" /> Vercel.</span>
+                <span className="dis-flex ali-ite-center jus-con-center"><img src="/img/vercel.svg" alt="" className="hei-6 wid-6 mar-3" /> Vercel.</span>
               </a>
             </span>
             <span className="dis-flex ali-ite-center jus-con-center">
               Protected by
               <a className="hei-7 tex-dec-none" href="https://cloudback.it/" target="_blank">
-                <span className="dis-flex ali-ite-center jus-con-center"><img src="/img/cloudback.svg" className="hei-6 wid-6 mar-3" /> Cloudback.</span>
+                <span className="dis-flex ali-ite-center jus-con-center"><img src="/img/cloudback.svg" alt="" className="hei-6 wid-6 mar-3" /> Cloudback.</span>
               </a>
             </span>
           </Stack>
