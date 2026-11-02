@@ -7,6 +7,7 @@
     "build:sitemap": "tsc sitemap.ts && node sitemap.js",
     "build:prod": "cross-env NODE_ENV=production webpack",
     "build:dev": "cross-env NODE_ENV=development webpack",
+    "prerender": "webpack --config webpack.prerender.config.js && cross-env NODE_ENV=production node prerender.bundle.js",
     "watch:build:prod": "cross-env NODE_ENV=production webpack --watch",
     "watch:build:dev": "cross-env NODE_ENV=development webpack --watch",
     "watch:server": "lite-server -c lite-server-config.json",

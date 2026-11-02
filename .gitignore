@@ -91,6 +91,9 @@ out
 .nuxt
 dist
 
+# Prerender script bundle (see webpack.prerender.config.js)
+prerender.bundle.js
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js

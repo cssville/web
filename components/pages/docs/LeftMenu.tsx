@@ -21,7 +21,8 @@ const MenuItem = ({ href, item, category, activeCategory, activeItem, onClick })
 
 export const LeftMenu = ({ activeItem, activeCategory }) => {
 
-  const isDesktop = () => window.innerWidth > 768;
+  // No window during prerender: render the open menu so its links are in the static HTML
+  const isDesktop = () => typeof window === 'undefined' || window.innerWidth > 768;
 
   const [isOpen, setIsOpen] = useState(isDesktop());
 

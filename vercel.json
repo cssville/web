@@ -1,8 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "npm run build:prod",
-  "outputDirectory": ".",
+  "buildCommand": "npm run build:prod && npm run prerender",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
     {
@@ -13,5 +14,5 @@
     },
     { "source": "/docs", "destination": "/docs/intro/getting-started", "permanent": true }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/app" }]
 }
